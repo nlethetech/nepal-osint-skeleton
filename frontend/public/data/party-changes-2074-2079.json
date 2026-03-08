@@ -1,0 +1,812 @@
+[
+  {
+    "candidate_id": "335208",
+    "name": "रबि लामिछाने",
+    "from_party": "Nepali Congress",
+    "to_party": "Rastriya Swatantra Party",
+    "was_elected_2079": true,
+    "votes_2079": 49300,
+    "district": "Chitwan",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/335208.jpg"
+  },
+  {
+    "candidate_id": "337336",
+    "name": "प्रेम सुवाल",
+    "from_party": "CPN-UML",
+    "to_party": "Nepal Workers Peasants Party",
+    "was_elected_2079": true,
+    "votes_2079": 42761,
+    "district": "Bhaktapur",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/337336.jpg"
+  },
+  {
+    "candidate_id": "2074_saptari-4_1",
+    "name": "कमल लिम्बु",
+    "from_party": "Rastriya Janata Party Nepal",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": false,
+    "votes_2079": 40219,
+    "district": "Saptari",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_sarlahi-2_1",
+    "name": "कृष्ण प्रसाद तामाङ",
+    "from_party": "Nepali Congress",
+    "to_party": "Rastriya Swatantra Party",
+    "was_elected_2079": false,
+    "votes_2079": 37466,
+    "district": "Sarlahi",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "334500",
+    "name": "दिपक गिरी",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": true,
+    "votes_2079": 36911,
+    "district": "Dang",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/334500.jpg"
+  },
+  {
+    "candidate_id": "335240",
+    "name": "राजेन्द्र प्रसाद पाण्डे",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": true,
+    "votes_2079": 36018,
+    "district": "Dhading",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/335240.jpg"
+  },
+  {
+    "candidate_id": "335079",
+    "name": "प्रकाश ज्वाला",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": true,
+    "votes_2079": 35707,
+    "district": "Salyan",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/335079.jpg"
+  },
+  {
+    "candidate_id": "2074_rautahat-1_1",
+    "name": "भरत ओली",
+    "from_party": "Rastriya Janata Party Nepal",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": false,
+    "votes_2079": 35489,
+    "district": "Rautahat",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_nawalpur-2_1",
+    "name": "ज्ञानेन्द्र महर्जन",
+    "from_party": "Nepali Congress",
+    "to_party": "Independent",
+    "was_elected_2079": false,
+    "votes_2079": 35411,
+    "district": "Nawalpur",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "336334",
+    "name": "विक्रम पाण्डे",
+    "from_party": "CPN-UML",
+    "to_party": "RPP",
+    "was_elected_2079": true,
+    "votes_2079": 35060,
+    "district": "Chitwan",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/336334.jpg"
+  },
+  {
+    "candidate_id": "336720",
+    "name": "चन्द्र कान्त राउत",
+    "from_party": "Nepali Congress",
+    "to_party": "Janamat Party",
+    "was_elected_2079": true,
+    "votes_2079": 35042,
+    "district": "Saptari",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/336720.jpg"
+  },
+  {
+    "candidate_id": "2074_jajarkot-1_1",
+    "name": "बालकृष्ण बस्नेत",
+    "from_party": "Nepali Congress",
+    "to_party": "Rastriya Swatantra Party",
+    "was_elected_2079": false,
+    "votes_2079": 35017,
+    "district": "Jajarkot",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_nuwakot-2_1",
+    "name": "अर्जुन नरसिंह के.सी.",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 34832,
+    "district": "Nuwakot",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "337699",
+    "name": "रामनाथ अधिकारी",
+    "from_party": "CPN-UML",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": true,
+    "votes_2079": 34736,
+    "district": "Dhading",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/337699.jpg"
+  },
+  {
+    "candidate_id": "335943",
+    "name": "देव प्रसाद तिमलसेना",
+    "from_party": "Rastriya Janata Party Nepal",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": true,
+    "votes_2079": 34161,
+    "district": "Rautahat",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/335943.jpg"
+  },
+  {
+    "candidate_id": "335572",
+    "name": "दिपक खड्का",
+    "from_party": "CPN-UML",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": true,
+    "votes_2079": 32161,
+    "district": "Sankhuwasabha",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/335572.jpg"
+  },
+  {
+    "candidate_id": "336097",
+    "name": "राम कुमार राई",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Maoist Centre",
+    "was_elected_2079": true,
+    "votes_2079": 31351,
+    "district": "Khotang",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/336097.jpg"
+  },
+  {
+    "candidate_id": "335450",
+    "name": "डा. नारायण खड्का",
+    "from_party": "Naya Shakti Party",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": true,
+    "votes_2079": 31270,
+    "district": "Udayapur",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/335450.jpg"
+  },
+  {
+    "candidate_id": "333867",
+    "name": "तोसीमा कार्की",
+    "from_party": "Nepali Congress",
+    "to_party": "Rastriya Swatantra Party",
+    "was_elected_2079": true,
+    "votes_2079": 31136,
+    "district": "Lalitpur",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/333867.jpg"
+  },
+  {
+    "candidate_id": "334851",
+    "name": "नारायण प्रसाद आचार्य",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "CPN-UML",
+    "was_elected_2079": true,
+    "votes_2079": 31103,
+    "district": "Palpa",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/334851.jpg"
+  },
+  {
+    "candidate_id": "2074_rautahat-2_1",
+    "name": "अशोक महर्जन",
+    "from_party": "Rastriya Janata Party Nepal",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": false,
+    "votes_2079": 31023,
+    "district": "Rautahat",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "337370",
+    "name": "माधव सापकोटा",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Maoist Centre",
+    "was_elected_2079": true,
+    "votes_2079": 30408,
+    "district": "Sindhupalchok",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/337370.jpg"
+  },
+  {
+    "candidate_id": "338342",
+    "name": "रन्जिता श्रेष्ठ",
+    "from_party": "CPN-UML",
+    "to_party": "Nagarik Unmukti Party",
+    "was_elected_2079": true,
+    "votes_2079": 30404,
+    "district": "Kailali",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/338342.jpg"
+  },
+  {
+    "candidate_id": "335700",
+    "name": "विनोद कुमार चौधरी",
+    "from_party": "CPN-UML",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": true,
+    "votes_2079": 29519,
+    "district": "Nawalparasi West",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/335700.jpg"
+  },
+  {
+    "candidate_id": "335498",
+    "name": "सुदन किराती",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Maoist Centre",
+    "was_elected_2079": true,
+    "votes_2079": 28591,
+    "district": "Bhojpur",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/335498.jpg"
+  },
+  {
+    "candidate_id": "334465",
+    "name": "दिलेन्द्र प्रसाद बडू",
+    "from_party": "CPN-UML",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": true,
+    "votes_2079": 28515,
+    "district": "Darchula",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/334465.jpg"
+  },
+  {
+    "candidate_id": "336024",
+    "name": "अर्जुन नरसिंह के.सी.",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": true,
+    "votes_2079": 28107,
+    "district": "Nuwakot",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/336024.jpg"
+  },
+  {
+    "candidate_id": "335396",
+    "name": "दीपक कार्की",
+    "from_party": "Nepali Congress",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": true,
+    "votes_2079": 27431,
+    "district": "Dhanusha",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/335396.jpg"
+  },
+  {
+    "candidate_id": "333981",
+    "name": "डिग बहादुर लिम्वु",
+    "from_party": "CPN-UML",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": true,
+    "votes_2079": 27297,
+    "district": "Morang",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/333981.jpg"
+  },
+  {
+    "candidate_id": "2074_sindhuli-1_1",
+    "name": "संजय जोशी",
+    "from_party": "CPN-UML",
+    "to_party": "Rastriya Swatantra Party",
+    "was_elected_2079": false,
+    "votes_2079": 26398,
+    "district": "Sindhuli",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "336425",
+    "name": "रामचन्द्र पौडेल",
+    "from_party": "CPN-UML",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": true,
+    "votes_2079": 25361,
+    "district": "Tanahun",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/336425.jpg"
+  },
+  {
+    "candidate_id": "2074_parsa-4_1",
+    "name": "रमेश दाहाल",
+    "from_party": "Rastriya Janata Party Nepal",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": false,
+    "votes_2079": 24782,
+    "district": "Parsa",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "335075",
+    "name": "राज किशोर यादव",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": true,
+    "votes_2079": 24178,
+    "district": "Siraha",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/335075.jpg"
+  },
+  {
+    "candidate_id": "336140",
+    "name": "महेन्द्र बहादुर शाही",
+    "from_party": "Independent",
+    "to_party": "CPN-Maoist Centre",
+    "was_elected_2079": true,
+    "votes_2079": 23727,
+    "district": "Kalikot",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/336140.jpg"
+  },
+  {
+    "candidate_id": "336025",
+    "name": "नवल किसोर साह सुडी",
+    "from_party": "Rastriya Janata Party Nepal",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": true,
+    "votes_2079": 23604,
+    "district": "Saptari",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/336025.jpg"
+  },
+  {
+    "candidate_id": "333762",
+    "name": "लझ्मी महतो काेइरी",
+    "from_party": "Independent",
+    "to_party": "CPN-UML",
+    "was_elected_2079": true,
+    "votes_2079": 23402,
+    "district": "Mahottari",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/333762.jpg"
+  },
+  {
+    "candidate_id": "2074_sunsari-1_2",
+    "name": "दिनेश पोखरेल",
+    "from_party": "CPN-UML",
+    "to_party": "RPP",
+    "was_elected_2079": false,
+    "votes_2079": 23036,
+    "district": "Sunsari",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_mahottari-2_2",
+    "name": "कृष्ण प्रसाद सिंह",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "CPN-UML",
+    "was_elected_2079": false,
+    "votes_2079": 23003,
+    "district": "Mahottari",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_parsa-3_1",
+    "name": "राज कुमार गुप्ता",
+    "from_party": "CPN-UML",
+    "to_party": "RPP",
+    "was_elected_2079": false,
+    "votes_2079": 22984,
+    "district": "Parsa",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "333290",
+    "name": "मंगल प्रसाद गुप्‍ता",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "CPN-UML",
+    "was_elected_2079": true,
+    "votes_2079": 22619,
+    "district": "Kapilvastu",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/333290.jpg"
+  },
+  {
+    "candidate_id": "335285",
+    "name": "अरुन कुमार चौधरी",
+    "from_party": "CPN-UML",
+    "to_party": "Nagarik Unmukti Party",
+    "was_elected_2079": true,
+    "votes_2079": 21871,
+    "district": "Kailali",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/335285.jpg"
+  },
+  {
+    "candidate_id": "335338",
+    "name": "ज्वाला कुमारी साह",
+    "from_party": "Nepali Congress",
+    "to_party": "CPN-UML",
+    "was_elected_2079": true,
+    "votes_2079": 20251,
+    "district": "Bara",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/335338.jpg"
+  },
+  {
+    "candidate_id": "334511",
+    "name": "दिक्पाल कुमार शाहि",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": true,
+    "votes_2079": 20183,
+    "district": "Dailekh",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/334511.jpg"
+  },
+  {
+    "candidate_id": "334630",
+    "name": "राम कृष्ण यादव",
+    "from_party": "Rastriya Janata Party Nepal",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": true,
+    "votes_2079": 20112,
+    "district": "Dhanusha",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/334630.jpg"
+  },
+  {
+    "candidate_id": "2074_dadeldhura-1_1",
+    "name": "दिनेश नेपाल",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 19867,
+    "district": "Dadeldhura",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_dhanusha-2_1",
+    "name": "राम कृष्ण यादव",
+    "from_party": "Rastriya Janata Party Nepal",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": false,
+    "votes_2079": 19866,
+    "district": "Dhanusha",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "335229",
+    "name": "शेर बहादुर कुँवर",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": true,
+    "votes_2079": 19534,
+    "district": "Achham",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/335229.jpg"
+  },
+  {
+    "candidate_id": "2074_nawalparasi-west-2_1",
+    "name": "नरेश साह",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 18789,
+    "district": "Nawalparasi West",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "334495",
+    "name": "अम्मर बहादुर थापा",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": true,
+    "votes_2079": 18297,
+    "district": "Dailekh",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/334495.jpg"
+  },
+  {
+    "candidate_id": "2074_chitwan-3_1",
+    "name": "विक्रम पाण्डे",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 17112,
+    "district": "Chitwan",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "334201",
+    "name": "विधा भटटराई",
+    "from_party": "Nepali Congress",
+    "to_party": "CPN-UML",
+    "was_elected_2079": true,
+    "votes_2079": 16998,
+    "district": "Kaski",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/334201.jpg"
+  },
+  {
+    "candidate_id": "2074_saptari-2_1",
+    "name": "चन्द्र कान्त राउत",
+    "from_party": "Nepali Congress",
+    "to_party": "Independent",
+    "was_elected_2079": false,
+    "votes_2079": 16827,
+    "district": "Saptari",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_nuwakot-1_2",
+    "name": "रवि अधिकारी",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 15798,
+    "district": "Nuwakot",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_surkhet-2_1",
+    "name": "बालकृष्ण जोशी",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 15752,
+    "district": "Surkhet",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_morang-6_1",
+    "name": "दिनेश ओली",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 15462,
+    "district": "Morang",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "336951",
+    "name": "सन्तोष चालिसे",
+    "from_party": "CPN-UML",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": true,
+    "votes_2079": 15158,
+    "district": "Kathmandu",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/336951.jpg"
+  },
+  {
+    "candidate_id": "335524",
+    "name": "प्रेम बहादुर महर्जन",
+    "from_party": "Nepali Congress",
+    "to_party": "CPN-UML",
+    "was_elected_2079": true,
+    "votes_2079": 15025,
+    "district": "Lalitpur",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/335524.jpg"
+  },
+  {
+    "candidate_id": "339157",
+    "name": "ऐन बहादुर शाही ठकुरी",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": true,
+    "votes_2079": 14706,
+    "district": "Mugu",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/339157.jpg"
+  },
+  {
+    "candidate_id": "2074_parsa-1_2",
+    "name": "महेश पोखरेल",
+    "from_party": "CPN-UML",
+    "to_party": "Rastriya Swatantra Party",
+    "was_elected_2079": false,
+    "votes_2079": 14690,
+    "district": "Parsa",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_solukhumbu-1_1",
+    "name": "मानबीर राई",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 14573,
+    "district": "Solukhumbu",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_taplejung-1_2",
+    "name": "भरत लिम्बु",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 14503,
+    "district": "Taplejung",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_kaski-2_2",
+    "name": "पदम लिम्बु",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 14451,
+    "district": "Kaski",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_siraha-2_2",
+    "name": "नरेश यादव",
+    "from_party": "CPN-UML",
+    "to_party": "Rastriya Swatantra Party",
+    "was_elected_2079": false,
+    "votes_2079": 14282,
+    "district": "Siraha",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_kathmandu-6_1",
+    "name": "सन्तोष महर्जन",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 14150,
+    "district": "Kathmandu",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_rupandehi-3_1",
+    "name": "बालकृष्ण तामाङ",
+    "from_party": "CPN-UML",
+    "to_party": "RPP",
+    "was_elected_2079": false,
+    "votes_2079": 13998,
+    "district": "Rupandehi",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_jhapa-5_2",
+    "name": "नरेश मण्डल",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 13969,
+    "district": "Jhapa",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_gorkha-2_2",
+    "name": "नरेश ठाकुर",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 13530,
+    "district": "Gorkha",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_nawalparasi-west-1_2",
+    "name": "गोपाल तिवारी",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "CPN-UML",
+    "was_elected_2079": false,
+    "votes_2079": 13015,
+    "district": "Nawalparasi West",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_kavrepalanchok-2_2",
+    "name": "सुरेश देउबा",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 12857,
+    "district": "Kavrepalanchok",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_parsa-2_1",
+    "name": "बालकृष्ण पौडेल",
+    "from_party": "Rastriya Janata Party Nepal",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": false,
+    "votes_2079": 12231,
+    "district": "Parsa",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_saptari-3_2",
+    "name": "बिकास यादव",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 12187,
+    "district": "Saptari",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_bara-1_1",
+    "name": "शिव कुमार साह",
+    "from_party": "Rastriya Janata Party Nepal",
+    "to_party": "Loktantrik Samajbadi Party",
+    "was_elected_2079": false,
+    "votes_2079": 11920,
+    "district": "Bara",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_kathmandu-10_2",
+    "name": "पदम नेपाल",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "CPN-UML",
+    "was_elected_2079": false,
+    "votes_2079": 11848,
+    "district": "Kathmandu",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_banke-1_1",
+    "name": "सुरेश गुरुङ",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 11667,
+    "district": "Banke",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "339143",
+    "name": "धन बहादुर बुढा",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": true,
+    "votes_2079": 11292,
+    "district": "Dolpa",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/339143.jpg"
+  },
+  {
+    "candidate_id": "2074_banke-2_1",
+    "name": "गणेश सिंह",
+    "from_party": "Rastriya Janata Party Nepal",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": false,
+    "votes_2079": 11207,
+    "district": "Banke",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_mahottari-3_1",
+    "name": "योगेन्द्र भट्टराई",
+    "from_party": "Rastriya Janata Party Nepal",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": false,
+    "votes_2079": 11139,
+    "district": "Mahottari",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_dang-3_2",
+    "name": "गोपाल ढकाल",
+    "from_party": "CPN-UML",
+    "to_party": "Independent",
+    "was_elected_2079": false,
+    "votes_2079": 10940,
+    "district": "Dang",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "2074_palpa-1_2",
+    "name": "राम बहादुर मिश्र",
+    "from_party": "CPN-UML",
+    "to_party": "Rastriya Swatantra Party",
+    "was_elected_2079": false,
+    "votes_2079": 10473,
+    "district": "Palpa",
+    "photo_url": ""
+  },
+  {
+    "candidate_id": "333301",
+    "name": "विराज भक्त श्रेष्ठ",
+    "from_party": "CPN-UML",
+    "to_party": "Rastriya Swatantra Party",
+    "was_elected_2079": true,
+    "votes_2079": 10112,
+    "district": "Kathmandu",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/333301.jpg"
+  },
+  {
+    "candidate_id": "2074_nawalpur-2_2",
+    "name": "रमेश बस्नेत",
+    "from_party": "CPN-UML",
+    "to_party": "CPN-Unified Socialist",
+    "was_elected_2079": false,
+    "votes_2079": 8120,
+    "district": "Nawalpur",
+    "photo_url": ""
+  }
+]

@@ -1,0 +1,332 @@
+[
+  {
+    "candidate_id": "340349",
+    "name": "दामोदर भण्डारी",
+    "from_party": "CPN-UML",
+    "to_party": "RPP",
+    "was_elected_2079": true,
+    "votes_2079": 33611,
+    "district": "Baitadi",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/340349.jpg"
+  },
+  {
+    "candidate_id": "340034",
+    "name": "कृष्ण कुमार श्रेष्ठ",
+    "from_party": "CPN-Unified Socialist",
+    "to_party": "CPN-UML",
+    "was_elected_2079": true,
+    "votes_2079": 30341,
+    "district": "Bara",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/340034.jpg"
+  },
+  {
+    "candidate_id": "340055",
+    "name": "सर्वेन्द्र नाथ शुक्ला",
+    "from_party": "Loktantrik Samajbadi Party",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": true,
+    "votes_2079": 28000,
+    "district": "Rupandehi",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/340055.jpg"
+  },
+  {
+    "candidate_id": "341460",
+    "name": "शरत सिंह भण्डारी",
+    "from_party": "Loktantrik Samajbadi Party",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": true,
+    "votes_2079": 25190,
+    "district": "Mahottari",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/341460.jpg"
+  },
+  {
+    "candidate_id": "340395",
+    "name": "राम प्रकाश चौधरी",
+    "from_party": "Loktantrik Samajbadi Party",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": true,
+    "votes_2079": 24838,
+    "district": "Sarlahi",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/340395.jpg"
+  },
+  {
+    "candidate_id": "340417",
+    "name": "बिरेन्द्र प्रसाद महतो",
+    "from_party": "Janata Samajbadi Party",
+    "to_party": "Janamat Party",
+    "was_elected_2079": true,
+    "votes_2079": 24102,
+    "district": "Siraha",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/340417.jpg"
+  },
+  {
+    "candidate_id": "340046",
+    "name": "प्रदिप यादव",
+    "from_party": "Janata Samajbadi Party",
+    "to_party": "CPN-UML",
+    "was_elected_2079": true,
+    "votes_2079": 22537,
+    "district": "Parsa",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/340046.jpg"
+  },
+  {
+    "candidate_id": "339904",
+    "name": "नरेन्द्र साह कलवार",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "Rastriya Swatantra Party",
+    "was_elected_2079": false,
+    "votes_2079": 32168,
+    "district": "Sarlahi",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/339904.jpg"
+  },
+  {
+    "candidate_id": "339359",
+    "name": "कमल थापा",
+    "from_party": "CPN-UML",
+    "to_party": "RPP",
+    "was_elected_2079": false,
+    "votes_2079": 25460,
+    "district": "Makawanpur",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/339359.jpg"
+  },
+  {
+    "candidate_id": "340825",
+    "name": "ठाकुर सिंह थारु",
+    "from_party": "Nagarik Unmukti Party",
+    "to_party": "Rastriya Swatantra Party",
+    "was_elected_2079": false,
+    "votes_2079": 23993,
+    "district": "Bardiya",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/340825.jpg"
+  },
+  {
+    "candidate_id": "341696",
+    "name": "अनिल कुमार झा",
+    "from_party": "Loktantrik Samajbadi Party",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": false,
+    "votes_2079": 23686,
+    "district": "Dhanusha",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/341696.jpg"
+  },
+  {
+    "candidate_id": "340037",
+    "name": "मोहम्मद इश्तियाक राई",
+    "from_party": "Janata Samajbadi Party",
+    "to_party": "CPN-UML",
+    "was_elected_2079": false,
+    "votes_2079": 23520,
+    "district": "Banke",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/340037.jpg"
+  },
+  {
+    "candidate_id": "341739",
+    "name": "प्रमोद कुमार यादव",
+    "from_party": "Nepali Congress",
+    "to_party": "CPN-UML",
+    "was_elected_2079": false,
+    "votes_2079": 22704,
+    "district": "Rupandehi",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/341739.jpg"
+  },
+  {
+    "candidate_id": "342560",
+    "name": "धर्मनाथ प्रसाद साह",
+    "from_party": "CPN-Unified Socialist",
+    "to_party": "CPN-UML",
+    "was_elected_2079": false,
+    "votes_2079": 14653,
+    "district": "Siraha",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/342560.jpg"
+  },
+  {
+    "candidate_id": "341166",
+    "name": "किशोरी साह कमल",
+    "from_party": "Janamat Party",
+    "to_party": "Rastriya Swatantra Party",
+    "was_elected_2079": false,
+    "votes_2079": 14467,
+    "district": "Dhanusha",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/341166.jpg"
+  },
+  {
+    "candidate_id": "341989",
+    "name": "प्रकाश रजौरिया",
+    "from_party": "RPP",
+    "to_party": "Rastriya Swatantra Party",
+    "was_elected_2079": false,
+    "votes_2079": 14030,
+    "district": "Kapilvastu",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/341989.jpg"
+  },
+  {
+    "candidate_id": "341907",
+    "name": "सुरेश कुमार चौधरी",
+    "from_party": "Nagarik Unmukti Party",
+    "to_party": "Rastriya Swatantra Party",
+    "was_elected_2079": false,
+    "votes_2079": 11465,
+    "district": "Banke",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/341907.jpg"
+  },
+  {
+    "candidate_id": "341208",
+    "name": "भरत बहादुर खड्का",
+    "from_party": "RPP",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": false,
+    "votes_2079": 9303,
+    "district": "Bhaktapur",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/341208.jpg"
+  },
+  {
+    "candidate_id": "341005",
+    "name": "रविन्‍द्र पटेल",
+    "from_party": "CPN-Maoist Centre",
+    "to_party": "Rastriya Swatantra Party",
+    "was_elected_2079": false,
+    "votes_2079": 8558,
+    "district": "Rautahat",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/341005.jpg"
+  },
+  {
+    "candidate_id": "339376",
+    "name": "उमेश कुमार यादव",
+    "from_party": "Janamat Party",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": false,
+    "votes_2079": 5971,
+    "district": "Mahottari",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/339376.jpg"
+  },
+  {
+    "candidate_id": "340494",
+    "name": "राकेश कुमार मिश्र",
+    "from_party": "Janata Samajbadi Party",
+    "to_party": "Janamat Party",
+    "was_elected_2079": false,
+    "votes_2079": 5813,
+    "district": "Sarlahi",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/340494.jpg"
+  },
+  {
+    "candidate_id": "341231",
+    "name": "राम कुमार यादव",
+    "from_party": "Janata Samajbadi Party",
+    "to_party": "Nepali Congress",
+    "was_elected_2079": false,
+    "votes_2079": 2693,
+    "district": "Banke",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/341231.jpg"
+  },
+  {
+    "candidate_id": "342054",
+    "name": "ओम प्रकाश यादव",
+    "from_party": "Janata Samajbadi Party",
+    "to_party": "Janamat Party",
+    "was_elected_2079": false,
+    "votes_2079": 2623,
+    "district": "Rupandehi",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/342054.jpg"
+  },
+  {
+    "candidate_id": "339771",
+    "name": "राम बहादुर कार्की",
+    "from_party": "RPP",
+    "to_party": "Rastriya Janamorcha",
+    "was_elected_2079": false,
+    "votes_2079": 406,
+    "district": "Taplejung",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/339771.jpg"
+  },
+  {
+    "candidate_id": "341408",
+    "name": "अनिरुध्या आर्य",
+    "from_party": "Loktantrik Samajbadi Party",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": false,
+    "votes_2079": 368,
+    "district": "Bardiya",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/341408.jpg"
+  },
+  {
+    "candidate_id": "341025",
+    "name": "नरेन्द्र प्रसाद कुरुम्‍वाङ",
+    "from_party": "Rastriya Janamukti Party",
+    "to_party": "Nepal Janamukti Party",
+    "was_elected_2079": false,
+    "votes_2079": 302,
+    "district": "Panchthar",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/341025.jpg"
+  },
+  {
+    "candidate_id": "339488",
+    "name": "इन्द्र कुमार लिम्बू",
+    "from_party": "Rastriya Janamukti Party",
+    "to_party": "Nepal Janamukti Party",
+    "was_elected_2079": false,
+    "votes_2079": 266,
+    "district": "Taplejung",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/339488.jpg"
+  },
+  {
+    "candidate_id": "340581",
+    "name": "पदम बहादुर जवेगु",
+    "from_party": "Rastriya Janamukti Party",
+    "to_party": "Nepal Janamukti Party",
+    "was_elected_2079": false,
+    "votes_2079": 214,
+    "district": "Jhapa",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/340581.jpg"
+  },
+  {
+    "candidate_id": "339775",
+    "name": "देव राज घिमिरे",
+    "from_party": "Janata Samajbadi Party",
+    "to_party": "CPN-UML",
+    "was_elected_2079": false,
+    "votes_2079": 149,
+    "district": "Nuwakot",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/339775.jpg"
+  },
+  {
+    "candidate_id": "339929",
+    "name": "गोकर्ण राई",
+    "from_party": "Rastriya Janamukti Party",
+    "to_party": "Nepal Janamukti Party",
+    "was_elected_2079": false,
+    "votes_2079": 120,
+    "district": "Udayapur",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/339929.jpg"
+  },
+  {
+    "candidate_id": "341737",
+    "name": "रुपक लामा",
+    "from_party": "Loktantrik Samajbadi Party",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": false,
+    "votes_2079": 39,
+    "district": "Makawanpur",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/341737.jpg"
+  },
+  {
+    "candidate_id": "341089",
+    "name": "दानिन्द्र जोशी",
+    "from_party": "Loktantrik Samajbadi Party",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": false,
+    "votes_2079": 37,
+    "district": "Kathmandu",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/341089.jpg"
+  },
+  {
+    "candidate_id": "340830",
+    "name": "प्रकाश नायजु",
+    "from_party": "Loktantrik Samajbadi Party",
+    "to_party": "Janata Samajbadi Party",
+    "was_elected_2079": false,
+    "votes_2079": 22,
+    "district": "Kathmandu",
+    "photo_url": "https://result.election.gov.np/Images/Candidate/340830.jpg"
+  }
+]
