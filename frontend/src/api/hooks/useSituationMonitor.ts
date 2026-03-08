@@ -38,7 +38,7 @@ export function useDevelopingStories() {
 
 /** Province anomaly data for ProvinceMonitorWidget. */
 export function useProvinceAnomalies() {
-  return useQuery<ProvinceAnomalyLatest>({
+  return useQuery<ProvinceAnomalyLatest[]>({
     queryKey: situationMonitorKeys.provinceAnomalies(),
     queryFn: () => getProvinceAnomalies(),
     staleTime: 5 * 60 * 1000,          // 5 minutes

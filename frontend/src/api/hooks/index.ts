@@ -125,6 +125,19 @@ export {
   situationMonitorKeys,
 } from './useSituationMonitor';
 
+// Fact-check stub (no-op in skeleton)
+export function useRequestFactCheck() {
+  return {
+    mutate: (_storyId: string, _options?: { onSuccess?: () => void; onError?: (err: unknown) => void }) => {
+      _options?.onSuccess?.();
+    },
+    mutateAsync: async (_storyId: string) => {},
+    isPending: false,
+    isError: false,
+    isSuccess: false,
+  };
+}
+
 // Aviation monitoring hooks (ADS-B)
 export {
   useLiveAircraft,

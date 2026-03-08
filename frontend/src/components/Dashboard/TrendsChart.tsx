@@ -52,7 +52,7 @@ export function TrendsChart({
     if (showLoading) setLoading(true)
     try {
       const result = await getTrends(days)
-      setTrends(result)
+      setTrends(result as EventTrend[])
       setError(null)
     } catch (err) {
       setError('Failed to load trend data')

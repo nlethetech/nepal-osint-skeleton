@@ -106,9 +106,46 @@ export interface ConsolidatedStory {
   cluster_id?: string;
 }
 
+export interface TrendsData {
+  labels: string[];
+  stories: number[];
+  events: number[];
+}
+
+export interface StorySummaryResponse {
+  summary: string;
+  key_entities: Array<{ name: string; type: string }>;
+  sources: Array<{ name: string; url?: string }>;
+}
+
+export interface ClusterSummaryResponse {
+  summary: string;
+  key_entities: Array<{ name: string; type: string }>;
+  sources: Array<{ name: string; url?: string }>;
+}
+
 // =============================================================================
 // API Functions (stubs — return empty data)
 // =============================================================================
+
+export async function getTrends(days: number = 30): Promise<Array<{ event_type: string; trend: Array<{ date: string; count: number }> }>> {
+  try {
+    const { data } = await apiClient.get('/analytics/trends', { params: { days } });
+    return data;
+  } catch {
+    return [];
+  }
+}
+
+export async function getStorySummary(storyId: string): Promise<StorySummaryResponse> {
+  const { data } = await apiClient.get(`/stories/${storyId}/summary`);
+  return data;
+}
+
+export async function getClusterSummary(clusterId: string): Promise<ClusterSummaryResponse> {
+  const { data } = await apiClient.get(`/stories/clusters/${clusterId}/summary`);
+  return data;
+}
 
 export async function getAnalyticsSummary(
   _hours: number,

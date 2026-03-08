@@ -1,6 +1,7 @@
 /**
  * Situation Monitor API — Stub for open-source skeleton
  */
+import apiClient from './client';
 
 export interface ClusterTimelineEntry {
   cluster_id: string;
@@ -20,6 +21,42 @@ export interface ClusterTimelineEntry {
   }>;
 }
 
+export interface ProvinceAnomalyLatest {
+  id: string;
+  province_id: number;
+  province_name: string;
+  anomaly_type: string;
+  severity: string;
+  headline: string;
+  summary: string;
+  created_at: string;
+}
+
 export async function getDevelopingStories(): Promise<ClusterTimelineEntry[]> {
   return [];
+}
+
+export async function getClusterTimeline(params?: {
+  hours?: number;
+  limit?: number;
+  min_stories?: number;
+}): Promise<ClusterTimelineEntry[]> {
+  try {
+    const { data } = await apiClient.get('/stories/cluster-timeline', { params });
+    return data;
+  } catch {
+    return [];
+  }
+}
+
+export async function getProvinceAnomalies(params?: {
+  province_id?: number;
+  limit?: number;
+}): Promise<ProvinceAnomalyLatest[]> {
+  try {
+    const { data } = await apiClient.get('/province-anomalies/latest', { params });
+    return data;
+  } catch {
+    return [];
+  }
 }
