@@ -6,6 +6,8 @@ import { Dashboard as NewDashboard } from './components/Dashboard'
 import Login from './pages/Login'
 import ChooseUsername from './pages/ChooseUsername'
 import DisasterAlerts from './pages/DisasterAlerts'
+import Elections from './pages/Elections'
+import MapView from './pages/MapView'
 import { useAuthStore, User } from './store/slices/authSlice'
 import { useUserPreferencesStore } from './store/slices/userPreferencesSlice'
 import { usePermissions } from './hooks/usePermissions'
@@ -106,6 +108,8 @@ function App() {
           <Route path="/" element={<NewDashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/disasters" element={<DisasterAlerts />} />
+          <Route path="/elections" element={<Elections />} />
+          <Route path="/map" element={<MapView />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AnimatedRoutes>
