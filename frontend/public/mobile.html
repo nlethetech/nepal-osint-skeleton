@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>NepalOSINT</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#0C0F13;--card:#151A21;--surface:#1A2029;--border:rgba(255,255,255,.06);
+  --text:#ECEFF4;--sub:#9CA3AF;--dim:#6B7280;
+  --accent:#4C9AFF;--green:#34D399;--red:#F87171;--amber:#FBBF24;--purple:#A78BFA;
+  --r:14px;
+}
+html,body{height:100%;overflow:hidden}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);overscroll-behavior:none}
+button,input,select{font-family:inherit}
+button{cursor:pointer;border:none;background:none;color:inherit}
+a{color:inherit;text-decoration:none}
+
+.app{display:flex;flex-direction:column;height:100dvh;max-width:430px;margin:0 auto;position:relative}
+
+/* Header */
+.hdr{padding:env(safe-area-inset-top,12px) 20px 0;display:flex;align-items:center;justify-content:space-between;height:56px;padding-top:max(env(safe-area-inset-top,12px),12px)}
+.hdr-brand{font-size:17px;font-weight:700;letter-spacing:-.2px}
+.hdr-brand span{color:var(--accent)}
+.hdr-live{font-size:9px;font-weight:700;color:var(--green);display:flex;align-items:center;gap:5px;text-transform:uppercase;letter-spacing:.8px}
+.hdr-live::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:glow 2s ease infinite}
+@keyframes glow{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* Ticker */
+.tkr{height:32px;display:flex;align-items:center;border-bottom:1px solid var(--border);overflow:hidden}
+.tkr-scroll-wrap{flex:1;overflow:hidden;padding:0 20px}
+.tkr-scroll{display:inline-flex;gap:28px;animation:tkrMove 50s linear infinite;white-space:nowrap}
+.tkr-scroll span{font-size:11px;color:var(--sub)}
+@keyframes tkrMove{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* Tabs */
+.tab-bar{display:flex;background:var(--card);border-top:1px solid var(--border);padding:6px 0 max(env(safe-area-inset-bottom,6px),6px)}
+.tab-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 0 2px;font-size:10px;font-weight:500;color:var(--dim);transition:color .15s}
+.tab-btn.active{color:var(--accent)}
+.tab-btn svg{width:22px;height:22px;stroke-width:1.5}
+
+/* Content */
+.cnt{flex:1;overflow:hidden;position:relative}
+.pane{position:absolute;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;opacity:0;pointer-events:none;transition:opacity .12s}
+.pane.active{opacity:1;pointer-events:auto}
+.pane::-webkit-scrollbar{display:none}
+
+/* Pills */
+.pills{display:flex;gap:6px;padding:14px 16px 10px;overflow-x:auto;scrollbar-width:none}
+.pills::-webkit-scrollbar{display:none}
+.pill{padding:7px 16px;border-radius:20px;font-size:12px;font-weight:500;color:var(--sub);background:transparent;border:1px solid var(--border);white-space:nowrap;transition:all .12s}
+.pill.on{background:var(--accent);color:#fff;border-color:transparent}
+
+/* ── NEWS ── */
+.n-list{padding:0 16px 16px}
+.n-card{display:block;padding:16px;background:var(--card);border-radius:var(--r);margin-bottom:8px;border:1px solid var(--border);transition:transform .08s}
+.n-card:active{transform:scale(.985)}
+.n-head{display:flex;align-items:center;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+.n-src{font-size:11px;font-weight:600;color:var(--sub)}
+.n-dot{width:3px;height:3px;border-radius:50%;background:var(--dim);flex-shrink:0}
+.n-cat{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+.n-cat.political{color:#4C9AFF}.n-cat.economic{color:#34D399}.n-cat.security{color:#F87171}.n-cat.social{color:#A78BFA}.n-cat.disaster{color:#FBBF24}
+.n-time{font-size:10px;color:var(--dim);margin-left:auto}
+.n-title{font-size:14px;font-weight:500;line-height:1.5;margin-bottom:8px}
+.n-badges{display:flex;gap:6px;flex-wrap:wrap}
+.n-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;padding:3px 10px;border-radius:20px}
+.n-badge svg{width:12px;height:12px}
+.n-badge.multi{color:var(--green);background:rgba(52,211,153,.08)}
+.n-badge.fc-true{color:var(--green);background:rgba(52,211,153,.08)}
+.n-badge.fc-false{color:var(--red);background:rgba(248,113,113,.08)}
+.n-sev{width:4px;border-radius:2px;align-self:stretch;flex-shrink:0;margin-right:4px}
+
+/* Pagination */
+.pgn{display:flex;align-items:center;justify-content:center;gap:12px;padding:8px 20px 24px}
+.pgn-btn{padding:10px 20px;border-radius:10px;font-size:12px;font-weight:600;background:var(--card);color:var(--sub);border:1px solid var(--border)}
+.pgn-btn:disabled{opacity:.25}
+.pgn-btn:not(:disabled):active{background:var(--accent);color:#fff;border-color:transparent}
+.pgn-info{font-size:12px;color:var(--dim)}
+
+/* ── PROMISES ── */
+.p-hero{padding:16px 16px 8px}
+.p-bar-wrap{margin-bottom:16px}
+.p-bar-track{height:8px;border-radius:4px;background:var(--surface);overflow:hidden;display:flex}
+.p-bar-seg{height:100%;transition:width .6s ease}
+.p-bar-legend{display:flex;gap:16px;margin-top:8px}
+.p-bar-legend-item{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--sub)}
+.p-bar-legend-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.p-stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.p-stat-box{text-align:center;padding:12px 4px;background:var(--card);border:1px solid var(--border);border-radius:10px}
+.p-stat-n{font-size:22px;font-weight:700;line-height:1}
+.p-stat-l{font-size:9px;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.3px;margin-top:4px}
+.p-list{padding:0 16px 16px}
+.p-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin-bottom:8px;position:relative;overflow:hidden}
+.p-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:0 2px 2px 0}
+.p-card.s-fulfilled::before{background:var(--green)}
+.p-card.s-in_progress::before{background:var(--amber)}
+.p-card.s-not_started::before{background:var(--dim)}
+.p-card.s-stalled::before{background:var(--red)}
+.p-title{font-size:13px;font-weight:600;line-height:1.45;margin-bottom:6px}
+.p-detail{font-size:12px;color:var(--sub);line-height:1.45;margin-bottom:8px}
+.p-meta{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.p-status{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;padding:3px 8px;border-radius:6px}
+.p-status.fulfilled{background:rgba(52,211,153,.1);color:var(--green)}
+.p-status.in_progress{background:rgba(251,191,36,.1);color:var(--amber)}
+.p-status.not_started{background:rgba(107,114,128,.15);color:var(--sub)}
+.p-status.stalled{background:rgba(248,113,113,.1);color:var(--red)}
+.p-cat{font-size:10px;color:var(--dim)}
+.p-src{font-size:10px;color:var(--dim);font-style:italic}
+
+/* ── PARLIAMENT ── */
+.sub-tabs{display:flex;margin:0 16px;border-bottom:1px solid var(--border)}
+.sub-tab{flex:1;padding:12px 0;font-size:13px;font-weight:600;text-align:center;color:var(--dim);border-bottom:2px solid transparent;transition:all .12s}
+.sub-tab.on{color:var(--text);border-bottom-color:var(--accent)}
+
+.s-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.s-meeting{font-size:15px;font-weight:700}
+.s-date{font-size:11px;color:var(--sub);margin-top:2px}
+.s-chamber{font-size:9px;font-weight:700;padding:3px 8px;border-radius:6px;letter-spacing:.5px}
+.s-chamber.hor{background:rgba(76,154,255,.1);color:var(--accent)}
+.s-chamber.na{background:rgba(167,139,250,.1);color:var(--purple)}
+.s-speeches{font-size:11px;color:var(--green);font-weight:600}
+.b-head{display:flex;align-items:center;gap:6px;margin-bottom:8px;flex-wrap:wrap}
+.b-status{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;padding:3px 8px;border-radius:6px}
+.b-status.registered{background:rgba(107,114,128,.15);color:var(--sub)}
+.b-status.first_reading{background:rgba(76,154,255,.1);color:var(--accent)}
+.b-status.committee{background:rgba(251,191,36,.1);color:var(--amber)}
+.b-status.second_reading{background:rgba(167,139,250,.1);color:var(--purple)}
+.b-status.passed{background:rgba(52,211,153,.1);color:var(--green)}
+.b-title{font-size:14px;font-weight:600;line-height:1.4;margin-bottom:4px}
+.b-ministry{font-size:11px;color:var(--dim)}
+
+/* ── Detail Overlay ── */
+.overlay{position:fixed;inset:0;z-index:100;background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch;transform:translateY(100%);transition:transform .25s ease;will-change:transform}
+.overlay.open{transform:translateY(0)}
+.overlay::-webkit-scrollbar{display:none}
+.overlay-inner{padding:0 0 40px}
+.ov-back{display:flex;align-items:center;gap:6px;padding:max(env(safe-area-inset-top,14px),14px) 16px 12px;font-size:14px;font-weight:600;color:var(--accent);background:var(--bg);position:sticky;top:0;z-index:1}
+.ov-back svg{width:18px;height:18px}
+.ov-section{padding:0 20px;margin-bottom:20px}
+.ov-h1{font-size:20px;font-weight:700;line-height:1.35;margin-bottom:4px}
+.ov-h2{font-size:14px;font-weight:700;color:var(--text);margin:20px 0 10px;text-transform:uppercase;letter-spacing:.5px}
+.ov-meta{font-size:12px;color:var(--sub);margin-bottom:4px}
+.ov-badge{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;padding:3px 10px;border-radius:6px;margin-right:6px;margin-bottom:6px}
+.ov-body{font-size:13px;color:var(--sub);line-height:1.65}
+.ov-divider{height:1px;background:var(--border);margin:16px 20px}
+.ov-topic{display:inline-block;font-size:11px;padding:5px 12px;border-radius:8px;background:var(--surface);color:var(--sub);border:1px solid var(--border);margin:0 4px 6px 0}
+.ov-provision{font-size:12px;color:var(--sub);line-height:1.55;padding:8px 0 8px 14px;position:relative;border-bottom:1px solid var(--border)}
+.ov-provision:last-child{border-bottom:none}
+.ov-provision::before{content:'';position:absolute;left:0;top:15px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.ov-sector{display:inline-block;font-size:10px;padding:3px 10px;border-radius:6px;background:var(--surface);color:var(--dim);border:1px solid var(--border);margin:0 4px 4px 0}
+.ov-agenda{padding:10px 0;border-bottom:1px solid var(--border)}
+.ov-agenda:last-child{border-bottom:none}
+.ov-agenda-topic{font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px}
+.ov-agenda-desc{font-size:11px;color:var(--sub);line-height:1.5}
+.ov-agenda-outcome{font-size:10px;color:var(--accent);margin-top:2px}
+
+/* Session cards (compact, tappable) */
+.s-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);margin:10px 16px;padding:16px;overflow:hidden;cursor:pointer;transition:transform .08s}
+.s-card:active{transform:scale(.98)}
+.s-preview{font-size:12px;color:var(--dim);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:6px}
+.s-tap{font-size:11px;color:var(--accent);font-weight:600;margin-top:8px;display:flex;align-items:center;gap:4px}
+.s-tap svg{width:14px;height:14px}
+
+/* Bill cards (compact, tappable) */
+.b-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);margin:0 16px 10px;padding:16px;cursor:pointer;transition:transform .08s}
+.b-card:active{transform:scale(.98)}
+.b-preview{font-size:12px;color:var(--dim);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:6px}
+
+/* Loading */
+.ld{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;gap:10px}
+.spinner{width:20px;height:20px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ld-txt{font-size:12px;color:var(--dim)}
+.empty{text-align:center;padding:40px 20px;color:var(--dim);font-size:13px}
+.sec-head{padding:14px 20px 6px;display:flex;justify-content:space-between;align-items:center}
+.sec-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--dim)}
+.sec-count{font-size:11px;color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="hdr">
+    <div class="hdr-brand">Nepal<span>OSINT</span></div>
+    <div class="hdr-live">Live</div>
+  </div>
+
+  <div class="tkr">
+    <div class="tkr-scroll-wrap"><div class="tkr-scroll" id="ticker"></div></div>
+  </div>
+
+  <!-- Detail overlay -->
+  <div class="overlay" id="overlay">
+    <div class="overlay-inner" id="overlay-body"></div>
+  </div>
+
+  <div class="cnt">
+    <div class="pane active" id="pane-news">
+      <div class="pills" id="news-pills"></div>
+      <div id="news-list" class="n-list"></div>
+      <div id="news-pgn" class="pgn"></div>
+    </div>
+    <div class="pane" id="pane-promises">
+      <div id="p-hero"></div>
+      <div class="pills" id="p-pills"></div>
+      <div id="p-list" class="p-list"></div>
+      <div id="p-pgn" class="pgn"></div>
+    </div>
+    <div class="pane" id="pane-parliament">
+      <div class="sub-tabs" id="ptabs">
+        <button class="sub-tab on" data-s="sessions">Sessions</button>
+        <button class="sub-tab" data-s="bills">Bills</button>
+      </div>
+      <div id="p-sessions"></div>
+      <div id="p-bills" style="display:none"></div>
+      <div id="p-bills-pgn" class="pgn" style="display:none"></div>
+    </div>
+  </div>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" data-t="news">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h4v4H7zM15 7h2M15 11h2M7 15h10"/></svg>
+      News
+    </button>
+    <button class="tab-btn" data-t="promises">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      Promises
+    </button>
+    <button class="tab-btn" data-t="parliament">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
+      Parliament
+    </button>
+  </div>
+</div>
+
+<script>
+const LOCAL = location.hostname==='localhost'||location.hostname==='127.0.0.1'||location.protocol==='file:';
+const BASE = LOCAL ? 'https://nepalosint.com/api/v1' : '/api/v1';
+let TK = null;
+const $ = s => document.querySelector(s);
+const $$ = s => document.querySelectorAll(s);
+const esc = s => { const d=document.createElement('div'); d.textContent=s; return d.innerHTML; };
+
+async function auth(){
+  const r=await fetch(`${BASE}/auth/guest`,{method:'POST',headers:{'Content-Type':'application/json'}});
+  TK=(await r.json()).access_token;
+}
+async function api(p,q={}){
+  const qs=new URLSearchParams(q).toString();
+  return (await fetch(`${BASE}${p}${qs?'?'+qs:''}`,{headers:{Authorization:`Bearer ${TK}`}})).json();
+}
+function ago(d){
+  if(!d)return'';const ms=Date.now()-new Date(d).getTime();
+  if(ms<60000)return'now';const m=Math.floor(ms/60000);
+  if(m<60)return m+'m';const h=Math.floor(m/60);
+  if(h<24)return h+'h';return Math.floor(h/24)+'d';
+}
+
+// ── Tabs ──
+$$('.tab-btn').forEach(b=>b.onclick=()=>{
+  $$('.tab-btn').forEach(t=>t.classList.remove('active'));
+  $$('.pane').forEach(p=>p.classList.remove('active'));
+  b.classList.add('active');
+  $('#pane-'+b.dataset.t).classList.add('active');
+});
+$$('#ptabs .sub-tab').forEach(b=>b.onclick=()=>{
+  $$('#ptabs .sub-tab').forEach(t=>t.classList.remove('on'));
+  b.classList.add('on');
+  const s=b.dataset.s;
+  $('#p-sessions').style.display=s==='sessions'?'':'none';
+  $('#p-bills').style.display=s==='bills'?'':'none';
+  $('#p-bills-pgn').style.display=s==='bills'?'':'none';
+});
+
+// ── NEWS ──
+let nPage=1,nCat='all',nPages=1,multiIds=new Set(),fcMap={};
+const CATS=['all','political','economic','security','social','disaster'];
+
+function renderNPills(){
+  $('#news-pills').innerHTML=CATS.map(c=>
+    `<button class="pill ${nCat===c?'on':''}" onclick="nCat='${c}';nPage=1;loadNews()">${c==='all'?'All':c[0].toUpperCase()+c.slice(1)}</button>`
+  ).join('');
+}
+
+async function loadMulti(){try{const d=await api('/stories',{page:1,page_size:100,multi_source_only:true,nepal_only:true});(d.items||[]).forEach(s=>multiIds.add(s.id))}catch(e){}}
+async function loadFC(){try{const d=await api('/fact-check/results',{limit:50,hours:720});(d||[]).forEach(f=>{fcMap[f.story_id]=f})}catch(e){}}
+
+async function loadNews(){
+  const el=$('#news-list'),pg=$('#news-pgn');
+  el.innerHTML='<div class="ld"><div class="spinner"></div><div class="ld-txt">Loading...</div></div>';
+  pg.innerHTML='';renderNPills();
+  try{
+    const q={page:nPage,page_size:10,nepal_only:true};
+    if(nCat!=='all')q.category=nCat;
+    const d=await api('/stories',q);
+    const items=d.items||[],total=d.total||0;
+    nPages=Math.max(1,Math.ceil(total/(d.page_size||10)));
+    if(!items.length){el.innerHTML='<div class="empty">No stories found</div>';return}
+
+    el.innerHTML=items.map(s=>{
+      const cat=(s.category||'').toLowerCase();
+      const multi=multiIds.has(s.id);
+      const fc=fcMap[s.id];
+      const fcOk=fc&&(fc.verdict==='true'||fc.verdict==='partially_true');
+      const fcBad=fc&&(fc.verdict==='false'||fc.verdict==='misleading');
+      return `<a href="${esc(s.url||'#')}" target="_blank" rel="noopener" class="n-card">
+        <div class="n-head">
+          <span class="n-src">${esc(s.source_name||s.source_id||'')}</span>
+          <span class="n-dot"></span>
+          ${cat?`<span class="n-cat ${cat}">${cat}</span>`:''}
+          <span class="n-time">${ago(s.published_at||s.created_at)}</span>
+        </div>
+        <div class="n-title">${esc(s.title)}</div>
+        ${multi||fcOk||fcBad?`<div class="n-badges">
+          ${multi?'<span class="n-badge multi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>Multi-Source</span>':''}
+          ${fcOk?'<span class="n-badge fc-true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Fact-Checked</span>':''}
+          ${fcBad?'<span class="n-badge fc-false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>Disputed</span>':''}
+        </div>`:''}
+      </a>`;
+    }).join('');
+
+    if(nPages>1) pg.innerHTML=`
+      <button class="pgn-btn" ${nPage<=1?'disabled':''} onclick="nPage--;loadNews()">Prev</button>
+      <span class="pgn-info">${nPage} / ${nPages}</span>
+      <button class="pgn-btn" ${nPage>=nPages?'disabled':''} onclick="nPage++;loadNews()">Next</button>`;
+  }catch(e){el.innerHTML='<div class="empty">Failed to load</div>'}
+}
+
+// ── TICKER ──
+async function loadTicker(){
+  try{
+    const d=await api('/stories/recent',{hours:24,limit:15});
+    const hi=(d||[]).filter(s=>s.severity==='critical'||s.severity==='high');
+    if(!hi.length)return;
+    const html=hi.map(s=>`<span>${esc(s.title)}</span>`).join('');
+    $('#ticker').innerHTML=html+html;
+  }catch(e){}
+}
+
+// ── PROMISES ──
+let allP=[],pCat='all',pPage=1,pPages=1;const PP=8;
+
+function pStats(){
+  const st={fulfilled:0,in_progress:0,not_started:0,stalled:0};
+  allP.forEach(p=>{const s=(p.status||'not_started').toLowerCase().replace(/ /g,'_');if(st[s]!==undefined)st[s]++});
+  return st;
+}
+function pCats(){const c=new Set();allP.forEach(p=>{if(p.category)c.add(p.category)});return['all',...[...c].sort()]}
+
+function renderPHero(){
+  const st=pStats(),t=allP.length||1;
+  const pDone=((st.fulfilled/t)*100).toFixed(1);
+  const pActive=((st.in_progress/t)*100).toFixed(1);
+  const pStalled=((st.stalled/t)*100).toFixed(1);
+  const pPending=((st.not_started/t)*100).toFixed(1);
+
+  $('#p-hero').innerHTML=`<div class="p-hero">
+    <div class="p-bar-wrap">
+      <div class="p-bar-track">
+        <div class="p-bar-seg" style="width:${pDone}%;background:var(--green)"></div>
+        <div class="p-bar-seg" style="width:${pActive}%;background:var(--amber)"></div>
+        <div class="p-bar-seg" style="width:${pStalled}%;background:var(--red)"></div>
+        <div class="p-bar-seg" style="width:${pPending}%;background:var(--dim)"></div>
+      </div>
+      <div class="p-bar-legend">
+        <span class="p-bar-legend-item"><span class="p-bar-legend-dot" style="background:var(--green)"></span>Done</span>
+        <span class="p-bar-legend-item"><span class="p-bar-legend-dot" style="background:var(--amber)"></span>Active</span>
+        <span class="p-bar-legend-item"><span class="p-bar-legend-dot" style="background:var(--red)"></span>Stalled</span>
+        <span class="p-bar-legend-item"><span class="p-bar-legend-dot" style="background:var(--dim)"></span>Pending</span>
+      </div>
+    </div>
+    <div class="p-stats-row">
+      <div class="p-stat-box"><div class="p-stat-n" style="color:var(--green)">${st.fulfilled}</div><div class="p-stat-l">Done</div></div>
+      <div class="p-stat-box"><div class="p-stat-n" style="color:var(--amber)">${st.in_progress}</div><div class="p-stat-l">Active</div></div>
+      <div class="p-stat-box"><div class="p-stat-n" style="color:var(--red)">${st.stalled}</div><div class="p-stat-l">Stalled</div></div>
+      <div class="p-stat-box"><div class="p-stat-n" style="color:var(--sub)">${st.not_started}</div><div class="p-stat-l">Pending</div></div>
+    </div></div>`;
+}
+
+function renderPPills(){
+  $('#p-pills').innerHTML=pCats().map(c=>
+    `<button class="pill ${pCat===c?'on':''}" onclick="pCat='${esc(c)}';pPage=1;renderP()">${c==='all'?'All':c}</button>`
+  ).join('');
+}
+
+function renderP(){
+  renderPPills();
+  const fil=pCat==='all'?allP:allP.filter(p=>p.category===pCat);
+  pPages=Math.max(1,Math.ceil(fil.length/PP));
+  if(pPage>pPages)pPage=pPages;
+  const pg=fil.slice((pPage-1)*PP,pPage*PP);
+  const el=$('#p-list');
+
+  if(!pg.length){el.innerHTML='<div class="empty">No promises</div>';$('#p-pgn').innerHTML='';return}
+
+  el.innerHTML=pg.map(p=>{
+    const st=(p.status||'not_started').toLowerCase().replace(/ /g,'_');
+    return `<div class="p-card s-${st}">
+      <div class="p-title">${esc(p.promise||'')}</div>
+      ${p.detail?`<div class="p-detail">${esc(p.detail)}</div>`:''}
+      <div class="p-meta">
+        <span class="p-status ${st}">${st.replace(/_/g,' ')}</span>
+        ${p.category?`<span class="p-cat">${esc(p.category)}</span>`:''}
+        ${p.source?`<span class="p-src">${esc(p.source)}</span>`:''}
+      </div>
+    </div>`;
+  }).join('');
+
+  $('#p-pgn').innerHTML=fil.length>PP?`
+    <button class="pgn-btn" ${pPage<=1?'disabled':''} onclick="pPage--;renderP()">Prev</button>
+    <span class="pgn-info">${pPage} / ${pPages}</span>
+    <button class="pgn-btn" ${pPage>=pPages?'disabled':''} onclick="pPage++;renderP()">Next</button>`:'';
+}
+
+async function loadPromises(){
+  $('#p-list').innerHTML='<div class="ld"><div class="spinner"></div><div class="ld-txt">Loading promises...</div></div>';
+  try{
+    const d=await api('/promises',{limit:500});
+    allP=Array.isArray(d)?d:(d.promises||d.items||[]);
+    renderPHero();renderP();
+  }catch(e){$('#p-list').innerHTML='<div class="empty">Failed to load</div>'}
+}
+
+// ── OVERLAY ──
+function openOverlay(html){
+  const ov=$('#overlay'),body=$('#overlay-body');
+  body.innerHTML=`<button class="ov-back" onclick="closeOverlay()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Back</button>`+html;
+  ov.classList.add('open');
+  ov.scrollTop=0;
+}
+function closeOverlay(){$('#overlay').classList.remove('open')}
+
+// ── PARLIAMENT: SESSIONS ──
+let sessData=[];
+
+function openSession(i){
+  const s=sessData[i]; if(!s)return;
+  const ch=(s.chamber||'').toLowerCase();
+  const topics=s.key_topics||[];
+  const agenda=s.agenda_items||[];
+  const summ=s.session_summary||'';
+  const mn=s.meeting_no||s.session_no||i+1;
+
+  openOverlay(`
+    <div class="ov-section">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+        <div>
+          <div class="ov-h1">Meeting ${mn}</div>
+          <div class="ov-meta">${s.session_date||''}</div>
+        </div>
+        ${ch?`<span class="s-chamber ${ch}" style="margin-top:4px">${ch==='hor'?'House of Representatives':'National Assembly'}</span>`:''}
+      </div>
+      ${s.speech_count?`<div class="s-speeches" style="margin-bottom:12px">${s.speech_count} speeches analyzed</div>`:''}
+    </div>
+
+    ${summ?`<div class="ov-divider"></div><div class="ov-section"><div class="ov-h2">Summary</div><div class="ov-body">${esc(summ)}</div></div>`:''}
+
+    ${topics.length?`<div class="ov-divider"></div><div class="ov-section"><div class="ov-h2">Key Topics</div><div>${topics.map(t=>`<span class="ov-topic">${esc(typeof t==='string'?t:t.topic||t.name||'')}</span>`).join('')}</div></div>`:''}
+
+    ${agenda.length?`<div class="ov-divider"></div><div class="ov-section"><div class="ov-h2">Agenda Items</div>${agenda.map(a=>`<div class="ov-agenda">
+      <div class="ov-agenda-topic">${esc(a.topic||'')}</div>
+      ${a.description?`<div class="ov-agenda-desc">${esc(a.description)}</div>`:''}
+      ${a.outcome?`<div class="ov-agenda-outcome">${esc(a.outcome)}</div>`:''}
+    </div>`).join('')}</div>`:''}
+
+  `);
+}
+
+async function loadSessions(){
+  const el=$('#p-sessions');
+  el.innerHTML='<div class="ld"><div class="spinner"></div><div class="ld-txt">Loading sessions...</div></div>';
+  try{
+    const d=await api('/verbatim/summary');
+    sessData=d.recent_sessions||[];
+    if(!sessData.length){el.innerHTML='<div class="empty">No sessions</div>';return}
+
+    el.innerHTML=`<div class="sec-head"><span class="sec-title">Recent Sessions</span><span class="sec-count">${d.analyzed_sessions||sessData.length} analyzed</span></div>`+
+      sessData.map((s,i)=>{
+        const ch=(s.chamber||'').toLowerCase();
+        const topics=s.key_topics||[];
+        const summ=s.session_summary||'';
+        const mn=s.meeting_no||s.session_no||i+1;
+        return `<div class="s-card" onclick="openSession(${i})">
+          <div class="s-top">
+            <div><div class="s-meeting">Meeting ${mn}</div><div class="s-date">${s.session_date||''}</div></div>
+            ${ch?`<span class="s-chamber ${ch}">${ch==='hor'?'HoR':'NA'}</span>`:''}
+          </div>
+          ${s.speech_count?`<div class="s-speeches">${s.speech_count} speeches</div>`:''}
+          ${summ?`<div class="s-preview">${esc(summ)}</div>`:''}
+          <div class="s-tap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>View full session</div>
+        </div>`;
+      }).join('');
+  }catch(e){el.innerHTML='<div class="empty">Failed to load</div>'}
+}
+
+// ── PARLIAMENT: BILLS ──
+let billData=[],bPage=1,bPages=1;
+
+function openBill(pageIdx){
+  const b=billData[pageIdx]; if(!b)return;
+  const st=(b.status||'registered').toLowerCase().replace(/ /g,'_');
+  const ch=(b.chamber||'').toLowerCase();
+  let ai=null;
+  try{ai=typeof b.ai_analysis==='string'?JSON.parse(b.ai_analysis):b.ai_analysis}catch(e){}
+  const sig=ai?.significance||'';
+  const sigReason=ai?.significance_reason||'';
+  const aiSumm=ai?.summary||'';
+  const provisions=ai?.key_provisions||[];
+  const sectors=ai?.sectors_affected||[];
+  const amends=ai?.amendment_of||'';
+
+  openOverlay(`
+    <div class="ov-section">
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+        <span class="ov-badge b-status ${st}">${st.replace(/_/g,' ')}</span>
+        ${ch?`<span class="ov-badge s-chamber ${ch}">${ch==='hor'?'House':'National Assembly'}</span>`:''}
+        ${sig?`<span class="ov-badge" style="background:${sig==='high'?'rgba(248,113,113,.1)':sig==='medium'?'rgba(251,191,36,.1)':'rgba(107,114,128,.1)'};color:${sig==='high'?'var(--red)':sig==='medium'?'var(--amber)':'var(--sub)'}">${sig} significance</span>`:''}
+      </div>
+      <div class="ov-h1">${esc(b.title_en||b.title||'')}</div>
+      ${b.ministry?`<div class="ov-meta">${esc(b.ministry)}</div>`:''}
+      ${b.presented_by||b.presenting_mp_name?`<div class="ov-meta">Presented by ${esc(b.presented_by||b.presenting_mp_name)}</div>`:''}
+      ${amends?`<div class="ov-meta" style="color:var(--amber)">Amends: ${esc(amends)}</div>`:''}
+    </div>
+
+    ${aiSumm?`<div class="ov-divider"></div><div class="ov-section"><div class="ov-h2">What This Bill Does</div><div class="ov-body">${esc(aiSumm)}</div></div>`:''}
+
+    ${sigReason?`<div class="ov-divider"></div><div class="ov-section"><div class="ov-h2">Why It Matters</div><div class="ov-body">${esc(sigReason)}</div></div>`:''}
+
+    ${provisions.length?`<div class="ov-divider"></div><div class="ov-section"><div class="ov-h2">Key Provisions</div>${provisions.map(p=>`<div class="ov-provision">${esc(p)}</div>`).join('')}</div>`:''}
+
+    ${sectors.length?`<div class="ov-divider"></div><div class="ov-section"><div class="ov-h2">Sectors Affected</div><div>${sectors.map(s=>`<span class="ov-sector">${esc(s)}</span>`).join('')}</div></div>`:''}
+
+    ${b.summary?`<div class="ov-divider"></div><div class="ov-section"><div class="ov-h2">Timeline</div><div class="ov-body">${esc(b.summary)}</div></div>`:''}
+
+    ${b.pdf_url?`<div class="ov-divider"></div><div class="ov-section"><a href="${esc(b.pdf_url)}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--accent)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>View Full Bill (PDF)</a></div>`:''}
+  `);
+}
+
+async function loadBills(){
+  const el=$('#p-bills'),pg=$('#p-bills-pgn');
+  el.innerHTML='<div class="ld"><div class="spinner"></div><div class="ld-txt">Loading bills...</div></div>';
+  pg.innerHTML='';
+  try{
+    const d=await api('/parliament/bills',{page:bPage,page_size:6});
+    billData=d.items||d.bills||[];
+    const total=d.total||billData.length;
+    bPages=Math.max(1,Math.ceil(total/6));
+
+    if(!billData.length){el.innerHTML='<div class="empty">No bills found</div>';return}
+
+    el.innerHTML=`<div class="sec-head"><span class="sec-title">Legislative Bills</span><span class="sec-count">${total} bills</span></div>`+
+      billData.map((b,i)=>{
+        const st=(b.status||'registered').toLowerCase().replace(/ /g,'_');
+        const ch=(b.chamber||'').toLowerCase();
+        let ai=null;
+        try{ai=typeof b.ai_analysis==='string'?JSON.parse(b.ai_analysis):b.ai_analysis}catch(e){}
+        const aiSumm=ai?.summary||'';
+
+        return `<div class="b-card" onclick="openBill(${i})">
+          <div class="b-head">
+            <span class="b-status ${st}">${st.replace(/_/g,' ')}</span>
+            ${ch?`<span class="s-chamber ${ch}" style="font-size:9px;font-weight:600;padding:2px 6px;border-radius:4px">${ch==='hor'?'HoR':'NA'}</span>`:''}
+          </div>
+          <div class="b-title">${esc(b.title_en||b.title||'')}</div>
+          ${b.ministry?`<div class="b-ministry">${esc(b.ministry)}</div>`:''}
+          ${aiSumm?`<div class="b-preview">${esc(aiSumm)}</div>`:''}
+          <div class="s-tap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>View details</div>
+        </div>`;
+      }).join('');
+
+    if(bPages>1) pg.innerHTML=`
+      <button class="pgn-btn" ${bPage<=1?'disabled':''} onclick="bPage--;loadBills()">Prev</button>
+      <span class="pgn-info">${bPage} / ${bPages}</span>
+      <button class="pgn-btn" ${bPage>=bPages?'disabled':''} onclick="bPage++;loadBills()">Next</button>`;
+  }catch(e){el.innerHTML='<div class="empty">Failed to load</div>'}
+}
+
+// ── INIT ──
+async function init(){
+  try{await auth()}catch(e){$('.cnt').innerHTML='<div class="ld"><div class="ld-txt">Auth failed</div></div>';return}
+  await Promise.all([loadMulti(),loadFC()]);
+  loadTicker();loadNews();loadPromises();loadSessions();loadBills();
+}
+init();
+</script>
+</body>
+</html>
