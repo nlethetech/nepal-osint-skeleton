@@ -1,0 +1,86 @@
+/**
+ * Map Animations - Minimal, professional effects
+ */
+
+/* Base transitions - DISABLED transform transitions for static map */
+.event-marker,
+.event-cluster,
+.district-polygon {
+  /* DISABLED: transition: transform 0.15s ease-out, opacity 0.15s ease-out; */
+  /* Only opacity transition allowed for static map */
+  transition: opacity 0.15s ease-out;
+}
+
+/* Hover states - opacity only, no scale transforms */
+.event-marker:hover .event-marker-inner {
+  opacity: 0.85;
+}
+
+.event-cluster:hover .event-cluster-inner {
+  opacity: 0.85;
+}
+
+/* Leaflet overrides - DISABLED transform transitions for static map */
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+  /* DISABLED: transition: transform 0.15s ease-out !important; */
+  transition: none !important;
+}
+
+/* Tooltip base styling with show delay for professional behavior */
+.leaflet-tooltip {
+  background: #141416 !important;
+  border: 1px solid #252528 !important;
+  border-radius: 4px !important;
+  padding: 6px 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  color: #e8e8ea !important;
+  font-size: 12px !important;
+  /* Add delay before showing tooltip (prevents clutter on quick mouse movements) */
+  opacity: 0 !important;
+  transition: opacity 0.15s ease-out 0.25s !important; /* 250ms delay before showing */
+  pointer-events: none !important;
+}
+
+/* Show tooltip after delay */
+.leaflet-tooltip.leaflet-tooltip-visible,
+.leaflet-marker-icon:hover + .leaflet-tooltip,
+.leaflet-interactive:hover .leaflet-tooltip {
+  opacity: 1 !important;
+}
+
+/* Override for when tooltip is actively open - show immediately */
+.leaflet-tooltip-pane .leaflet-tooltip {
+  opacity: 1 !important;
+  transition: opacity 0.15s ease-out 0.25s !important; /* 250ms show delay */
+}
+
+/* Hide immediately on mouseout (no delay for hiding) */
+.leaflet-tooltip:not(.leaflet-tooltip-visible) {
+  transition: opacity 0.05s ease-out 0s !important; /* Immediate hide */
+}
+
+.leaflet-tooltip-left::before,
+.leaflet-tooltip-right::before,
+.leaflet-tooltip-top::before,
+.leaflet-tooltip-bottom::before {
+  border-color: transparent !important;
+}
+
+.marker-cluster {
+  background: transparent !important;
+}
+
+.marker-cluster div {
+  background: transparent !important;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

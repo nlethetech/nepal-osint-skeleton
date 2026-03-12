@@ -1,0 +1,581 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-03",
+    "source": "WebSearch discovery and verification",
+    "total_municipalities": 17,
+    "metropolitan_count": 6,
+    "sub_metropolitan_count": 11,
+    "notes": "Nepal has 6 metropolitan cities and 11 sub-metropolitan cities as of 2024. All 293 municipalities are members of MuAN (Municipal Association of Nepal)."
+  },
+  "association_portals": [
+    {
+      "name": "Municipal Association of Nepal (MuAN)",
+      "domain": "muannepal.org.np",
+      "base_url": "https://muannepal.org.np",
+      "description": "Umbrella organization representing all 293 municipalities of Nepal, established 1994",
+      "endpoints": {
+        "municipality_profiles": "/municipality_profile/",
+        "contact": "/contact-us"
+      },
+      "notes": "Provides profiles of all municipalities, advocacy and lobbying services"
+    },
+    {
+      "name": "Public Procurement Monitoring Office (PPMO)",
+      "domain": "bolpatra.gov.np",
+      "base_url": "https://bolpatra.gov.np/egp/",
+      "description": "Official government e-procurement portal for all public tenders",
+      "notes": "Central portal for all government tender notices including municipal procurement"
+    }
+  ],
+  "municipalities": [
+    {
+      "name_en": "Kathmandu Metropolitan City",
+      "name_ne": "काठमाडौं महानगरपालिका",
+      "category": "metropolitan",
+      "province": "Bagmati",
+      "province_id": 3,
+      "district": "Kathmandu",
+      "domain": "kathmandu.gov.np",
+      "base_url": "https://kathmandu.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "news": "/archives/news",
+        "notice": "/notice/?lang=en",
+        "tender": "/archives/report-type/procurement-en?lang=en",
+        "mayor": "/archives/official/mayor?lang=en",
+        "departments": "/department/",
+        "ward_profile": "/ward-profile"
+      },
+      "mayor": "Sunita Dangol (Acting, since Jan 2026)",
+      "previous_mayor": "Balendra Shah (Balen) - resigned Jan 2026",
+      "wards": 32,
+      "population_2021": 845767,
+      "area_sqkm": 49.45,
+      "contact": {
+        "phone": ["+977-1-4268964"],
+        "email": ["mayor@kathmandu.gov.np", "ceo@kathmandu.gov.np", "info@kathmandu.gov.np"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": null,
+      "notes": "Capital city, first independent mayor Balen Shah resigned in Jan 2026 to contest federal elections"
+    },
+    {
+      "name_en": "Lalitpur Metropolitan City",
+      "name_ne": "ललितपुर महानगरपालिका",
+      "category": "metropolitan",
+      "province": "Bagmati",
+      "province_id": 3,
+      "district": "Lalitpur",
+      "domain": "lmc.gov.np",
+      "base_url": "https://lmc.gov.np",
+      "endpoints": {
+        "home_en": "/en/",
+        "home_ne": "/",
+        "news": "/en/news",
+        "notice": "/en/notice",
+        "tender": "/en/tender",
+        "officials": "/en/officials"
+      },
+      "mayor": "Chiri Babu Maharjan",
+      "wards": 29,
+      "population_2021": 299843,
+      "area_sqkm": 15.43,
+      "contact": {
+        "phone": ["+977-1-5522563"],
+        "fax": "+977-1-5553966",
+        "email": ["info@lmc.gov.np"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": null,
+      "ebps_url": "https://www.lsmcebps.gov.np/",
+      "notes": "Also known as Patan, fourth most populous city, has electronic building permit system"
+    },
+    {
+      "name_en": "Bharatpur Metropolitan City",
+      "name_ne": "भरतपुर महानगरपालिका",
+      "category": "metropolitan",
+      "province": "Bagmati",
+      "province_id": 3,
+      "district": "Chitwan",
+      "domain": "bharatpurmun.gov.np",
+      "base_url": "https://bharatpurmun.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "news": "/en/news",
+        "notice": "/en/notice",
+        "tender": "/en/tender",
+        "gazette": "/en/content/metropolitan-gazette",
+        "staff": "/en/staff",
+        "ward_profile": "/en/ward-profile"
+      },
+      "mayor": "Renu Dahal",
+      "deputy_mayor": "Parbati Shah Thakuri",
+      "wards": 29,
+      "population_2021": 369377,
+      "area_sqkm": 432.95,
+      "contact": {
+        "phone": ["+977-56-597004", "+977-56-511467"],
+        "email": ["bmc@ntc.net.np", "info@bharatpurmun.gov.np"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": null,
+      "notes": "Third most populous city, second largest metro by area, Mayor received International Mayor Award 2024"
+    },
+    {
+      "name_en": "Pokhara Metropolitan City",
+      "name_ne": "पोखरा महानगरपालिका",
+      "category": "metropolitan",
+      "province": "Gandaki",
+      "province_id": 4,
+      "district": "Kaski",
+      "domain": "pokharamun.gov.np",
+      "base_url": "https://pokharamun.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "news": "/en/news",
+        "notice": "/en/notice",
+        "tender": "/en/tender",
+        "officials": "/en/officials"
+      },
+      "mayor": "Dhana Raj Acharya",
+      "deputy_mayor": "Manju Devi Gurung",
+      "wards": 33,
+      "population_2021": 600051,
+      "area_sqkm": 464.24,
+      "contact": {
+        "phone": ["+977-61-571104"],
+        "email": ["info@pokharamun.gov.np"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": null,
+      "notes": "Largest metro by area, tourism capital of Nepal, second largest city after Kathmandu"
+    },
+    {
+      "name_en": "Biratnagar Metropolitan City",
+      "name_ne": "विराटनगर महानगरपालिका",
+      "category": "metropolitan",
+      "province": "Koshi",
+      "province_id": 1,
+      "district": "Morang",
+      "domain": "biratnagarmun.gov.np",
+      "base_url": "https://www.biratnagarmun.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "news": "/en/news",
+        "notice": "/en/notice",
+        "tender": "/en/tender",
+        "officials": "/en/officials-lists",
+        "publications": "/en/publications"
+      },
+      "mayor": "Nagesh Koirala",
+      "deputy_mayor": "Shilpa Nirala Karki",
+      "wards": 19,
+      "population_2021": 244750,
+      "area_sqkm": 58.48,
+      "contact": {
+        "phone": ["+977-21-471950"],
+        "email": ["info@biratnagarmun.gov.np"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": null,
+      "notes": "Industrial capital of Nepal, capital of Koshi Province, largest city in province"
+    },
+    {
+      "name_en": "Birgunj Metropolitan City",
+      "name_ne": "वीरगञ्ज महानगरपालिका",
+      "category": "metropolitan",
+      "province": "Madhesh",
+      "province_id": 2,
+      "district": "Parsa",
+      "domain": "birgunjmun.gov.np",
+      "base_url": "https://birgunjmun.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "news": "/en/news",
+        "notice": "/en/notice",
+        "tender": "/en/tender",
+        "elected_officials": "/en/elected-officials",
+        "ward_profile": "/en/ward-profile"
+      },
+      "mayor": "Rajesh Man Singh",
+      "deputy_mayor": "Imtiaz Alam",
+      "wards": 32,
+      "population_2021": 268273,
+      "area_sqkm": 53.28,
+      "contact": {
+        "phone": ["+977-51-522802", "+977-51-522803"],
+        "email": ["info@birgunjmun.gov.np"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": "https://data.birgunjmun.gov.np/",
+      "notes": "Gateway of Nepal, commercial capital, has IDMS data portal"
+    },
+    {
+      "name_en": "Hetauda Sub-Metropolitan City",
+      "name_ne": "हेटौंडा उपमहानगरपालिका",
+      "category": "sub-metropolitan",
+      "province": "Bagmati",
+      "province_id": 3,
+      "district": "Makwanpur",
+      "domain": "hetaudamun.gov.np",
+      "base_url": "https://hetaudamun.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "news": "/en/news",
+        "notice": "/en/notice",
+        "tender": "/en/tender",
+        "mayor": "/en/designation/mayor"
+      },
+      "mayor": "Mina Kumari Lama",
+      "deputy_mayor": "Rajesh Baniya",
+      "wards": 19,
+      "population_2021": 193576,
+      "area_sqkm": 261.58,
+      "contact": {
+        "phone": ["+977-57-520377"],
+        "email": ["info@hetaudamun.gov.np", "ito@hetaudamun.gov.np"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": null,
+      "notes": "Capital of Bagmati Province, junction of Tribhuvan and Mahendra highways"
+    },
+    {
+      "name_en": "Dharan Sub-Metropolitan City",
+      "name_ne": "धरान उपमहानगरपालिका",
+      "category": "sub-metropolitan",
+      "province": "Koshi",
+      "province_id": 1,
+      "district": "Sunsari",
+      "domain": "dharan.gov.np",
+      "base_url": "https://www.dharan.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "news": "/en/news",
+        "notice": "/en/notice",
+        "tender": "/en/tender"
+      },
+      "mayor": "Harka Raj Rai (Harka Sampang) - resigned Jan 2026",
+      "wards": 20,
+      "population_2021": 173096,
+      "area_sqkm": 192,
+      "contact": {
+        "phone": ["+977-25-520215"],
+        "email": ["info@dharan.gov.np"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": null,
+      "ebps_url": "https://ebps.dharan.gov.np/",
+      "notes": "Gateway between hills and Terai, known for Dharan Model of development, mayor resigned Jan 2026"
+    },
+    {
+      "name_en": "Itahari Sub-Metropolitan City",
+      "name_ne": "इटहरी उपमहानगरपालिका",
+      "category": "sub-metropolitan",
+      "province": "Koshi",
+      "province_id": 1,
+      "district": "Sunsari",
+      "domain": "itaharimun.gov.np",
+      "base_url": "https://itaharimun.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "news": "/en/news",
+        "notice": "/en/notice",
+        "tender": "/en/tender",
+        "elected_officials": "/en/elected-officials"
+      },
+      "mayor": "Hem Karna Poudel",
+      "deputy_mayor": "Sangita Kumari Chaudhary",
+      "wards": 20,
+      "population_2021": 198098,
+      "area_sqkm": 93.78,
+      "contact": {
+        "phone": ["+977-25-585710"],
+        "email": ["info@itaharimun.gov.np"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": null,
+      "ebps_url": "https://ebps.itaharimun.gov.np/",
+      "notes": "Major transportation hub at Mahendra and Koshi highway junction, fastest growing city in east"
+    },
+    {
+      "name_en": "Janakpurdham Sub-Metropolitan City",
+      "name_ne": "जनकपुरधाम उपमहानगरपालिका",
+      "category": "sub-metropolitan",
+      "province": "Madhesh",
+      "province_id": 2,
+      "district": "Dhanusha",
+      "domain": "janakpurmun.gov.np",
+      "base_url": "https://janakpurmun.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "news": "/en/news",
+        "notice": "/en/notice",
+        "tender": "/en/tender",
+        "contact": "/en/node/2",
+        "ward_profile": "/en/ward-profile"
+      },
+      "mayor": "Manoj Kumar Sah",
+      "deputy_mayor": "Kishori Sah",
+      "wards": 25,
+      "population_2021": 194556,
+      "area_sqkm": 92,
+      "contact": {
+        "phone": ["+977-41-520520"],
+        "fax": "+977-41-520510",
+        "email": ["info@janakpurmun.gov.np", "janakpursmc@gmail.com"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": "https://data.janakpurmun.gov.np/",
+      "notes": "Capital of Madhesh Province, religious and cultural tourism hub, Maithili language center"
+    },
+    {
+      "name_en": "Nepalgunj Sub-Metropolitan City",
+      "name_ne": "नेपालगञ्ज उपमहानगरपालिका",
+      "category": "sub-metropolitan",
+      "province": "Lumbini",
+      "province_id": 5,
+      "district": "Banke",
+      "domain": "nepalgunjmun.gov.np",
+      "base_url": "https://nepalgunjmun.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "news": "/en/news",
+        "notice": "/en/notice",
+        "tender": "/en/tender",
+        "mayor": "/en/designation/mayor"
+      },
+      "mayor": "Prashant Bista",
+      "wards": 23,
+      "population_2021": 164444,
+      "area_sqkm": 85.94,
+      "contact": {
+        "phone": ["+977-81-520433"],
+        "email": ["info@nepalgunjmun.gov.np"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": null,
+      "notes": "Gateway to western Nepal, major commercial center near India border"
+    },
+    {
+      "name_en": "Butwal Sub-Metropolitan City",
+      "name_ne": "बुटवल उपमहानगरपालिका",
+      "category": "sub-metropolitan",
+      "province": "Lumbini",
+      "province_id": 5,
+      "district": "Rupandehi",
+      "domain": "butwalmun.gov.np",
+      "base_url": "https://butwalmun.gov.np",
+      "endpoints": {
+        "home_en": "/?language=en",
+        "home_ne": "/",
+        "news": "/news",
+        "notice": "/notice",
+        "tender": "/tender"
+      },
+      "mayor": "Khel Raj Pandey",
+      "deputy_mayor": "Sabitra Aryal",
+      "wards": 19,
+      "population_2021": 195054,
+      "area_sqkm": 102,
+      "contact": {
+        "phone": ["+977-71-540044"],
+        "email": ["info@butwalmun.gov.np"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": null,
+      "ebps_url": "https://ebps.butwalmun.gov.np/",
+      "notes": "One of oldest municipalities (1959), Green City of Nepal 2019, Best City in Nepal title 5 times"
+    },
+    {
+      "name_en": "Dhangadhi Sub-Metropolitan City",
+      "name_ne": "धनगढी उपमहानगरपालिका",
+      "category": "sub-metropolitan",
+      "province": "Sudurpashchim",
+      "province_id": 7,
+      "district": "Kailali",
+      "domain": "dhangadhimun.gov.np",
+      "base_url": "https://dhangadhimun.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "news": "/en/news",
+        "notice": "/en/notice",
+        "tender": "/en/tender",
+        "elected_officials": "/en/elected-officials"
+      },
+      "mayor": "Gopal Hamal",
+      "deputy_mayor": "Kandakala Rana",
+      "wards": 19,
+      "population_2021": 198792,
+      "area_sqkm": 271.74,
+      "contact": {
+        "phone": ["+977-91-521429", "+977-91-520733"],
+        "toll_free": "18105000090",
+        "email": ["info@dhangadhimun.gov.np", "dhangadhimun2013@gmail.com"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": null,
+      "notes": "First sub-metro in far-west (2015), most populous city in Sudurpashchim Province"
+    },
+    {
+      "name_en": "Tulsipur Sub-Metropolitan City",
+      "name_ne": "तुलसीपुर उपमहानगरपालिका",
+      "category": "sub-metropolitan",
+      "province": "Lumbini",
+      "province_id": 5,
+      "district": "Dang",
+      "domain": "tulsipurmun.gov.np",
+      "base_url": "https://tulsipurmun.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "news": "/en/news",
+        "notice": "/en/notice",
+        "tender": "/en/tender",
+        "officials": "/en/officials"
+      },
+      "mayor": "Tika Ram Khadka",
+      "deputy_mayor": "Syani Chaudhary",
+      "wards": 18,
+      "population_2021": 156645,
+      "area_sqkm": 385.15,
+      "contact": {
+        "phone": ["+977-82-520233"],
+        "judicial_hotline": "16608218001",
+        "email": ["tulsipursubmun2073@gmail.com"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": "https://data.tulsipurmun.gov.np/",
+      "notes": "Second most populous city in Dang after Ghorahi, has IDMS data portal"
+    },
+    {
+      "name_en": "Ghorahi Sub-Metropolitan City",
+      "name_ne": "घोराही उपमहानगरपालिका",
+      "category": "sub-metropolitan",
+      "province": "Lumbini",
+      "province_id": 5,
+      "district": "Dang",
+      "domain": "ghorahimun.gov.np",
+      "base_url": "https://ghorahimun.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "news": "/en/news",
+        "notice": "/en/notice",
+        "tender": "/en/tender",
+        "mayor": "/en/taxonomy/term/169",
+        "deputy_mayor": "/en/taxonomy/term/175"
+      },
+      "mayor": "Narulal Chaudhary",
+      "deputy_mayor": "Huma DC",
+      "wards": 19,
+      "population_2021": 200530,
+      "area_sqkm": 522.21,
+      "contact": {
+        "phone": ["+977-82-560007"],
+        "email": ["info@ghorahimun.gov.np"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": null,
+      "notes": "Largest sub-metro by area and population in Lumbini Province, won Most Clean City title multiple times"
+    },
+    {
+      "name_en": "Siddharthanagar Municipality",
+      "name_ne": "सिद्धार्थनगर नगरपालिका",
+      "category": "municipality",
+      "province": "Lumbini",
+      "province_id": 5,
+      "district": "Rupandehi",
+      "domain": "siddharthanagarmun.gov.np",
+      "base_url": "https://siddharthanagarmun.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "news": "/en/news",
+        "notice": "/en/notice",
+        "tender": "/en/tender",
+        "contact": "/en/content/contact"
+      },
+      "mayor": null,
+      "wards": 13,
+      "population_2021": 96602,
+      "area_sqkm": 36.03,
+      "contact": {
+        "phone": ["+977-71-520292", "+977-71-520355", "+977-71-520908"],
+        "email": ["info@siddharthanagarmun.gov.np", "siddharthanagar.municipality@gmail.com"]
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "data_portal": null,
+      "notes": "Gateway to Lumbini (Buddha birthplace), formerly Bhairahawa, has Gautam Buddha International Airport"
+    }
+  ],
+  "common_endpoint_patterns": {
+    "description": "Most Nepal municipality websites follow similar URL patterns based on a common CMS platform",
+    "typical_structure": {
+      "news": "/en/news or /news",
+      "notice": "/en/notice or /notice",
+      "tender": "/en/tender or /tender",
+      "elected_officials": "/en/elected-officials or /en/officials",
+      "ward_profile": "/en/ward-profile",
+      "publications": "/en/publications",
+      "contact": "/en/contact"
+    },
+    "data_portals": {
+      "pattern": "data.[domain]",
+      "description": "Integrated Data Management System (IDMS) portals aggregate municipal data",
+      "examples": ["data.birgunjmun.gov.np", "data.janakpurmun.gov.np", "data.tulsipurmun.gov.np"]
+    },
+    "ebps_portals": {
+      "pattern": "ebps.[domain]",
+      "description": "Electronic Building Permit System portals",
+      "examples": ["ebps.dharan.gov.np", "ebps.itaharimun.gov.np", "ebps.butwalmun.gov.np"]
+    }
+  },
+  "verification_status": {
+    "verified_date": "2026-02-03",
+    "method": "WebSearch discovery",
+    "notes": "SSL status assumed valid for .gov.np domains. Some mayors may have changed due to 2026 elections."
+  }
+}

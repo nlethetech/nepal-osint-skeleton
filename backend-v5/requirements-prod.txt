@@ -1,0 +1,73 @@
+# Nepal OSINT v5 Backend - Lightweight Production Dependencies
+# Excludes: torch, transformers, sentence-transformers, geemap, playwright, weasyprint
+
+# Core
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+email-validator>=2.1.0
+python-multipart>=0.0.9
+
+# Database
+sqlalchemy[asyncio]>=2.0.25
+asyncpg>=0.29.0
+alembic>=1.13.0
+pgvector>=0.2.0
+
+# Redis
+redis>=5.0.0
+
+# RSS / HTTP / Scraping
+aiohttp>=3.9.0
+httpx>=0.26.0
+requests>=2.31.0
+feedparser>=6.0.10
+beautifulsoup4>=4.12.0
+lxml>=5.1.0
+
+# Utilities
+pyyaml>=6.0
+python-dateutil>=2.8.0
+
+# Scheduler
+apscheduler>=3.10.0
+
+# NLP / Text Processing
+indic-transliteration>=2.3.0
+
+# Anthropic API (Haiku analysis, analyst agent)
+anthropic>=0.18.0
+
+# Numeric
+numpy>=1.24.0
+scipy>=1.11.0
+
+# Auth
+bcrypt>=4.0.0
+PyJWT>=2.8.0
+resend>=2.0.0
+
+# PostGIS / Geographic
+geoalchemy2>=0.14.0
+shapely>=2.0.0
+
+# Google Earth Engine
+earthengine-api>=0.1.380
+google-auth>=2.29.0
+
+# Network Analysis
+networkx>=3.0
+python-louvain>=0.16
+
+# Report Generation (lightweight)
+fpdf2>=2.7.0
+
+# Web Search
+duckduckgo-search>=7.0.0
+PyPDF2>=3.0.0
+
+# OCR for Nepali PDF extraction (non-Unicode legacy fonts)
+PyMuPDF>=1.24.0
+pytesseract>=0.3.10
+Pillow>=10.0.0

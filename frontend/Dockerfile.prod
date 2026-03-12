@@ -1,0 +1,74 @@
+# Pre-built static files — no node build needed on server
+FROM nginx:alpine
+COPY dist/ /usr/share/nginx/html
+COPY mobile-mockup-v2.html /usr/share/nginx/html/mobile.html
+
+RUN cat > /etc/nginx/conf.d/default.conf <<'NGINX'
+limit_req_zone $binary_remote_addr zone=api:10m rate=15r/s;
+limit_conn_zone $binary_remote_addr zone=perip:10m;
+
+upstream backend {
+    server backend:8000;
+}
+
+server {
+    listen 80;
+    root /usr/share/nginx/html;
+    index index.html;
+
+    # API proxy — rate limited
+    location /api/ {
+        limit_req zone=api burst=30 nodelay;
+        limit_conn perip 20;
+
+        proxy_pass http://backend;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 60s;
+    }
+
+    # WebSocket proxy
+    location /ws {
+        proxy_pass http://backend;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_read_timeout 86400s;
+    }
+
+    # Static assets — long cache
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # Mobile detection — serve mobile-native shell for phone browsers
+    set $mobile 0;
+    if ($http_user_agent ~* "(iPhone|iPod|Android.*Mobile|webOS|BlackBerry|Opera Mini|IEMobile)") {
+        set $mobile 1;
+    }
+
+    location = /mobile.html {
+        add_header Cache-Control "no-store, no-cache, must-revalidate";
+    }
+
+    # SPA fallback — redirect mobile users to the native mobile shell
+    location / {
+        if ($mobile = 1) {
+            rewrite ^/$ /mobile.html last;
+        }
+        try_files $uri /index.html;
+        add_header Cache-Control "no-store, no-cache, must-revalidate";
+        add_header CDN-Cache-Control "no-store";
+        add_header Surrogate-Control "no-store";
+    add_header X-Build-Id "aviation-v55";
+    }
+}
+NGINX
+
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

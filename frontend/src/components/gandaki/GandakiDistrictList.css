@@ -1,0 +1,150 @@
+/* GandakiDistrictList - Palantir/Bloomberg Dark Theme */
+
+.gandaki-district-list {
+  background: var(--bg-surface, #111113);
+  border: 1px solid var(--border-subtle, #27272a);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gandaki-district-list:hover {
+  border-color: var(--border-default, #3f3f46);
+}
+
+.gandaki-district-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--bg-elevated, #18181b);
+  border-bottom: 1px solid var(--border-subtle, #27272a);
+  min-height: 40px;
+}
+
+.gandaki-district-list-header h3 {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary, #a1a1aa);
+  margin: 0;
+}
+
+.gandaki-district-count {
+  font-size: 10px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  color: var(--text-muted, #71717a);
+}
+
+.gandaki-district-list-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.gandaki-district-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-subtle, #27272a);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.gandaki-district-item:last-child {
+  border-bottom: none;
+}
+
+.gandaki-district-item:hover {
+  background: var(--bg-hover, #1f1f23);
+}
+
+.gandaki-district-item.selected {
+  background: rgba(59, 130, 246, 0.1);
+  border-left: 2px solid var(--accent-primary, #3b82f6);
+  padding-left: 10px;
+}
+
+.gandaki-district-item.has-activity {
+  border-left: 2px solid var(--status-high, #f97316);
+  padding-left: 10px;
+}
+
+.gandaki-district-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gandaki-district-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary, #fafafa);
+}
+
+.gandaki-district-hq {
+  font-size: 10px;
+  color: var(--text-muted, #71717a);
+}
+
+.gandaki-district-stats {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gandaki-district-stat {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  padding: 2px 6px;
+}
+
+.gandaki-district-stat.news {
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--accent-primary, #3b82f6);
+}
+
+.gandaki-district-stat.events {
+  background: rgba(249, 115, 22, 0.15);
+  color: var(--status-high, #f97316);
+}
+
+.gandaki-district-stat.empty {
+  color: var(--text-disabled, #52525b);
+}
+
+.gandaki-district-list-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: rgba(59, 130, 246, 0.1);
+  border-top: 1px solid rgba(59, 130, 246, 0.3);
+  font-size: 11px;
+  color: var(--accent-primary, #3b82f6);
+}
+
+.gandaki-district-list-footer button {
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--accent-primary, #3b82f6);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.gandaki-district-list-footer button:hover {
+  background: var(--accent-hover, #2563eb);
+}

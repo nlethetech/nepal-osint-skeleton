@@ -1,0 +1,90 @@
+# Environment & Secrets
+.env
+.env.consumer
+.env.local
+.env.production
+.claude/
+.run/
+analyst_state/
+Screenshot*.png
+backend-v5/logs/
+backend-v5/query_balen.py
+backend-v5/test_three_panel.png
+infrastructure/.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+*.cover
+
+# Node.js
+node_modules/
+frontend/dist/
+frontend/.vite/
+*.tsbuildinfo
+
+# Data & large files
+data/
+*.sqlite3
+*.db
+bipad_nepal_disasters.json
+
+# External libraries (cloned repos)
+backend-v5/pwtt_lib/
+
+# RL model artifacts (CPU-inference .pt files)
+backend/data/models/
+*.pt
+
+# Bulk-merge audit reports (generated locally)
+backend/data/merge_reports/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# SSL keys/certs (never commit)
+infrastructure/nginx/ssl/
+*.pem
+
+# Docker volumes
+postgres_data/
+neo4j_data/
+redis_data/
+backend-v5/.models/
+backend-v5/run_agents.sh
+backend-v5/run_local_*.py
+backend-v5/run_promise_tracker.py
+backend-v5/run_election_ticker_agent.py
+backend-v5/scrape_*_local.py
+backend-v5/LOCAL_AGENTS.md
+backend-v5/app/services/analyst_agent/
+
+# Celery
+celerybeat-schedule
+
+# Logs
+*.log
+logs/
+
+# Ralph (will be created when you use Ralph)
+progress.txt

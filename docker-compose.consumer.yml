@@ -1,0 +1,137 @@
+# Consumer + Dev Only Deployment (No Analyst)
+# Usage: docker compose -f docker-compose.consumer.yml --env-file .env.consumer up -d
+#
+# 4-service stack: postgres, redis, backend, frontend
+# No Neo4j, no Celery worker, no analyst routes
+# Target RAM: ~500 MB (vs ~2.1 GB full stack)
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: nepal_consumer_postgres
+    environment:
+      POSTGRES_USER: nepal_osint
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-nepal_osint_dev}
+      POSTGRES_DB: nepal_osint
+    ports:
+      - "127.0.0.1:5434:5432"
+    volumes:
+      - consumer_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nepal_osint"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command:
+      - "postgres"
+      - "-c"
+      - "shared_buffers=128MB"
+      - "-c"
+      - "effective_cache_size=512MB"
+      - "-c"
+      - "maintenance_work_mem=64MB"
+      - "-c"
+      - "work_mem=16MB"
+
+  redis:
+    image: redis:7-alpine
+    container_name: nepal_consumer_redis
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - consumer_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: redis-server --maxmemory 128mb --maxmemory-policy allkeys-lru
+
+  migrate:
+    build:
+      context: ./backend-v5
+      dockerfile: Dockerfile
+    container_name: nepal_consumer_migrate
+    environment:
+      DATABASE_URL: postgresql+asyncpg://nepal_osint:${POSTGRES_PASSWORD:-nepal_osint_dev}@postgres:5432/nepal_osint
+      REDIS_URL: redis://redis:6379/0
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-dev-secret-change-me}
+      DEBUG: "false"
+    volumes:
+      - ./backend-v5:/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: alembic upgrade head
+    restart: "no"
+
+  seed_elections:
+    build:
+      context: ./backend-v5
+      dockerfile: Dockerfile
+    container_name: nepal_consumer_seed_elections
+    environment:
+      DATABASE_URL: postgresql+asyncpg://nepal_osint:${POSTGRES_PASSWORD:-nepal_osint_dev}@postgres:5432/nepal_osint
+      REDIS_URL: redis://redis:6379/0
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-dev-secret-change-me}
+      DEBUG: "false"
+    volumes:
+      - ./backend-v5:/app
+      - ./frontend/public/data:/frontend/public/data:ro
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    command: sh -c "python scripts/import_election_data.py --all || echo 'Election seed failed (non-fatal), continuing...'"
+    restart: "no"
+
+  backend:
+    build:
+      context: ./backend-v5
+      dockerfile: Dockerfile
+    container_name: nepal_consumer_backend
+    environment:
+      DATABASE_URL: postgresql+asyncpg://nepal_osint:${POSTGRES_PASSWORD:-nepal_osint_dev}@postgres:5432/nepal_osint
+      REDIS_URL: redis://redis:6379/0
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-dev-secret-change-me}
+      DEBUG: ${DEBUG:-false}
+      RUN_SCHEDULER: "true"
+      CONSUMER_MODE: "true"
+      ANTHROPIC_API_KEY: ""
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+    ports:
+      - "127.0.0.1:8001:8000"
+    volumes:
+      - ./backend-v5:/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: nepal_consumer_frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      BACKEND_URL: http://backend:8000
+    depends_on:
+      - backend
+    command: sh -c "npm install express http-proxy-middleware --save 2>/dev/null && npx vite build && node server.js"
+
+volumes:
+  consumer_postgres_data:
+    # Reuse the full stack's postgres volume so consumer deployment has all existing data
+    name: nepal_osint_v5_postgres_data
+    external: true
+  consumer_redis_data:

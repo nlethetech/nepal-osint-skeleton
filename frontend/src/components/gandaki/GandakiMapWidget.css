@@ -1,0 +1,241 @@
+/* GandakiMapWidget - Palantir/Bloomberg Dark Theme */
+
+.gandaki-map-widget {
+  background: var(--bg-surface, #111113);
+  border: 1px solid var(--border-subtle, #27272a);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: border-color 0.15s ease;
+}
+
+.gandaki-map-widget:hover {
+  border-color: var(--border-default, #3f3f46);
+}
+
+.gandaki-map-widget.expanded {
+  position: fixed;
+  top: 60px;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 100;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.gandaki-map-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--bg-elevated, #18181b);
+  border-bottom: 1px solid var(--border-subtle, #27272a);
+  min-height: 40px;
+}
+
+.gandaki-map-header h3 {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary, #a1a1aa);
+  margin: 0;
+}
+
+.gandaki-map-expand-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--border-subtle, #27272a);
+  background: transparent;
+  color: var(--text-muted, #71717a);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.gandaki-map-expand-btn:hover {
+  background: var(--bg-hover, #1f1f23);
+  color: var(--text-primary, #fafafa);
+  border-color: var(--border-default, #3f3f46);
+}
+
+.gandaki-map-container {
+  flex: 1;
+  min-height: 280px;
+  background: var(--bg-base, #0a0a0b);
+}
+
+.gandaki-map-selection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: rgba(59, 130, 246, 0.1);
+  border-top: 1px solid rgba(59, 130, 246, 0.3);
+  font-size: 11px;
+  color: var(--accent-primary, #3b82f6);
+}
+
+.gandaki-map-selection button {
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--accent-primary, #3b82f6);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.gandaki-map-selection button:hover {
+  background: var(--accent-hover, #2563eb);
+}
+
+/* Map Legend */
+.gandaki-map-legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 12px;
+  background: var(--bg-elevated, #18181b);
+  border-top: 1px solid var(--border-subtle, #27272a);
+  font-size: 10px;
+}
+
+.gandaki-map-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted, #71717a);
+}
+
+.gandaki-map-legend-color {
+  width: 12px;
+  height: 12px;
+}
+
+.gandaki-map-legend-color.province {
+  background: transparent;
+  border: 2px dashed;
+}
+
+/* Map Tooltip */
+.gandaki-map-tooltip {
+  animation: tooltipFadeIn 0.15s ease;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gandaki-map-tooltip-content {
+  background: rgba(17, 17, 19, 0.97);
+  border: 1px solid var(--border-default, #3f3f46);
+  padding: 10px 14px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  min-width: 140px;
+}
+
+.gandaki-map-tooltip-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary, #fafafa);
+  margin-bottom: 2px;
+}
+
+.gandaki-map-tooltip-province {
+  font-size: 11px;
+  color: var(--text-muted, #71717a);
+}
+
+.gandaki-map-tooltip-stats {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle, #27272a);
+}
+
+.gandaki-map-tooltip-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gandaki-map-tooltip-stat .label {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-disabled, #52525b);
+}
+
+.gandaki-map-tooltip-stat .value {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  color: var(--text-primary, #fafafa);
+}
+
+/* District labels (for centroid markers if needed) */
+.gandaki-district-label {
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary, #a1a1aa);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.gandaki-district-label.selected {
+  color: var(--accent-primary, #3b82f6);
+}
+
+/* Leaflet overrides for dark theme */
+.gandaki-map-widget .leaflet-container {
+  background: var(--bg-base, #0a0a0b);
+  font-family: var(--font-sans, 'Inter', sans-serif);
+}
+
+.gandaki-map-widget .leaflet-popup-content-wrapper {
+  background: var(--bg-surface, #111113);
+  color: var(--text-primary, #fafafa);
+  border: 1px solid var(--border-default, #3f3f46);
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.gandaki-map-widget .leaflet-popup-content {
+  margin: 10px 12px;
+}
+
+.gandaki-map-widget .leaflet-popup-tip {
+  background: var(--bg-surface, #111113);
+  border: 1px solid var(--border-default, #3f3f46);
+}
+
+.gandaki-map-widget .leaflet-control-zoom a {
+  background: var(--bg-surface, #111113) !important;
+  color: var(--text-secondary, #a1a1aa) !important;
+  border: 1px solid var(--border-subtle, #27272a) !important;
+}
+
+.gandaki-map-widget .leaflet-control-zoom a:hover {
+  background: var(--bg-hover, #1f1f23) !important;
+  color: var(--text-primary, #fafafa) !important;
+}
+
+.gandaki-map-widget .leaflet-tile-pane {
+  filter: brightness(0.8) contrast(1.1) saturate(0.8);
+}

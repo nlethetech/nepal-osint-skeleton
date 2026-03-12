@@ -1,0 +1,405 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-03",
+    "agent": "AGENT-ECONOMIC",
+    "description": "Nepal Economic Data Sources Discovery",
+    "total_sources": 22
+  },
+  "sources": [
+    {
+      "name_en": "Nepal Stock Exchange",
+      "name_ne": "नेपाल स्टक एक्सचेन्ज",
+      "category": "stock",
+      "domain": "nepalstock.com",
+      "base_url": "https://www.nepalstock.com",
+      "endpoints": {
+        "today_price": "/todaysprice",
+        "floorsheet": "/floorsheet",
+        "market_open": "/api/nots/nepse-data/market-open"
+      },
+      "has_api": true,
+      "api_docs": "Unofficial APIs available via PyPI nepse-api package",
+      "data_types": ["stock prices", "market indices", "floorsheet", "company listings", "trading data"],
+      "ssl_valid": true,
+      "notes": "Official NEPSE website. API requires paid subscription for institutions. Unofficial wrappers available on GitHub."
+    },
+    {
+      "name_en": "Mero Lagani",
+      "name_ne": "मेरो लगानी",
+      "category": "stock",
+      "domain": "merolagani.com",
+      "base_url": "https://merolagani.com",
+      "endpoints": {
+        "latest_market": "/latestmarket.aspx",
+        "market_summary": "/MarketSummary.aspx",
+        "company_list": "/CompanyList.aspx",
+        "company_detail": "/CompanyDetail.aspx?symbol={SYMBOL}"
+      },
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["live trading data", "floorsheet", "indices", "company info", "AGM", "dividends", "IPO"],
+      "ssl_valid": true,
+      "notes": "Popular financial portal. No official API but data can be scraped. GitHub projects exist for data extraction."
+    },
+    {
+      "name_en": "Share Sansar",
+      "name_ne": "शेयर संसार",
+      "category": "stock",
+      "domain": "sharesansar.com",
+      "base_url": "https://www.sharesansar.com",
+      "endpoints": {
+        "today_share_price": "/today-share-price",
+        "live_trading": "/live-trading",
+        "company": "/company/{SYMBOL}",
+        "news": "/news-page"
+      },
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["share prices", "floorsheet", "indices", "dividends", "AGM", "IPO", "FPO", "right shares"],
+      "ssl_valid": true,
+      "notes": "No.1 online financial portal of Nepal. Offers SS Pro premium tool with screeners and alerts."
+    },
+    {
+      "name_en": "Nepal Clearing House Limited",
+      "name_ne": "नेपाल क्लियरिङ हाउस लिमिटेड",
+      "category": "financial",
+      "domain": "nchl.com.np",
+      "base_url": "https://nchl.com.np",
+      "endpoints": {
+        "members": "/members/",
+        "connectips": "https://connectips.com"
+      },
+      "has_api": true,
+      "api_docs": "https://doc.connectips.com",
+      "data_types": ["payment systems", "cheque clearing", "real-time payments", "QR payments"],
+      "ssl_valid": true,
+      "notes": "ISO 27001:2013 certified. Operates NCHL-ECC, National Payment Switch, connectIPS, CORPORATEPAY, NEPALPAY QR. Has documented REST APIs for payment gateway integration."
+    },
+    {
+      "name_en": "Nepal Rastra Bank",
+      "name_ne": "नेपाल राष्ट्र बैंक",
+      "category": "bank",
+      "domain": "nrb.org.np",
+      "base_url": "https://www.nrb.org.np",
+      "endpoints": {
+        "forex_api": "/api/forex/v1/rates",
+        "api_docs": "/api-docs-v1/"
+      },
+      "has_api": true,
+      "api_docs": "https://www.nrb.org.np/api-docs-v1/",
+      "data_types": ["forex rates", "monetary policy", "bank regulations", "financial statistics"],
+      "ssl_valid": true,
+      "notes": "Central Bank of Nepal. Has official FOREX API with documented endpoints for exchange rates."
+    },
+    {
+      "name_en": "Department of Customs",
+      "name_ne": "भन्सार विभाग",
+      "category": "department",
+      "domain": "customs.gov.np",
+      "base_url": "https://customs.gov.np",
+      "endpoints": {
+        "necas_portal": "NECAS Portal (internal)",
+        "archive": "https://archive.customs.gov.np"
+      },
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["customs duty", "VAT", "excise", "tariff structures", "trade data", "EXIM codes"],
+      "ssl_valid": true,
+      "notes": "Uses NECAS (Nepal Customs Automation System) based on ASYCUDA World. Covers 95% of Nepal's trade."
+    },
+    {
+      "name_en": "Inland Revenue Department",
+      "name_ne": "आन्तरिक राजस्व विभाग",
+      "category": "department",
+      "domain": "ird.gov.np",
+      "base_url": "https://ird.gov.np",
+      "endpoints": {
+        "taxpayer_portal": "/taxpayer-portal",
+        "login": "/login"
+      },
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["income tax", "VAT", "excise duty", "PAN registration", "tax returns"],
+      "ssl_valid": true,
+      "notes": "84 field offices including Large Taxpayers Office. Has mobile app (IRD Nepal). E-filing and e-payment available."
+    },
+    {
+      "name_en": "Office of Company Registrar",
+      "name_ne": "कम्पनी रजिष्ट्रारको कार्यालय",
+      "category": "department",
+      "domain": "ocr.gov.np",
+      "base_url": "https://ocr.gov.np",
+      "endpoints": {
+        "camis": "https://camis.ocr.gov.np",
+        "application": "https://application.ocr.gov.np",
+        "company_details": "https://application.ocr.gov.np/faces/CompanyDetails.jsp"
+      },
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["company registration", "company search", "business registration"],
+      "ssl_valid": true,
+      "notes": "CAMIS system for online company registration. Under Ministry of Industry, Commerce and Supplies."
+    },
+    {
+      "name_en": "Department of Industry",
+      "name_ne": "उद्योग विभाग",
+      "category": "department",
+      "domain": "doind.gov.np",
+      "base_url": "https://doind.gov.np",
+      "endpoints": {
+        "imis": "https://imis.doind.gov.np",
+        "foreign_investment": "/foreign-investment"
+      },
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["industrial registration", "foreign investment", "technology transfer", "industrial policy"],
+      "ssl_valid": true,
+      "notes": "Sole agency for FITTA administration. Has IMIS (Industrial Management Information System)."
+    },
+    {
+      "name_en": "Department of Commerce, Supplies and Consumer Protection",
+      "name_ne": "वाणिज्य, आपूर्ति तथा उपभोक्ता संरक्षण विभाग",
+      "category": "department",
+      "domain": "doc.gov.np",
+      "base_url": "https://doc.gov.np",
+      "endpoints": {},
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["trade data", "consumer protection", "market regulation", "supply statistics"],
+      "ssl_valid": true,
+      "notes": "Under Ministry of Industry, Commerce and Supplies. Regulates internal and foreign trade."
+    },
+    {
+      "name_en": "Department of Foreign Employment",
+      "name_ne": "वैदेशिक रोजगार विभाग",
+      "category": "department",
+      "domain": "dofe.gov.np",
+      "base_url": "https://dofe.gov.np",
+      "endpoints": {
+        "yearly_progress": "/yearly.aspx",
+        "recruiting_agencies": "/Recruting-Agences.aspx",
+        "recognized_destinations": "/recognized.aspx",
+        "downloads": "/new/download"
+      },
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["labor approvals", "recruiting agencies", "destination countries", "migrant worker data"],
+      "ssl_valid": true,
+      "notes": "Under Ministry of Labour. Has online login system for tracking applications."
+    },
+    {
+      "name_en": "Foreign Employment Board",
+      "name_ne": "वैदेशिक रोजगार बोर्ड",
+      "category": "department",
+      "domain": "feb.gov.np",
+      "base_url": "https://feb.gov.np",
+      "endpoints": {},
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["foreign employment welfare", "migrant worker support"],
+      "ssl_valid": true,
+      "notes": "Secretariat under Ministry of Labour, Employment and Social Security. Alternative domain: fepb.gov.np"
+    },
+    {
+      "name_en": "Nepal Oil Corporation",
+      "name_ne": "नेपाल आयल निगम",
+      "category": "enterprise",
+      "domain": "noc.org.np",
+      "base_url": "https://noc.org.np",
+      "endpoints": {
+        "about": "/about",
+        "eservice": "https://eservice.nepaloil.org.np",
+        "erecruitment": "https://erecruitment.nepaloil.org.np"
+      },
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["fuel prices", "petroleum products", "storage capacity", "distribution data"],
+      "ssl_valid": true,
+      "notes": "State monopoly for petroleum import. 99.46% government owned. Publishes current fuel prices on website."
+    },
+    {
+      "name_en": "Nepal Electricity Authority",
+      "name_ne": "नेपाल विद्युत प्राधिकरण",
+      "category": "enterprise",
+      "domain": "nea.org.np",
+      "base_url": "https://www.nea.org.np",
+      "endpoints": {
+        "contacts": "/contacts",
+        "billing": "https://www.neabilling.com/viewonline/"
+      },
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["electricity generation", "transmission", "distribution", "billing data"],
+      "ssl_valid": true,
+      "notes": "Parent generator, transmitter and distributor of electric power. Cross-border trading with India and Bangladesh."
+    },
+    {
+      "name_en": "Nepal Telecom",
+      "name_ne": "नेपाल टेलिकम",
+      "category": "enterprise",
+      "domain": "ntc.net.np",
+      "base_url": "https://www.ntc.net.np",
+      "endpoints": {
+        "about": "/about-us/",
+        "services": "/services"
+      },
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["telecom services", "subscriber data", "tariffs"],
+      "ssl_valid": true,
+      "notes": "184 locations nationwide. Sole provider of fixed-line, ISDN, leased-line. Offers mobile, ADSL, FTTH, 4G/LTE."
+    },
+    {
+      "name_en": "Rastriya Banijya Bank",
+      "name_ne": "राष्ट्रिय बाणिज्य बैंक",
+      "category": "bank",
+      "domain": "rbb.com.np",
+      "base_url": "https://www.rbb.com.np",
+      "endpoints": {},
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["banking services", "financial reports"],
+      "ssl_valid": true,
+      "notes": "Largest commercial bank, fully government owned. Established 1966. SWIFT: RBBANPKA"
+    },
+    {
+      "name_en": "Nepal Bank Limited",
+      "name_ne": "नेपाल बैंक लिमिटेड",
+      "category": "bank",
+      "domain": "nepalbank.com.np",
+      "base_url": "https://nepalbank.com.np",
+      "endpoints": {
+        "contact": "/contact"
+      },
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["banking services", "financial reports"],
+      "ssl_valid": true,
+      "notes": "First commercial bank of Nepal, established 1937. 217 branches. SWIFT: NEBLNPKA"
+    },
+    {
+      "name_en": "Agricultural Development Bank Limited",
+      "name_ne": "कृषि विकास बैंक लिमिटेड",
+      "category": "bank",
+      "domain": "adbl.gov.np",
+      "base_url": "https://adbl.gov.np/en",
+      "endpoints": {},
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["agricultural credit", "rural finance", "banking services"],
+      "ssl_valid": true,
+      "notes": "Established 1968. Premier rural credit institution. 67% of institutional credit supply. SWIFT: ADBLNPKA"
+    },
+    {
+      "name_en": "Salt Trading Corporation",
+      "name_ne": "नुन व्यापार संस्थान",
+      "category": "enterprise",
+      "domain": "stcnepal.com",
+      "base_url": "https://stcnepal.com",
+      "endpoints": {},
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["commodity prices", "supply chain data"],
+      "ssl_valid": true,
+      "notes": "Established 1963. Supplies salt, sugar, wheat, oil, rice, LP gas, and other essential commodities."
+    },
+    {
+      "name_en": "Nepal Airlines Corporation",
+      "name_ne": "नेपाल वायुसेवा निगम",
+      "category": "enterprise",
+      "domain": "nepalairlines.com.np",
+      "base_url": "https://nepalairlines.com.np",
+      "endpoints": {
+        "booking": "https://book-nac.crane.aero/ibe/search",
+        "contact": "/contact-details"
+      },
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["flight schedules", "booking data", "aviation services"],
+      "ssl_valid": true,
+      "notes": "Flag carrier of Nepal, established 1958. Formerly Royal Nepal Airlines. Has mobile app for booking."
+    },
+    {
+      "name_en": "NEPSE Alpha",
+      "name_ne": "नेप्से अल्फा",
+      "category": "stock",
+      "domain": "nepsealpha.com",
+      "base_url": "https://nepsealpha.com",
+      "endpoints": {
+        "nepse_chart": "/nepse-chart",
+        "stocks": "/stocks/{SYMBOL}/info"
+      },
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["stock charts", "technical analysis", "fundamental analysis"],
+      "ssl_valid": true,
+      "notes": "Stock market newsportal with technical and fundamental analysis tools."
+    },
+    {
+      "name_en": "NEPSE Trading Management System",
+      "name_ne": "नेप्से ट्रेडिङ म्यानेजमेन्ट सिस्टम",
+      "category": "stock",
+      "domain": "nepsetms.com.np",
+      "base_url": "https://tms45.nepsetms.com.np",
+      "endpoints": {},
+      "has_api": false,
+      "api_docs": null,
+      "data_types": ["online trading", "portfolio management"],
+      "ssl_valid": true,
+      "notes": "Official NEPSE online trading system. Accessible through registered brokers."
+    }
+  ],
+  "api_resources": {
+    "official_apis": [
+      {
+        "name": "Nepal Rastra Bank FOREX API",
+        "url": "https://www.nrb.org.np/api/forex/v1/rates",
+        "documentation": "https://www.nrb.org.np/api-docs-v1/",
+        "data_types": ["forex rates"],
+        "authentication": "None required",
+        "rate_limit": "Unknown"
+      },
+      {
+        "name": "NCHL connectIPS API",
+        "url": "https://doc.connectips.com",
+        "documentation": "https://doc.connectips.com/docs/intro",
+        "data_types": ["payment gateway", "transaction validation"],
+        "authentication": "Merchant credentials required",
+        "rate_limit": "Contact NCHL"
+      }
+    ],
+    "unofficial_apis": [
+      {
+        "name": "nepse-api (PyPI)",
+        "url": "https://pypi.org/project/nepse-api/",
+        "github": "https://github.com/samrid-pandit/nepse-api",
+        "data_types": ["NEPSE market data"],
+        "notes": "Async Python wrapper for NEPSE data"
+      },
+      {
+        "name": "NepseAPI-Unofficial",
+        "github": "https://github.com/surajrimal07/NepseAPI-Unofficial",
+        "data_types": ["REST API", "WebSocket", "MCP server"],
+        "notes": "Educational use only. Features real-time market data."
+      },
+      {
+        "name": "nepse-scraper",
+        "github": "https://github.com/polymorphisma/nepse_scraper",
+        "data_types": ["NEPSE scraped data"],
+        "notes": "Python scraper for NEPSE data"
+      }
+    ]
+  },
+  "additional_resources": {
+    "ministry": {
+      "name_en": "Ministry of Industry, Commerce and Supplies",
+      "name_ne": "उद्योग, वाणिज्य तथा आपूर्ति मन्त्रालय",
+      "url": "https://moics.gov.np"
+    },
+    "regulator": {
+      "name_en": "Securities Board of Nepal",
+      "name_ne": "नेपाल धितोपत्र बोर्ड",
+      "url": "https://sebon.gov.np"
+    }
+  }
+}

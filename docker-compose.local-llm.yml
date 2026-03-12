@@ -1,0 +1,67 @@
+services:
+  local_llm_model:
+    image: curlimages/curl:8.12.1
+    container_name: osint_local_llm_model
+    restart: "no"
+    volumes:
+      - ./backend-v5/.models:/models
+      - ./backend-v5/scripts/download_qwen_gguf.sh:/scripts/download_qwen_gguf.sh:ro
+    environment:
+      MODELS_DIR: /models
+      MODEL_FILE: Qwen_Qwen3.5-9B-Q4_K_M.gguf
+      MODEL_URL: https://huggingface.co/bartowski/Qwen_Qwen3.5-9B-GGUF/resolve/main/Qwen_Qwen3.5-9B-Q4_K_M.gguf
+    entrypoint: ["/bin/sh", "/scripts/download_qwen_gguf.sh"]
+
+  local_llm:
+    image: ghcr.io/ggml-org/llama.cpp:server
+    container_name: osint_local_llm
+    platform: linux/amd64
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8010:8080"
+    volumes:
+      - ./backend-v5/.models:/models:ro
+    depends_on:
+      local_llm_model:
+        condition: service_completed_successfully
+    command:
+      - -m
+      - /models/Qwen_Qwen3.5-9B-Q4_K_M.gguf
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8080"
+      - --ctx-size
+      - "8192"
+      - --n-predict
+      - "1024"
+      - --threads
+      - "8"
+      - --parallel
+      - "1"
+
+  backend:
+    environment:
+      LOCAL_LLM_FALLBACK_ENABLED: "true"
+      LOCAL_LLM_PREFER_LOCAL: "false"
+      LOCAL_LLM_BASE_URL: http://local_llm:8080/v1
+      LOCAL_LLM_API_KEY: local
+      LOCAL_LLM_MODEL: Qwen/Qwen3.5-9B
+      LOCAL_LLM_MAX_TOKENS: "4096"
+      LOCAL_LLM_TEMPERATURE: "0.1"
+    depends_on:
+      local_llm:
+        condition: service_started
+
+  worker:
+    environment:
+      LOCAL_LLM_FALLBACK_ENABLED: "true"
+      LOCAL_LLM_PREFER_LOCAL: "false"
+      LOCAL_LLM_BASE_URL: http://local_llm:8080/v1
+      LOCAL_LLM_API_KEY: local
+      LOCAL_LLM_MODEL: Qwen/Qwen3.5-9B
+      LOCAL_LLM_MAX_TOKENS: "4096"
+      LOCAL_LLM_TEMPERATURE: "0.1"
+    depends_on:
+      local_llm:
+        condition: service_started

@@ -1,0 +1,433 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-03",
+    "version": "1.0",
+    "description": "Nepal Security and Emergency Service Portals for OSINT",
+    "total_sources": 18
+  },
+  "sources": [
+    {
+      "name_en": "Nepal Police",
+      "name_ne": "नेपाल प्रहरी",
+      "category": "police",
+      "domain": "nepalpolice.gov.np",
+      "base_url": "https://www.nepalpolice.gov.np",
+      "endpoints": {
+        "press_release": "/news/press-releases/",
+        "wanted": "/structure/interpol-section/",
+        "missing": "/notices/missing-persons/",
+        "news": "/news/",
+        "faq": "/faq/"
+      },
+      "subdomains": {
+        "old_site": "https://old.nepalpolice.gov.np",
+        "opcr": "https://opcr.nepalpolice.gov.np",
+        "cid": "https://cid.nepalpolice.gov.np",
+        "traffic": "https://traffic.nepalpolice.gov.np",
+        "metro": "https://metro.nepalpolice.gov.np",
+        "ktmvalley": "https://ktmvalley.nepalpolice.gov.np",
+        "cyberbureau": "https://cyberbureau.nepalpolice.gov.np",
+        "nphshs": "https://nphshs.nepalpolice.gov.np"
+      },
+      "emergency_numbers": {
+        "general": "100",
+        "traffic": "103",
+        "toll_free": "16600141516"
+      },
+      "contact": {
+        "spokesperson_phone": "01-5719804",
+        "spokesperson_email": "spokesperson@nepalpolice.gov.np",
+        "interpol_email": "interpol@nepalpolice.gov.np"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": true,
+      "notes": "Primary law enforcement agency. Multiple subdomains for specialized units. Old site still accessible with historical data."
+    },
+    {
+      "name_en": "Nepal Police - Criminal Investigation Department (CID)",
+      "name_ne": "अपराध अनुसन्धान विभाग",
+      "category": "police",
+      "domain": "cid.nepalpolice.gov.np",
+      "base_url": "https://cid.nepalpolice.gov.np",
+      "endpoints": {
+        "introduction": "/about-us/introduction/",
+        "public_services": "/public-services/general-police-services/",
+        "police_clearance_info": "/information-police-clearance-report/",
+        "old_missing_persons": "https://old-cid.nepalpolice.gov.np/index.php/notices/missing-persons",
+        "old_missing_child": "https://old-cid.nepalpolice.gov.np/index.php/138-missing-child"
+      },
+      "contact": {
+        "phone": "01-4412748",
+        "toll_free": "16600141516",
+        "mobile": "09779849091139",
+        "fax": "01-4412602",
+        "email": "cicu@nepalpolice.gov.np"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": true,
+      "notes": "Handles criminal investigations. Old site has missing persons data. 215 crime investigation units nationwide. AI-based crime analysis in development."
+    },
+    {
+      "name_en": "Nepal Police - Cyber Bureau",
+      "name_ne": "साइबर ब्यूरो",
+      "category": "police",
+      "domain": "cyberbureau.nepalpolice.gov.np",
+      "base_url": "https://cyberbureau.nepalpolice.gov.np",
+      "endpoints": {
+        "report_crime": "/report-cyber-crime/",
+        "home": "/"
+      },
+      "contact": {
+        "spokesperson_phones": ["9851286772", "9851286771", "9851286770"],
+        "spokesperson_email": "cb_spokesperson@nepalpolice.gov.np",
+        "complaints_email": "cyberbureau@nepalpolice.gov.np"
+      },
+      "has_english": false,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": true,
+      "notes": "Specialized unit for cybercrime. Online complaint submission available. Headed by Deputy IGP."
+    },
+    {
+      "name_en": "Nepal Police - Traffic Police",
+      "name_ne": "ट्राफिक प्रहरी",
+      "category": "police",
+      "domain": "traffic.nepalpolice.gov.np",
+      "base_url": "https://traffic.nepalpolice.gov.np",
+      "endpoints": {
+        "message_from_chief": "/about-us/message-incharge/",
+        "traffic_helpline": "/safety-and-security/traffic-helpline/"
+      },
+      "contact": {
+        "control_number": "103",
+        "phone": "+977-01-5319641",
+        "email": "vtpo@nepalpolice.gov.np"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": true,
+      "notes": "Kathmandu Valley Traffic Police. Operates Metro Traffic FM 95.5 MHz."
+    },
+    {
+      "name_en": "Nepal Police - Kathmandu Valley Police Office",
+      "name_ne": "काठमाडौं उपत्यका प्रहरी कार्यालय",
+      "category": "police",
+      "domain": "ktmvalley.nepalpolice.gov.np",
+      "base_url": "https://ktmvalley.nepalpolice.gov.np",
+      "endpoints": {
+        "introduction": "/about-us/introduction/",
+        "kathmandu_range": "/structure/police-range-kathmandu/"
+      },
+      "alternate_domains": ["metro.nepalpolice.gov.np"],
+      "contact": {
+        "email": "mpco@nepalpolice.gov.np",
+        "lalitpur": "01-5521207",
+        "bhaktapur": "01-6614852"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": true,
+      "notes": "Covers Kathmandu, Lalitpur, Bhaktapur. Formerly Metropolitan Police Office (MPO). Renamed in 2079 BS."
+    },
+    {
+      "name_en": "Nepal Police - Online Police Clearance System",
+      "name_ne": "अनलाइन चालचलन प्रमाणपत्र प्रणाली",
+      "category": "police",
+      "domain": "opcr.nepalpolice.gov.np",
+      "base_url": "https://opcr.nepalpolice.gov.np",
+      "endpoints": {
+        "registration": "/",
+        "login": "/login",
+        "application_status": "/application-status"
+      },
+      "contact": {
+        "email": "chalchalan@nepalpolice.gov.np",
+        "phone": "+977 01-5719865",
+        "mobile": "9851285920"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": true,
+      "notes": "Online police clearance certificate application. Free service. Certificate valid for 6 months."
+    },
+    {
+      "name_en": "Armed Police Force Nepal",
+      "name_ne": "सशस्त्र प्रहरी बल, नेपाल",
+      "category": "military",
+      "domain": "apf.gov.np",
+      "base_url": "https://www.apf.gov.np",
+      "endpoints": {
+        "home": "/",
+        "news": "/news/",
+        "about": "/about/"
+      },
+      "contact": {
+        "email": "info@apf.gov.np"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": true,
+      "notes": "Paramilitary force. BIRD concept: Border security, Internal security, Revenue support, Disaster management. 37,000+ personnel. Mobile app available on Google Play."
+    },
+    {
+      "name_en": "Nepal Army",
+      "name_ne": "नेपाली सेना",
+      "category": "military",
+      "domain": "nepalarmy.mil.np",
+      "base_url": "https://www.nepalarmy.mil.np",
+      "endpoints": {
+        "home": "/",
+        "un_peacekeeping": "/page/na_in_un",
+        "recruitment": "https://vacancy.nepalarmy.mil.np/"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": true,
+      "notes": "National military. 95,000 personnel. Active in UN peacekeeping. Birendra Peace Operations Training Centre (BPOTC) at Panchkhal."
+    },
+    {
+      "name_en": "National Investigation Department",
+      "name_ne": "राष्ट्रिय अनुसन्धान विभाग",
+      "category": "police",
+      "domain": "nidept.gov.np",
+      "base_url": "https://nidept.gov.np",
+      "endpoints": {
+        "home": "/",
+        "vacancy": "https://rabvac.nidept.gov.np/"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": true,
+      "notes": "Main intelligence agency. Under Office of PM and Council of Ministers. Handles public security, economic crimes, terrorism, money laundering, narcotics, human trafficking. Note: Domain is nidept.gov.np NOT nid.gov.np"
+    },
+    {
+      "name_en": "Department of Immigration",
+      "name_ne": "अध्यागमन विभाग",
+      "category": "immigration",
+      "domain": "immigration.gov.np",
+      "base_url": "https://www.immigration.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "introduction": "/en/page/introduction",
+        "tourist_visa": "/en/page/tourist-visa",
+        "contact": "/en/contact",
+        "functions": "/en/page/functions-of-the-department",
+        "online_visa": "https://nepaliport.immigration.gov.np/",
+        "on_arrival": "https://nepaliport.immigration.gov.np/on-arrival/IO01"
+      },
+      "contact": {
+        "email": "info@immigration.gov.np",
+        "visa_inquiry": "inquiry@immigration.gov.np"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": true,
+      "notes": "Under Ministry of Home Affairs. Issues visas, trekking permits. Offices at TIA, Gautambuddha Airport, Pokhara Airport, and border points."
+    },
+    {
+      "name_en": "Department of Passport",
+      "name_ne": "राहदानी विभाग",
+      "category": "immigration",
+      "domain": "nepalpassport.gov.np",
+      "base_url": "https://nepalpassport.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "home_ne": "/",
+        "e_passport_enrollment": "https://emrtds.nepalpassport.gov.np/"
+      },
+      "contact": {
+        "phone": "+977 1 5970330",
+        "email_general": "info@nepalpassport.gov.np",
+        "email_communication": "communication@nepalpassport.gov.np",
+        "email_dg": "dg@nepalpassport.gov.np"
+      },
+      "location": "Tripureshor, Kathmandu",
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": true,
+      "notes": "First NS/ISO 9001:2015 certified government organization in Nepal. Over 5 million e-passports issued as of Kartik 2082."
+    },
+    {
+      "name_en": "BIPAD Portal",
+      "name_ne": "विपद पोर्टल",
+      "category": "emergency",
+      "domain": "bipadportal.gov.np",
+      "base_url": "https://bipadportal.gov.np",
+      "endpoints": {
+        "home": "/",
+        "incidents": "/incidents/",
+        "dashboard": "/dashboard/",
+        "realtime": "/realtime/",
+        "profile": "/profile/",
+        "risk_info": "/risk-info/"
+      },
+      "modules": [
+        "Dashboard - Alert information",
+        "Incident - Location-based incident info",
+        "Damage and Loss - Historical disaster data",
+        "Real-time - Flood, rain, air pollution monitoring",
+        "Profile - Disaster profiles",
+        "Risk Info - Hazard data and maps"
+      ],
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": true,
+      "ssl_valid": true,
+      "notes": "Building Information Platform Against Disaster. Developed by Youth Innovation Lab. Owned by NDRRMA. 753 municipality subdomains. Impact-based flood forecasting pilot at Karnali and Babai rivers."
+    },
+    {
+      "name_en": "NDRRMA BIPAD SIA",
+      "name_ne": "एनडीआरआरएमए विपद एसआईए",
+      "category": "emergency",
+      "domain": "bipad.gov.np",
+      "base_url": "https://www.bipad.gov.np",
+      "endpoints": {
+        "home": "/",
+        "npdrr": "/en/national-platform-for-disaster-risk-reduction-npdrr",
+        "situation_report": "/np/situation-report"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": true,
+      "notes": "NDRRMA Situational Information and Analysis platform. Links to National Platform for Disaster Risk Reduction (NPDRR)."
+    },
+    {
+      "name_en": "Nepal Disaster Risk Reduction Portal",
+      "name_ne": "नेपाल विपद जोखिम न्यूनीकरण पोर्टल",
+      "category": "emergency",
+      "domain": "drrportal.gov.np",
+      "base_url": "http://www.drrportal.gov.np",
+      "endpoints": {
+        "home": "/",
+        "documents": "/uploads/document/",
+        "notices": "/uploads/notice/"
+      },
+      "resources": [
+        "DRR Acts and Policies",
+        "National DRR Policy and Strategic Action Plan",
+        "Nepal Risk Information",
+        "Incident Maps",
+        "Nepal Disaster Reports"
+      ],
+      "eoc_network": {
+        "national": 1,
+        "provincial": 7,
+        "district": 70
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": false,
+      "notes": "Official DRR Gateway of Nepal. HTTP only (no HTTPS). Developed with ADPC technical support. Contains 2015 earthquake data and relief info."
+    },
+    {
+      "name_en": "National Disaster Risk Reduction and Management Authority",
+      "name_ne": "राष्ट्रिय विपद जोखिम न्यूनीकरण तथा व्यवस्थापन प्राधिकरण",
+      "category": "emergency",
+      "domain": "ndrrma.gov.np",
+      "base_url": "https://ndrrma.gov.np",
+      "endpoints": {
+        "home": "/",
+        "home_en": "/en",
+        "elearning": "https://elearning.ndrrma.gov.np/"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": true,
+      "notes": "Established under DRRM Act 2017. Coordinates federal, provincial, local DRRM. Owns BIPAD portal. E-learning platform available."
+    },
+    {
+      "name_en": "National Emergency Operation Center",
+      "name_ne": "राष्ट्रिय आपतकालीन कार्य संचालन केन्द्र",
+      "category": "emergency",
+      "domain": "neoc.gov.np",
+      "base_url": "http://www.neoc.gov.np",
+      "endpoints": {
+        "home_en": "/en/",
+        "introduction": "/en/introduction-2.html",
+        "news": "/en/news/"
+      },
+      "contact": {
+        "toll_free": "1149",
+        "phone_1": "+977-1-4200105",
+        "phone_2": "+977-1-4200258",
+        "fax": "+977-1-4200103",
+        "email": "neoc@moha.gov.np",
+        "satellite_phone_1": "+870776741587",
+        "satellite_phone_2": "+870776741492"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": false,
+      "notes": "Under Ministry of Home Affairs. 24/7 operation during disasters. Earthquake-resistant prefab building at Singha Durbar. DEOCs in 42+ districts. HTTP only."
+    },
+    {
+      "name_en": "Nepal Fire Service (Juddha Barun Yantra)",
+      "name_ne": "जुद्ध बरुण यन्त्र (दमकल)",
+      "category": "emergency",
+      "domain": "moha.gov.np",
+      "base_url": "https://moha.gov.np",
+      "endpoints": {
+        "fire_offices": "/en/offices?office_type=11"
+      },
+      "emergency_number": "101",
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": true,
+      "notes": "No dedicated website. Fire services in 46 of 58 municipalities. Managed by Ministry of Federal Affairs and Local Development since 2009. Oldest brigade (Damkal) based at Basantapur, Kathmandu. 39 staff from APF, Metropolitan Police, and Home Ministry."
+    },
+    {
+      "name_en": "Ministry of Home Affairs",
+      "name_ne": "गृह मन्त्रालय",
+      "category": "police",
+      "domain": "moha.gov.np",
+      "base_url": "https://moha.gov.np",
+      "endpoints": {
+        "home_en": "/en",
+        "nepal_police": "/en/post/nepal-police",
+        "apf": "/en/post/armed-police-force-nepal",
+        "immigration": "/en/post/nepal-immigration",
+        "drr_portal": "/en/post/drr-portal",
+        "neoc": "/en/post/national-emergency-operation-center",
+        "traffic_management": "/en/service/6",
+        "offices": "/en/offices"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "has_api": false,
+      "ssl_valid": true,
+      "notes": "Parent ministry for Nepal Police, APF, Immigration, NEOC. Central hub for security-related information."
+    }
+  ],
+  "emergency_contacts": {
+    "police": "100",
+    "fire": "101",
+    "ambulance": "102",
+    "traffic": "103",
+    "neoc": "1149",
+    "missing_child": "16600141516"
+  },
+  "notes": {
+    "ssl_issues": "drrportal.gov.np and neoc.gov.np use HTTP only",
+    "api_availability": "BIPAD Portal has data APIs. Other portals do not expose public APIs",
+    "language_support": "Most portals support both English and Nepali",
+    "subdomain_pattern": "Nepal Police uses extensive subdomain structure for different units"
+  }
+}

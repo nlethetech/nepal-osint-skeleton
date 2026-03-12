@@ -1,0 +1,738 @@
+/* Map animations */
+@import './map-animations.css';
+
+/* New Dashboard styles */
+@import './dashboard.css';
+
+/* Bloomberg Terminal Theme — kept for dashboard widgets that still use it */
+@import './bloomberg-theme.css';
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --pro-* fallbacks for OmniSearch portal outside .dashboard-app */
+:root {
+  --pro-bg-surface: #1C2127;
+  --pro-bg-elevated: #252A31;
+  --pro-border-default: #404854;
+  --pro-border-subtle: #383E47;
+  --pro-text-primary: #F6F7F9;
+  --pro-text-secondary: #ABB3BF;
+  --pro-text-muted: #738091;
+  --pro-accent: #2D72D2;
+  --pro-critical: #CD4246;
+  --pro-high: #C87619;
+  --pro-medium: #D1980B;
+  --bloomberg-teal: #238551;
+  --bloomberg-orange: #C87619;
+}
+
+/* ============================================
+   BASE LAYER — Blueprint Dark Foundation
+   ============================================ */
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bp-bg text-bp-text;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-x: hidden;
+    /* Safe-area insets for notched phones */
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-left: env(safe-area-inset-left, 0px);
+    --safe-right: env(safe-area-inset-right, 0px);
+  }
+
+  h1, .h1 { @apply text-xl font-semibold text-bp-text; }
+  h2, .h2 { @apply text-lg font-semibold text-bp-text; }
+  h3, .h3 { @apply text-base font-medium text-bp-text; }
+  h4, .h4 { @apply text-sm font-medium text-bp-text; }
+}
+
+/* ============================================
+   COMPONENT LAYER — Blueprint-Aligned Primitives
+   ============================================ */
+@layer components {
+  /* Section Labels */
+  .section-label {
+    @apply text-xs font-medium uppercase tracking-wide text-bp-text-muted mb-2;
+  }
+
+  /* Blueprint section header utility */
+  .bp-section-header {
+    @apply text-xs font-semibold uppercase tracking-wider text-bp-text-muted;
+    letter-spacing: 0.08em;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-bp-card border border-bp-border rounded p-4;
+  }
+
+  .card-interactive {
+    @apply card transition-all duration-200;
+  }
+
+  .card-interactive:hover {
+    @apply border-bp-border-strong shadow-card-hover;
+  }
+
+  .card-elevated {
+    @apply bg-bp-surface border border-bp-border rounded p-4;
+  }
+
+  .card-hero {
+    @apply bg-bp-card border border-bp-border-strong rounded p-4;
+  }
+
+  .card-glass {
+    @apply bg-bp-card/90 border border-bp-border rounded p-4;
+  }
+
+  /* Severity Cards — left border accent */
+  .card-severity-critical { @apply card border-l-2 border-l-severity-critical; }
+  .card-severity-high { @apply card border-l-2 border-l-severity-high; }
+  .card-severity-medium { @apply card border-l-2 border-l-severity-medium; }
+  .card-severity-low { @apply card border-l-2 border-l-severity-low; }
+
+  /* Buttons — Blueprint-aligned */
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 font-medium rounded text-sm;
+    @apply transition-colors duration-100;
+    @apply focus:outline-none focus:ring-1 focus:ring-bp-primary/50;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-xs { @apply px-2 py-1 text-xs; }
+  .btn-sm { @apply px-2.5 py-1.5 text-xs; }
+  .btn-md { @apply px-3 py-1.5 text-sm; }
+  .btn-lg { @apply px-4 py-2 text-sm; }
+
+  .btn-primary {
+    @apply bg-bp-primary text-white;
+  }
+  .btn-primary:hover {
+    @apply bg-bp-primary-hover;
+  }
+
+  .btn-secondary {
+    @apply bg-bp-surface text-bp-text border border-bp-border;
+  }
+  .btn-secondary:hover {
+    @apply bg-bp-hover border-bp-border-strong;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-bp-text-secondary;
+  }
+  .btn-ghost:hover {
+    @apply bg-bp-surface text-bp-text;
+  }
+
+  .btn-danger {
+    @apply bg-severity-critical/10 text-severity-critical border border-severity-critical/20;
+  }
+  .btn-danger:hover {
+    @apply bg-severity-critical/15;
+  }
+
+  .btn-icon { @apply p-1.5; }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-1 px-1.5 py-0.5 text-xs font-medium rounded;
+  }
+
+  .badge-critical { @apply bg-severity-critical/15 text-severity-critical; }
+  .badge-high { @apply bg-severity-high/15 text-severity-high; }
+  .badge-medium { @apply bg-severity-medium/15 text-severity-medium; }
+  .badge-low { @apply bg-severity-low/15 text-severity-low; }
+  .badge-info { @apply bg-bp-primary/15 text-bp-primary; }
+  .badge-default { @apply bg-bp-surface text-bp-text-secondary; }
+
+  .badge-person { @apply bg-entity-person/15 text-entity-person; }
+  .badge-organization { @apply bg-entity-organization/15 text-entity-organization; }
+  .badge-location { @apply bg-entity-location/15 text-entity-location; }
+  .badge-district { @apply bg-entity-district/15 text-entity-district; }
+
+  /* Keyboard shortcut badge */
+  .shortcut-badge {
+    @apply inline-flex items-center justify-center gap-0.5 px-1.5 py-0.5 rounded font-mono text-xs;
+    @apply bg-bp-surface text-bp-text-secondary border border-bp-border;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+  }
+
+  .bp6-dark kbd,
+  .dashboard-app kbd,
+  .bloomberg-theme kbd {
+    @apply inline-flex items-center justify-center gap-0.5 px-1.5 py-0.5 rounded font-mono text-xs;
+    @apply bg-bp-surface text-bp-text-secondary border border-bp-border;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+  }
+
+  /* Inputs */
+  .input {
+    @apply w-full px-2.5 py-1.5 text-sm bg-bp-surface border border-bp-border rounded;
+    @apply text-bp-text placeholder:text-bp-text-muted;
+    @apply focus:outline-none focus:border-bp-primary;
+  }
+
+  .input-sm { @apply px-2 py-1 text-xs; }
+
+  .select {
+    @apply input cursor-pointer appearance-none pr-7;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23738091' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+  }
+
+  /* Tables */
+  .table { @apply w-full text-sm; }
+  .table th {
+    @apply px-3 py-2 text-left text-xs font-medium uppercase tracking-wide text-bp-text-muted bg-bp-surface border-b border-bp-border;
+  }
+  .table td {
+    @apply px-3 py-2 text-bp-text border-b border-bp-border;
+  }
+  .table tbody tr:hover { @apply bg-bp-surface/30; }
+
+  /* Stats */
+  .stat-value { @apply text-lg font-semibold text-bp-text tabular-nums; }
+  .stat-label { @apply text-xs font-medium text-bp-text-muted uppercase tracking-wide; }
+
+  /* Tabs */
+  .tabs {
+    @apply flex gap-0 border-b border-bp-border;
+  }
+
+  .tab {
+    @apply px-3 py-2 text-sm font-medium text-bp-text-muted flex items-center gap-1.5;
+    @apply border-b-2 border-transparent -mb-px;
+    @apply transition-colors duration-100;
+  }
+
+  .tab:hover {
+    @apply text-bp-text;
+  }
+
+  .tab-active {
+    @apply text-bp-primary border-bp-primary;
+  }
+
+  /* Status Indicators */
+  .status-indicator {
+    @apply inline-flex items-center gap-1 text-xs font-medium;
+  }
+
+  .status-live {
+    @apply text-bp-success;
+  }
+
+  .status-offline {
+    @apply text-bp-text-muted;
+  }
+
+  .status-dot {
+    @apply w-1.5 h-1.5 rounded-full;
+  }
+
+  .status-dot-live {
+    @apply bg-bp-success;
+  }
+
+  .status-dot-offline {
+    @apply bg-bp-text-muted;
+  }
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+@layer utilities {
+  .tabular-nums { font-variant-numeric: tabular-nums; }
+
+  .truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .scroll-fade {
+    position: relative;
+  }
+  .scroll-fade::after {
+    content: '';
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background: linear-gradient(to top, #111418 0%, transparent 100%);
+    pointer-events: none;
+    display: block;
+    margin-top: -24px;
+  }
+}
+
+/* Scrollbar — Thin, styled, visible */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #404854; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #5c6672; }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #404854 transparent;
+}
+
+/* Leaflet Light Theme (Live UA Map style) */
+.leaflet-container {
+  background: #f8fafc;
+  contain: strict;
+  isolation: isolate;
+}
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #6b7280 !important;
+  font-size: 10px !important;
+}
+.leaflet-control-zoom a {
+  background: #ffffff !important;
+  color: #374151 !important;
+  border: 1px solid #e5e7eb !important;
+}
+.leaflet-control-zoom a:hover {
+  background: #f9fafb !important;
+  color: #111827 !important;
+}
+.leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+}
+.leaflet-popup-tip { background: #ffffff !important; }
+
+/* Election Monitor — Constituency tooltip */
+.constituency-tooltip {
+  background: #1f2937 !important;
+  color: #f3f4f6 !important;
+  border: 1px solid #374151 !important;
+  border-radius: 6px !important;
+  padding: 6px 10px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+  font-size: 11px !important;
+}
+.constituency-tooltip .leaflet-tooltip-tip {
+  border-top-color: #1f2937 !important;
+}
+
+/* Detection Markers */
+.detection-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.detection-marker svg {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.leaflet-popup-content-wrapper .font-sans {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.detection-marker-critical {
+  /* Static marker — no animation */
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Tooltip delay */
+.leaflet-tooltip {
+  pointer-events: none !important;
+  transition: opacity 0.15s ease-out !important;
+}
+
+.leaflet-tooltip-pane .leaflet-tooltip {
+  /* Static map — opacity only */
+}
+
+/* Event marker tooltips */
+.leaflet-tooltip-pane {
+  z-index: 99999 !important;
+}
+
+.leaflet-tooltip,
+.leaflet-tooltip.event-marker-tooltip {
+  z-index: 99999 !important;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  padding: 0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+  color: #111827 !important;
+  font-size: 13px !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  max-width: 320px !important;
+  min-width: 260px !important;
+  white-space: normal !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+}
+
+.leaflet-tooltip::before,
+.leaflet-tooltip.event-marker-tooltip::before {
+  display: none !important;
+}
+
+/* District tooltip */
+.leaflet-tooltip.district-tooltip {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  padding: 12px 14px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  min-width: 120px !important;
+  max-width: 200px !important;
+}
+
+.leaflet-tooltip.district-tooltip::before {
+  display: none !important;
+}
+
+/* Marker pointer events */
+.leaflet-marker-pane {
+  z-index: 600 !important;
+  pointer-events: auto !important;
+}
+
+.leaflet-marker-icon {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+.leaflet-markercluster-pane {
+  z-index: 650 !important;
+}
+
+/* Corporate Company Profile drawer — Blueprint intelligence style */
+.company-profile-drawer {
+  --cp-bg: #10161f;
+  --cp-bg-elev: #16202d;
+  --cp-bg-soft: #1a2635;
+  --cp-border: #2a3a4d;
+  --cp-border-strong: #3a5169;
+  --cp-divider: #243345;
+  --cp-text: #dbe5ef;
+  --cp-text-muted: #97a9bc;
+  --cp-accent: #4f95df;
+  --cp-radius: 8px;
+}
+
+.company-profile-drawer .bp6-drawer {
+  background: var(--cp-bg);
+  color: var(--cp-text);
+}
+
+.company-profile-drawer .bp6-drawer-header {
+  background: linear-gradient(180deg, #1a2635 0%, #152131 100%);
+  border-bottom: 1px solid var(--cp-border-strong);
+  box-shadow: inset 0 -1px 0 rgba(79, 149, 223, 0.2);
+}
+
+.company-profile-drawer .bp6-drawer-header .bp6-heading {
+  color: var(--cp-text);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.company-profile-drawer .bp6-drawer-body {
+  background:
+    radial-gradient(circle at top right, rgba(79, 149, 223, 0.08), transparent 40%),
+    linear-gradient(180deg, #111a27 0%, #0f151e 100%);
+  color: var(--cp-text);
+  padding: 0;
+  overflow: hidden;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.company-profile-drawer .bp6-drawer-body > .company-profile-panel,
+.company-profile-drawer .bp6-drawer-body > .company-profile-stack {
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Blueprint can wrap drawer body content; ensure scroll still works in that structure. */
+.company-profile-drawer .bp6-drawer-body .company-profile-stack,
+.company-profile-drawer .bp6-drawer-body .company-profile-panel {
+  min-height: 0;
+}
+
+.company-profile-drawer .bp6-drawer-body .company-profile-stack {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.company-profile-drawer .company-profile-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-bottom: 12px;
+}
+
+.company-profile-drawer .company-profile-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 14px 0;
+}
+
+.company-profile-drawer .company-profile-panel.company-profile-panel-addon {
+  padding-top: 10px;
+}
+
+.company-profile-drawer .company-profile-hero {
+  background: linear-gradient(180deg, rgba(29, 44, 64, 0.76) 0%, rgba(23, 34, 49, 0.74) 100%);
+  border: 1px solid var(--cp-border);
+  border-radius: var(--cp-radius);
+  padding: 11px 12px;
+}
+
+.company-profile-drawer .company-profile-eyebrow {
+  margin: 0 0 4px;
+  color: var(--cp-text-muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.company-profile-drawer .company-profile-heading {
+  color: var(--cp-text);
+  line-height: 1.25;
+}
+
+.company-profile-drawer .company-profile-subheading {
+  color: var(--cp-text-muted);
+}
+
+.company-profile-drawer .company-profile-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.company-profile-drawer .company-profile-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  border: 1px solid rgba(151, 169, 188, 0.26);
+  background: rgba(23, 35, 50, 0.78);
+  color: #c4d2e1;
+  font-size: 11px;
+  border-radius: 5px;
+  line-height: 1;
+}
+
+.company-profile-drawer .company-profile-chip.company-profile-chip-primary {
+  border-color: rgba(79, 149, 223, 0.45);
+  background: rgba(31, 60, 91, 0.72);
+  color: #b8d9fb;
+}
+
+.company-profile-drawer .company-profile-chip.company-profile-chip-muted {
+  background: rgba(23, 35, 50, 0.7);
+  color: var(--cp-text-muted);
+}
+
+.company-profile-drawer .company-profile-chip.company-profile-chip-warn {
+  border-color: rgba(206, 135, 66, 0.4);
+  background: rgba(100, 62, 26, 0.42);
+  color: #edbd8f;
+}
+
+.company-profile-drawer .company-profile-kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.company-profile-drawer .company-profile-kpi-card {
+  background: var(--cp-bg-elev);
+  border: 1px solid var(--cp-border);
+  border-radius: var(--cp-radius);
+  height: 62px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.company-profile-drawer .company-profile-kpi-label {
+  color: var(--cp-text-muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.company-profile-drawer .company-profile-kpi-value {
+  color: var(--cp-text);
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 14px;
+  margin-top: 4px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.company-profile-drawer .company-profile-kpi-value--currency {
+  font-size: 12px;
+}
+
+.company-profile-drawer .bp6-section {
+  border: 1px solid var(--cp-border);
+  border-radius: var(--cp-radius);
+  background: var(--cp-bg-elev);
+  overflow: hidden;
+}
+
+.company-profile-drawer .bp6-section-header {
+  background: linear-gradient(180deg, rgba(16, 25, 38, 0.96) 0%, rgba(13, 21, 32, 0.96) 100%);
+  border-bottom: 1px solid var(--cp-border);
+  height: 40px;
+}
+
+.company-profile-drawer .bp6-section.bp6-collapsed .bp6-section-header {
+  background: linear-gradient(180deg, rgba(16, 25, 38, 0.96) 0%, rgba(13, 21, 32, 0.96) 100%);
+}
+
+.company-profile-drawer .bp6-section-header .bp6-button {
+  min-height: 39px;
+}
+
+.company-profile-drawer .bp6-section-header .bp6-heading {
+  color: #cfdae7;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.company-profile-drawer .bp6-section-header .bp6-icon {
+  color: #8fa5bd;
+}
+
+.company-profile-drawer .bp6-section-card {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 10px 12px 9px;
+}
+
+.company-profile-drawer .company-profile-kv {
+  margin: 0;
+}
+
+.company-profile-drawer .company-profile-kv-row {
+  display: grid;
+  grid-template-columns: 124px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  min-height: 32px;
+  padding: 6px 0;
+  border-top: 1px solid var(--cp-divider);
+}
+
+.company-profile-drawer .company-profile-kv-row:first-child {
+  border-top: 0;
+  padding-top: 1px;
+}
+
+.company-profile-drawer .company-profile-label {
+  margin: 0;
+  color: var(--cp-text-muted);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.company-profile-drawer .company-profile-value {
+  margin: 0;
+  color: var(--cp-text);
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.company-profile-drawer .company-profile-mono {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.company-profile-drawer .company-profile-director-card {
+  background: var(--cp-bg-soft);
+  border: 1px solid var(--cp-border);
+  box-shadow: none;
+  border-radius: 7px;
+}
+
+.company-profile-drawer .company-profile-phone-note {
+  margin: 0 0 8px;
+  color: var(--cp-text-muted);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.company-profile-drawer .company-profile-phone-card {
+  background: var(--cp-bg-soft);
+  border: 1px solid var(--cp-border);
+  box-shadow: none;
+  border-radius: 7px;
+}
+
+.company-profile-drawer .company-profile-phone-card:hover {
+  border-color: var(--cp-border-strong);
+  background: #1d2a3a;
+}
+
+.company-profile-drawer .company-profile-phone-name {
+  color: var(--cp-text);
+}
+
+.company-profile-drawer .company-profile-phone-meta {
+  color: var(--cp-text-muted);
+}
+
+@media (min-width: 560px) {
+  .company-profile-drawer .company-profile-kpi-strip {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,157 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: nepal_v5_postgres
+    environment:
+      POSTGRES_USER: nepal_osint
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-nepal_osint_dev}
+      POSTGRES_DB: nepal_osint_v5
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nepal_osint -d nepal_osint_v5"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: nepal_v5_redis
+    ports:
+      - "127.0.0.1:6380:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nepal_v5_migrate
+    environment:
+      DATABASE_URL: postgresql+asyncpg://nepal_osint:${POSTGRES_PASSWORD:-nepal_osint_dev}@postgres:5432/nepal_osint_v5
+      REDIS_URL: redis://redis:6379/0
+      APP_ENV: ${APP_ENV:-development}
+      DEBUG: "false"
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:?JWT_SECRET_KEY is required}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      TWITTER_BEARER_TOKEN: ${TWITTER_BEARER_TOKEN:-}
+      TWITTER_API_TIER: ${TWITTER_API_TIER:-free}
+      # Google Earth Engine (required for PWTT satellite analysis)
+      GEE_PROJECT_ID: ${GEE_PROJECT_ID:-}
+      GEE_SERVICE_ACCOUNT_JSON: ${GEE_SERVICE_ACCOUNT_JSON:-}
+      GOOGLE_APPLICATION_CREDENTIALS: /home/appuser/.config/gcloud/application_default_credentials.json
+    volumes:
+      - ${HOME}/.config/gcloud:/home/appuser/.config/gcloud:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: alembic upgrade head
+    restart: "no"
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nepal_v5_api
+    environment:
+      DATABASE_URL: postgresql+asyncpg://nepal_osint:${POSTGRES_PASSWORD:-nepal_osint_dev}@postgres:5432/nepal_osint_v5
+      REDIS_URL: redis://redis:6379/0
+      APP_ENV: ${APP_ENV:-development}
+      DEBUG: "false"
+      RUN_SCHEDULER: "false"
+      ALLOWED_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173,http://localhost:5174,https://nepalosint.com,https://www.nepalosint.com,https://app.nepalosint.com}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:?JWT_SECRET_KEY is required}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      TWITTER_BEARER_TOKEN: ${TWITTER_BEARER_TOKEN:-}
+      TWITTER_API_TIER: ${TWITTER_API_TIER:-free}
+      # Google Earth Engine (required for PWTT satellite analysis)
+      GEE_PROJECT_ID: ${GEE_PROJECT_ID:-}
+      GEE_SERVICE_ACCOUNT_JSON: ${GEE_SERVICE_ACCOUNT_JSON:-}
+      # Mount ADC credentials for GEE
+      GOOGLE_APPLICATION_CREDENTIALS: /home/appuser/.config/gcloud/application_default_credentials.json
+    volumes:
+      - .:/app
+      - ${HOME}/.config/gcloud:/home/appuser/.config/gcloud:ro
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+      worker:
+        condition: service_started
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health').read()\""]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nepal_v5_worker
+    environment:
+      DATABASE_URL: postgresql+asyncpg://nepal_osint:${POSTGRES_PASSWORD:-nepal_osint_dev}@postgres:5432/nepal_osint_v5
+      REDIS_URL: redis://redis:6379/0
+      APP_ENV: ${APP_ENV:-development}
+      DEBUG: "false"
+      RUN_SCHEDULER: "true"
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:?JWT_SECRET_KEY is required}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      TWITTER_BEARER_TOKEN: ${TWITTER_BEARER_TOKEN:-}
+      TWITTER_API_TIER: ${TWITTER_API_TIER:-free}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    command: python -m app.worker
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    container_name: nepal_v5_frontend
+    environment:
+      # Use Vite dev-server proxy to reach the backend-v5 API container
+      VITE_PROXY_TARGET: http://api:8000
+      VITE_WS_PROXY_TARGET: http://api:8000
+      # Disable the repo's local dev endpoints inside Docker
+      VITE_API_URL: ""
+      VITE_WS_URL: ""
+      VITE_DEMO_MODE: "true"
+    ports:
+      - "${FRONTEND_PORT:-5173}:5173"
+    volumes:
+      - ../frontend:/app
+      - /app/node_modules
+    command: >
+      sh -c "if [ ! -d /app/node_modules/@blueprintjs/core ]; then npm install; fi && npm run dev -- --host"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:

@@ -1,0 +1,145 @@
+/* GandakiHeader - Palantir/Bloomberg Dark Theme */
+
+.gandaki-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  height: 48px;
+  background: var(--bg-surface, #111113);
+  border-bottom: 1px solid var(--border-subtle, #27272a);
+}
+
+.gandaki-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gandaki-home-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-subtle, #27272a);
+  background: var(--bg-elevated, #18181b);
+  color: var(--text-secondary, #a1a1aa);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.gandaki-home-btn:hover {
+  background: var(--bg-hover, #1f1f23);
+  color: var(--text-primary, #fafafa);
+  border-color: var(--border-default, #3f3f46);
+}
+
+.gandaki-header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gandaki-header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--accent-primary, #3b82f6);
+  color: white;
+}
+
+.gandaki-header-text h1 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary, #fafafa);
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.gandaki-header-subtitle {
+  font-size: 10px;
+  color: var(--text-muted, #71717a);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.gandaki-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gandaki-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gandaki-dropdown-label {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted, #71717a);
+}
+
+.gandaki-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gandaki-select {
+  appearance: none;
+  padding: 6px 28px 6px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-primary, #fafafa);
+  background: var(--bg-elevated, #18181b);
+  border: 1px solid var(--border-subtle, #27272a);
+  cursor: pointer;
+  min-width: 100px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  transition: all 0.15s ease;
+}
+
+.gandaki-select:hover {
+  border-color: var(--border-default, #3f3f46);
+  background: var(--bg-hover, #1f1f23);
+}
+
+.gandaki-select:focus {
+  outline: none;
+  border-color: var(--accent-primary, #3b82f6);
+}
+
+.gandaki-select-icon {
+  position: absolute;
+  right: 8px;
+  color: var(--text-muted, #71717a);
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gandaki-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    height: auto;
+  }
+
+  .gandaki-header-controls {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .gandaki-select {
+    min-width: 90px;
+  }
+}

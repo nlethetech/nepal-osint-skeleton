@@ -1,0 +1,307 @@
+/* GandakiWeatherPanel - Palantir/Bloomberg Dark Theme */
+
+.gandaki-weather-panel {
+  background: var(--bg-surface, #111113);
+  border: 1px solid var(--border-subtle, #27272a);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gandaki-weather-panel:hover {
+  border-color: var(--border-default, #3f3f46);
+}
+
+.gandaki-weather-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--bg-elevated, #18181b);
+  border-bottom: 1px solid var(--border-subtle, #27272a);
+  min-height: 40px;
+}
+
+.gandaki-weather-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary, #a1a1aa);
+  margin: 0;
+}
+
+.gandaki-weather-header h3 svg {
+  color: var(--text-muted, #71717a);
+}
+
+.gandaki-weather-location {
+  font-size: 10px;
+  font-weight: 600;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  color: var(--text-muted, #71717a);
+  background: var(--bg-active, #27272a);
+  padding: 2px 6px;
+}
+
+.gandaki-weather-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.gandaki-weather-current {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle, #27272a);
+}
+
+.gandaki-weather-icon-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: var(--bg-elevated, #18181b);
+  border: 1px solid var(--border-subtle, #27272a);
+  color: var(--status-medium, #eab308);
+}
+
+.gandaki-weather-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gandaki-weather-temp {
+  font-size: 32px;
+  font-weight: 700;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  color: var(--text-primary, #fafafa);
+  line-height: 1;
+}
+
+.gandaki-weather-condition {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary, #a1a1aa);
+}
+
+.gandaki-weather-updated {
+  font-size: 10px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  color: var(--text-disabled, #52525b);
+}
+
+.gandaki-weather-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px;
+  margin-bottom: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  font-size: 11px;
+  color: var(--status-critical, #ef4444);
+}
+
+.gandaki-weather-notice svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.gandaki-weather-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border-subtle, #27272a);
+  margin-bottom: 12px;
+}
+
+.gandaki-weather-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px;
+  background: var(--bg-surface, #111113);
+}
+
+.gandaki-weather-detail-label {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted, #71717a);
+}
+
+.gandaki-weather-detail-value {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  color: var(--text-primary, #fafafa);
+}
+
+.gandaki-weather-forecast {
+  margin-bottom: 12px;
+}
+
+.gandaki-weather-forecast h4 {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted, #71717a);
+  margin: 0 0 8px;
+}
+
+.gandaki-weather-forecast p {
+  font-size: 12px;
+  color: var(--text-secondary, #a1a1aa);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.gandaki-weather-rivers {
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle, #27272a);
+}
+
+.gandaki-weather-rivers h4 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted, #71717a);
+  margin: 0 0 10px;
+}
+
+.gandaki-weather-rivers h4 svg {
+  color: var(--accent-primary, #3b82f6);
+}
+
+.gandaki-river-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border-subtle, #27272a);
+}
+
+.gandaki-river-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: var(--bg-surface, #111113);
+}
+
+.gandaki-river-name {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-primary, #fafafa);
+}
+
+.gandaki-river-level {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 2px 6px;
+}
+
+.gandaki-river-level.normal {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--status-low, #22c55e);
+}
+
+.gandaki-river-level.high {
+  background: rgba(249, 115, 22, 0.15);
+  color: var(--status-high, #f97316);
+}
+
+.gandaki-river-level.danger,
+.gandaki-river-level.critical {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--status-critical, #ef4444);
+}
+
+.gandaki-weather-source {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-subtle, #27272a);
+  font-size: 9px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  color: var(--text-disabled, #52525b);
+}
+
+.gandaki-weather-loading {
+  padding: 12px;
+}
+
+.gandaki-weather-skeleton {
+  height: 20px;
+  margin-bottom: 8px;
+  background: var(--bg-active, #27272a);
+}
+
+.gandaki-weather-skeleton.large {
+  height: 64px;
+}
+
+.gandaki-weather-skeleton:last-child {
+  margin-bottom: 0;
+}
+
+.gandaki-weather-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 32px;
+  text-align: center;
+  color: var(--text-muted, #71717a);
+}
+
+.gandaki-weather-error svg {
+  color: var(--text-disabled, #52525b);
+}
+
+.gandaki-weather-error p {
+  font-size: 12px;
+  margin: 12px 0 0;
+}
+
+.gandaki-weather-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 32px;
+  text-align: center;
+  color: var(--text-muted, #71717a);
+}
+
+.gandaki-weather-empty svg {
+  color: var(--text-disabled, #52525b);
+}
+
+.gandaki-weather-empty p {
+  font-size: 12px;
+  margin: 12px 0 4px;
+}
+
+.gandaki-weather-empty span {
+  font-size: 10px;
+  color: var(--text-disabled, #52525b);
+}

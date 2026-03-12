@@ -1,0 +1,272 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-03",
+    "description": "Specialized data sources for Nepal OSINT",
+    "categories": ["statistics", "education", "health", "environment", "transport", "social_media"]
+  },
+  "statistics_data": [
+    {
+      "name_en": "Central Bureau of Statistics",
+      "name_ne": "केन्द्रीय तथ्याङ्क विभाग",
+      "domain": "cbs.gov.np",
+      "base_url": "https://cbs.gov.np",
+      "endpoints": {
+        "publications": "/publications/",
+        "nada": "https://nada.cbs.gov.np",
+        "census_2021": "https://censusnepal.cbs.gov.np"
+      },
+      "data_types": ["census", "economic_surveys", "statistical_yearbooks", "NPHC"],
+      "has_api": false,
+      "notes": "Primary source for official statistics, Census 2021 data available"
+    },
+    {
+      "name_en": "National Planning Commission",
+      "name_ne": "राष्ट्रिय योजना आयोग",
+      "domain": "npc.gov.np",
+      "base_url": "https://npc.gov.np",
+      "endpoints": {
+        "publications": "/category/publication/",
+        "periodic_plans": "/category/periodic-plan/"
+      },
+      "data_types": ["development_plans", "SDG_reports", "economic_surveys"],
+      "has_api": false,
+      "notes": "Development planning, periodic plans, SDG monitoring"
+    }
+  ],
+  "education_sources": [
+    {
+      "name_en": "Tribhuvan University",
+      "name_ne": "त्रिभुवन विश्वविद्यालय",
+      "domain": "tu.edu.np",
+      "base_url": "https://tu.edu.np",
+      "endpoints": {
+        "news": "/news/",
+        "notice": "/notice/",
+        "results": "https://exam.tu.edu.np"
+      },
+      "notes": "Largest university, exam results, admissions"
+    },
+    {
+      "name_en": "Kathmandu University",
+      "name_ne": "काठमाडौं विश्वविद्यालय",
+      "domain": "ku.edu.np",
+      "base_url": "https://ku.edu.np",
+      "endpoints": {
+        "news": "/news/",
+        "admissions": "/admissions/"
+      },
+      "notes": "Private university, research publications"
+    },
+    {
+      "name_en": "University Grants Commission",
+      "name_ne": "विश्वविद्यालय अनुदान आयोग",
+      "domain": "ugcnepal.edu.np",
+      "base_url": "https://ugcnepal.edu.np",
+      "endpoints": {
+        "news": "/news-and-notices/",
+        "scholarship": "/scholarship/"
+      },
+      "notes": "University funding, scholarships, higher education policy"
+    },
+    {
+      "name_en": "Council for Technical Education and Vocational Training",
+      "name_ne": "प्राविधिक शिक्षा तथा व्यावसायिक तालिम परिषद्",
+      "domain": "ctevt.org.np",
+      "base_url": "https://ctevt.org.np",
+      "endpoints": {
+        "news": "/news/",
+        "notice": "/notice/",
+        "results": "/results/"
+      },
+      "notes": "Technical education, vocational training, TSLC/diploma results"
+    },
+    {
+      "name_en": "National Examination Board",
+      "name_ne": "राष्ट्रिय परीक्षा बोर्ड",
+      "domain": "neb.gov.np",
+      "base_url": "https://neb.gov.np",
+      "endpoints": {
+        "notice": "/notice/",
+        "results": "https://see.gov.np"
+      },
+      "notes": "SEE and grade 12 examinations"
+    }
+  ],
+  "health_sources": [
+    {
+      "name_en": "Department of Health Services",
+      "name_ne": "स्वास्थ्य सेवा विभाग",
+      "domain": "dohs.gov.np",
+      "base_url": "https://dohs.gov.np",
+      "endpoints": {
+        "publications": "/publications/",
+        "annual_report": "/annual-reports/"
+      },
+      "notes": "Health statistics, disease surveillance"
+    },
+    {
+      "name_en": "Epidemiology and Disease Control Division",
+      "name_ne": "महामारी तथा रोग नियन्त्रण महाशाखा",
+      "domain": "edcd.gov.np",
+      "base_url": "https://edcd.gov.np",
+      "endpoints": {
+        "reports": "/reports/",
+        "surveillance": "/surveillance-data/"
+      },
+      "data_types": ["disease_outbreaks", "epidemic_data", "vaccination"],
+      "notes": "Disease outbreak reports, epidemic monitoring"
+    },
+    {
+      "name_en": "Health Emergency and Disaster Management Unit",
+      "name_ne": "स्वास्थ्य आपतकालीन तथा प्रकोप व्यवस्थापन इकाई",
+      "domain": "hedmu.gov.np",
+      "base_url": "https://hedmu.gov.np",
+      "endpoints": {
+        "reports": "/reports/"
+      },
+      "notes": "Health emergencies, disaster health response"
+    }
+  ],
+  "environment_sources": [
+    {
+      "name_en": "Department of Hydrology and Meteorology",
+      "name_ne": "जलमापन तथा मौसम विज्ञान विभाग",
+      "domain": "dhm.gov.np",
+      "base_url": "https://dhm.gov.np",
+      "endpoints": {
+        "weather": "/weather/",
+        "flood_warning": "/flood/",
+        "river_watch": "https://hydrology.gov.np"
+      },
+      "data_types": ["weather_forecasts", "river_levels", "flood_warnings", "climate_data"],
+      "has_api": true,
+      "api_url": "https://api.dhm.gov.np",
+      "notes": "Weather forecasts, flood early warning, critical for disaster monitoring"
+    },
+    {
+      "name_en": "Department of Environment",
+      "name_ne": "वातावरण विभाग",
+      "domain": "doe.gov.np",
+      "base_url": "https://doe.gov.np",
+      "endpoints": {
+        "air_quality": "/air-quality/",
+        "publications": "/publications/"
+      },
+      "data_types": ["air_quality", "environmental_monitoring"],
+      "notes": "Air quality index, environmental assessments"
+    },
+    {
+      "name_en": "Department of National Parks and Wildlife Conservation",
+      "name_ne": "राष्ट्रिय निकुञ्ज तथा वन्यजन्तु संरक्षण विभाग",
+      "domain": "dnpwc.gov.np",
+      "base_url": "https://dnpwc.gov.np",
+      "endpoints": {
+        "news": "/news/",
+        "notice": "/notice/"
+      },
+      "notes": "National parks, wildlife, conservation areas"
+    }
+  ],
+  "transport_sources": [
+    {
+      "name_en": "Department of Transport Management",
+      "name_ne": "यातायात व्यवस्था विभाग",
+      "domain": "dotm.gov.np",
+      "base_url": "https://dotm.gov.np",
+      "endpoints": {
+        "notice": "/notice/",
+        "services": "/services/"
+      },
+      "notes": "Vehicle registration, driving licenses"
+    },
+    {
+      "name_en": "Department of Roads",
+      "name_ne": "सडक विभाग",
+      "domain": "dor.gov.np",
+      "base_url": "https://dor.gov.np",
+      "endpoints": {
+        "news": "/news/",
+        "road_status": "/road-status/"
+      },
+      "notes": "Road conditions, highway status"
+    },
+    {
+      "name_en": "Civil Aviation Authority of Nepal",
+      "name_ne": "नेपाल नागरिक उड्डयन प्राधिकरण",
+      "domain": "caanepal.gov.np",
+      "base_url": "https://caanepal.gov.np",
+      "endpoints": {
+        "news": "/news/",
+        "notam": "/notam/"
+      },
+      "notes": "Flight safety, NOTAMs, airport status"
+    },
+    {
+      "name_en": "Nepal Airlines Corporation",
+      "name_ne": "नेपाल वायुसेवा निगम",
+      "domain": "nepalairlines.com.np",
+      "base_url": "https://www.nepalairlines.com.np",
+      "endpoints": {
+        "news": "/news/"
+      },
+      "notes": "National carrier, flight schedules"
+    }
+  ],
+  "land_property_sources": [
+    {
+      "name_en": "Department of Land Management and Archive",
+      "name_ne": "भूमि व्यवस्था तथा अभिलेख विभाग",
+      "domain": "dolma.gov.np",
+      "base_url": "https://dolma.gov.np",
+      "endpoints": {
+        "notice": "/notice/",
+        "malpot_portal": "https://malpot.gov.np"
+      },
+      "notes": "Land records, property registration"
+    },
+    {
+      "name_en": "Survey Department",
+      "name_ne": "नापी विभाग",
+      "domain": "dos.gov.np",
+      "base_url": "https://dos.gov.np",
+      "endpoints": {
+        "maps": "/maps/",
+        "notice": "/notice/"
+      },
+      "notes": "Geographic surveys, cadastral maps"
+    }
+  ],
+  "official_social_media": {
+    "twitter": [
+      {"handle": "PMaboralOli", "name": "PM KP Sharma Oli", "type": "official"},
+      {"handle": "MOaboraFNepal", "name": "Ministry of Foreign Affairs", "type": "ministry"},
+      {"handle": "ECNOfficial", "name": "Election Commission Nepal", "type": "constitutional"},
+      {"handle": "NepaliArmyHQ", "name": "Nepal Army", "type": "security"},
+      {"handle": "neaboralPolice", "name": "Nepal Police", "type": "security"},
+      {"handle": "BIPADPortal", "name": "BIPAD Portal", "type": "disaster"},
+      {"handle": "MOaboraH_Nepal", "name": "Ministry of Health", "type": "ministry"}
+    ],
+    "facebook": [
+      {"page": "opmcmnepal", "name": "OPMCM Official", "type": "official"},
+      {"page": "mohaborap.gov.np", "name": "Ministry of Health", "type": "ministry"},
+      {"page": "nepalpolice.gov.np", "name": "Nepal Police", "type": "security"}
+    ]
+  },
+  "rss_feeds": [
+    {
+      "source": "OPMCM",
+      "url": "https://opmcm.gov.np/feed/",
+      "type": "government"
+    },
+    {
+      "source": "Nepal Police",
+      "url": "https://nepalpolice.gov.np/feed/",
+      "type": "security"
+    },
+    {
+      "source": "TU",
+      "url": "https://tu.edu.np/feed/",
+      "type": "education"
+    }
+  ]
+}

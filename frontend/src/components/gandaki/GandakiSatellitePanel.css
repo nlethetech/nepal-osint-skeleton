@@ -1,0 +1,287 @@
+/* GandakiSatellitePanel - Palantir/Bloomberg Dark Theme */
+
+.gandaki-satellite-panel {
+  background: var(--bg-surface, #111113);
+  border: 1px solid var(--border-subtle, #27272a);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gandaki-satellite-panel:hover {
+  border-color: var(--border-default, #3f3f46);
+}
+
+.gandaki-satellite-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--bg-elevated, #18181b);
+  border-bottom: 1px solid var(--border-subtle, #27272a);
+  min-height: 40px;
+}
+
+.gandaki-satellite-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary, #a1a1aa);
+  margin: 0;
+}
+
+.gandaki-satellite-header h3 svg {
+  color: var(--text-muted, #71717a);
+}
+
+.gandaki-satellite-detail-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent-primary, #3b82f6);
+  background: transparent;
+  border: 1px solid var(--border-subtle, #27272a);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.gandaki-satellite-detail-link:hover {
+  background: var(--accent-primary, #3b82f6);
+  border-color: var(--accent-primary, #3b82f6);
+  color: white;
+}
+
+.gandaki-satellite-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.gandaki-satellite-form {
+  margin-bottom: 12px;
+}
+
+.gandaki-satellite-label {
+  display: block;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted, #71717a);
+  margin-bottom: 6px;
+}
+
+.gandaki-satellite-select-wrapper {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.gandaki-satellite-select {
+  appearance: none;
+  width: 100%;
+  padding: 10px 36px 10px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary, #fafafa);
+  background: var(--bg-elevated, #18181b);
+  border: 1px solid var(--border-subtle, #27272a);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.gandaki-satellite-select:hover {
+  border-color: var(--border-default, #3f3f46);
+}
+
+.gandaki-satellite-select:focus {
+  outline: none;
+  border-color: var(--accent-primary, #3b82f6);
+}
+
+.gandaki-satellite-select option {
+  background: var(--bg-surface, #111113);
+  color: var(--text-primary, #fafafa);
+}
+
+.gandaki-satellite-select-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted, #71717a);
+  pointer-events: none;
+}
+
+.gandaki-satellite-description {
+  font-size: 11px;
+  color: var(--text-secondary, #a1a1aa);
+  margin: 0 0 12px;
+  padding: 8px 10px;
+  background: var(--bg-active, #27272a);
+}
+
+.gandaki-satellite-analyze-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: white;
+  background: var(--accent-primary, #3b82f6);
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.gandaki-satellite-analyze-btn:hover:not(:disabled) {
+  background: var(--accent-hover, #2563eb);
+}
+
+.gandaki-satellite-analyze-btn:disabled {
+  background: var(--bg-active, #27272a);
+  color: var(--text-disabled, #52525b);
+  cursor: not-allowed;
+}
+
+.gandaki-satellite-analyze-btn .spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.gandaki-satellite-result {
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.gandaki-satellite-result.no_change {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.gandaki-satellite-result.minor_change {
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.gandaki-satellite-result.significant_change {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.gandaki-satellite-result-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.gandaki-satellite-result-header .status-ok {
+  color: var(--status-low, #22c55e);
+}
+
+.gandaki-satellite-result-header .status-minor {
+  color: var(--status-high, #f97316);
+}
+
+.gandaki-satellite-result-header .status-warning {
+  color: var(--status-critical, #ef4444);
+}
+
+.gandaki-satellite-result-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary, #fafafa);
+}
+
+.gandaki-satellite-result-message {
+  font-size: 12px;
+  color: var(--text-secondary, #a1a1aa);
+  margin: 0 0 8px;
+}
+
+.gandaki-satellite-result-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 10px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  color: var(--text-disabled, #52525b);
+}
+
+.gandaki-satellite-info {
+  border-top: 1px solid var(--border-subtle, #27272a);
+  padding-top: 12px;
+}
+
+.gandaki-satellite-info h4 {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted, #71717a);
+  margin: 0 0 10px;
+}
+
+.gandaki-satellite-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gandaki-satellite-info li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-subtle, #27272a);
+}
+
+.gandaki-satellite-info li:last-child {
+  border-bottom: none;
+}
+
+.gandaki-satellite-info .location-name {
+  font-size: 11px;
+  color: var(--text-primary, #fafafa);
+}
+
+.gandaki-satellite-info .location-type {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted, #71717a);
+  background: var(--bg-active, #27272a);
+  padding: 2px 6px;
+}
+
+.gandaki-satellite-loading {
+  padding: 12px;
+}
+
+.gandaki-satellite-skeleton {
+  height: 20px;
+  margin-bottom: 8px;
+  background: var(--bg-active, #27272a);
+}
+
+.gandaki-satellite-skeleton:last-child {
+  margin-bottom: 0;
+}

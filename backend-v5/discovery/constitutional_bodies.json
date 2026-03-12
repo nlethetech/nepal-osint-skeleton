@@ -1,0 +1,482 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-03",
+    "description": "Nepal Constitutional Bodies, Regulatory Agencies, and Judiciary",
+    "source": "Web search and verification",
+    "total_bodies": 27
+  },
+  "bodies": [
+    {
+      "name_en": "Election Commission Nepal",
+      "name_ne": "निर्वाचन आयोग, नेपाल",
+      "category": "constitutional",
+      "domain": "election.gov.np",
+      "base_url": "https://election.gov.np",
+      "endpoints": {
+        "voter_roll": "https://applyvr.election.gov.np",
+        "ecn_portal": "https://ecn.gov.np"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "card",
+      "notes": "Constitutional body responsible for conducting elections. Has voter registration portal and e-bulletin services."
+    },
+    {
+      "name_en": "Commission for the Investigation of Abuse of Authority (CIAA)",
+      "name_ne": "अख्तियार दुरुपयोग अनुसन्धान आयोग",
+      "category": "constitutional",
+      "domain": "ciaa.gov.np",
+      "base_url": "https://ciaa.gov.np",
+      "endpoints": {
+        "about": "/page/7",
+        "nepali_home": "/page/50"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "list",
+      "notes": "Anti-corruption body. Central office in Tangal, Kathmandu. Has 8 outreach offices across Nepal. Phone: +977 15262151"
+    },
+    {
+      "name_en": "Office of the Auditor General",
+      "name_ne": "महालेखा परीक्षकको कार्यालय",
+      "category": "constitutional",
+      "domain": "oag.gov.np",
+      "base_url": "https://www.oag.gov.np",
+      "endpoints": {
+        "profile_en": "/profile/en",
+        "old_site": "https://old.oag.gov.np"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "list",
+      "notes": "Supreme audit institution of Nepal. Located at Babarmahal, Kathmandu. Mandate from Article 241 of Constitution and Audit Act 2075."
+    },
+    {
+      "name_en": "Public Service Commission",
+      "name_ne": "लोक सेवा आयोग",
+      "category": "constitutional",
+      "domain": "psc.gov.np",
+      "base_url": "https://psc.gov.np",
+      "endpoints": {
+        "online_portal": "https://psconline.psc.gov.np",
+        "psconline1": "https://psconline1.psc.gov.np"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "notes": "Civil service recruitment body. Established 15 June 1951. Central Office at Anamnagar, Kathmandu. Tel: 4771488"
+    },
+    {
+      "name_en": "National Human Rights Commission",
+      "name_ne": "राष्ट्रिय मानव अधिकार आयोग",
+      "category": "constitutional",
+      "domain": "nhrcnepal.org",
+      "base_url": "https://www.nhrcnepal.org",
+      "endpoints": {
+        "about": "/nhrc_about.html"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "card",
+      "notes": "Human rights body with A-status accreditation. Established 2000, elevated to constitutional body 2007. Hotline: +977-01-5010000. Note: nhrc.gov.np redirects to nhrcnepal.org"
+    },
+    {
+      "name_en": "National Women Commission",
+      "name_ne": "राष्ट्रिय महिला आयोग",
+      "category": "constitutional",
+      "domain": "nwc.gov.np",
+      "base_url": "https://nwc.gov.np",
+      "endpoints": {
+        "english": "/en/",
+        "about": "/en/about/our-introduction/",
+        "helpline": "https://nwchelpline.gov.np"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "card",
+      "notes": "Women's rights protection body. Established March 7, 2002. Located at Bhadrakali Plaza, Kathmandu. Helpline: 1145"
+    },
+    {
+      "name_en": "National Dalit Commission",
+      "name_ne": "राष्ट्रिय दलित आयोग",
+      "category": "constitutional",
+      "domain": "ndc.gov.np",
+      "base_url": "https://ndc.gov.np",
+      "endpoints": {
+        "act": "/pages/act"
+      },
+      "has_english": false,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "list",
+      "notes": "Dalit rights protection body. Located at Kupundol, Lalitpur. Officials appointed December 2020 after 5-year vacancy."
+    },
+    {
+      "name_en": "National Inclusion Commission",
+      "name_ne": "राष्ट्रिय समावेशी आयोग",
+      "category": "constitutional",
+      "domain": "ninc.gov.np",
+      "base_url": "https://ninc.gov.np",
+      "endpoints": {
+        "team": "/our-team-detail/787/"
+      },
+      "has_english": false,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "list",
+      "notes": "Established under Article 296 of Constitution. Protects rights of Khas-Arya, backward, disabled, elderly, farmers, minorities, marginalized groups."
+    },
+    {
+      "name_en": "Indigenous Nationalities Commission",
+      "name_ne": "आदिवासी जनजाति आयोग",
+      "category": "constitutional",
+      "domain": "inc.gov.np",
+      "base_url": "https://inc.gov.np",
+      "endpoints": {},
+      "has_english": false,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "list",
+      "notes": "Adivasi Janajati Aayog. Operational since November 13, 2018. Located at Pulchowk, Lalitpur. Governed by Indigenous Nationalities Commission Act 2074."
+    },
+    {
+      "name_en": "Madhesi Commission",
+      "name_ne": "मधेसी आयोग",
+      "category": "constitutional",
+      "domain": "madheshicommission.gov.np",
+      "base_url": "http://madheshicommission.gov.np",
+      "endpoints": {
+        "english": "/en/"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": false,
+      "page_structure": "card",
+      "notes": "Established under Article 262 of Constitution. Located at Jagwal-10, Lalitpur. Tel: +977-01-5261185. Toll-free: 16600116185"
+    },
+    {
+      "name_en": "Tharu Commission",
+      "name_ne": "थारू आयोग",
+      "category": "constitutional",
+      "domain": "tharucommission.gov.np",
+      "base_url": "https://tharucommission.gov.np",
+      "endpoints": {
+        "english": "/en"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "list",
+      "notes": "Established 2017 under Article 263 of Constitution. Located at Anamnagar, Kathmandu-29. Governed by Tharu Commission Act 2074."
+    },
+    {
+      "name_en": "Muslim Commission",
+      "name_ne": "मुस्लिम आयोग",
+      "category": "constitutional",
+      "domain": "muslimcommission.gov.np",
+      "base_url": "https://muslimcommission.gov.np",
+      "endpoints": {},
+      "has_english": false,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "list",
+      "notes": "Established under Article 264 of Constitution. Muslim Commission Act 2074 ratified October 13, 2017. Powered by GIWMS | DOIT."
+    },
+    {
+      "name_en": "National Natural Resources and Fiscal Commission",
+      "name_ne": "राष्ट्रिय प्राकृतिक स्रोत तथा वित्त आयोग",
+      "category": "constitutional",
+      "domain": "nnrfc.gov.np",
+      "base_url": "https://nnrfc.gov.np",
+      "endpoints": {},
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "list",
+      "notes": "Established 2018 under Constitution 2015. Sets guidelines for federal fiscal transfers and natural resource royalty distribution formulas."
+    },
+    {
+      "name_en": "Nepal Rastra Bank",
+      "name_ne": "नेपाल राष्ट्र बैंक",
+      "category": "regulatory",
+      "domain": "nrb.org.np",
+      "base_url": "https://www.nrb.org.np",
+      "endpoints": {
+        "about": "/about/",
+        "contact": "/contact/",
+        "departments": "/departments/",
+        "archive": "https://archive.nrb.org.np"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "card",
+      "notes": "Central Bank of Nepal. Established April 26, 1956. Located at Baluwatar, Kathmandu. P.O. Box 73. Tel: 977-1-5719641 to 5719652"
+    },
+    {
+      "name_en": "Securities Board of Nepal (SEBON)",
+      "name_ne": "नेपाल धितोपत्र बोर्ड",
+      "category": "regulatory",
+      "domain": "sebon.gov.np",
+      "base_url": "https://www.sebon.gov.np",
+      "endpoints": {},
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "notes": "Securities market regulator. Established June 7, 1993. Located at Khumaltar, Lalitpur. Tel: +977 1 5254057. Toll Free: 1660 01 44433"
+    },
+    {
+      "name_en": "Nepal Insurance Authority",
+      "name_ne": "नेपाल बीमा प्राधिकरण",
+      "category": "regulatory",
+      "domain": "nib.gov.np",
+      "base_url": "https://nib.gov.np",
+      "endpoints": {
+        "introduction": "/introduction/",
+        "life_insurance": "/life-insurance/",
+        "organization": "/organization-structure/",
+        "alternate": "https://nia.gov.np"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "list",
+      "notes": "Formerly Insurance Board (Beema Samiti). Converted to Authority under Insurance Act 2079. Located at Kupondole, Lalitpur-10. Tel: +977-1-5421079"
+    },
+    {
+      "name_en": "Nepal Telecommunications Authority",
+      "name_ne": "नेपाल दूरसञ्चार प्राधिकरण",
+      "category": "regulatory",
+      "domain": "nta.gov.np",
+      "base_url": "https://www.nta.gov.np",
+      "endpoints": {
+        "nta_call_app": "https://ntacall.nta.gov.np",
+        "old_site": "http://mail.nta.gov.np/old/"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "card",
+      "notes": "Telecom regulator. Established February 1998 under Telecommunications Act 1997. Tel: +977 15355474"
+    },
+    {
+      "name_en": "Electricity Regulatory Commission",
+      "name_ne": "विद्युत नियमन आयोग",
+      "category": "regulatory",
+      "domain": "erc.gov.np",
+      "base_url": "https://www.erc.gov.np",
+      "endpoints": {
+        "organizational_structure": "/pages/organizational-structure"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "list",
+      "notes": "Electricity sector regulator. Established May 9, 2019 under ERC Act 2017. Located at Sano Gaucharan, Kathmandu. Note: Initially planned as NERC, now officially ERC."
+    },
+    {
+      "name_en": "Civil Aviation Authority of Nepal",
+      "name_ne": "नेपाल नागरिक उड्डयन प्राधिकरण",
+      "category": "regulatory",
+      "domain": "caanepal.gov.np",
+      "base_url": "https://caanepal.gov.np",
+      "endpoints": {
+        "academy": "https://academy.caanepal.gov.np",
+        "e_aip": "https://e-aip.caanepal.gov.np"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "card",
+      "notes": "Aviation regulator and service provider. Established December 31, 1998 under Civil Aviation Act 1996. Located at Babarmahal, Kathmandu. Tel: +977-1-4262326"
+    },
+    {
+      "name_en": "Department of Drug Administration",
+      "name_ne": "औषधि व्यवस्था विभाग",
+      "category": "regulatory",
+      "domain": "dda.gov.np",
+      "base_url": "https://dda.gov.np",
+      "endpoints": {
+        "role": "/pages/our-role/",
+        "notices": "/information/NOTICE",
+        "regional_offices": "/content/regional-offices",
+        "dams": "https://dams.dda.gov.np"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "notes": "Drug regulatory body under Ministry of Health. Established 1979 under Drug Act 1978. Located at Bijulibazar, New Baneshwor, Kathmandu. Tel: (977) 1 4780227"
+    },
+    {
+      "name_en": "Supreme Court of Nepal",
+      "name_ne": "नेपालको सर्वोच्च अदालत",
+      "category": "judiciary",
+      "domain": "supremecourt.gov.np",
+      "base_url": "https://supremecourt.gov.np",
+      "endpoints": {
+        "web": "/web/",
+        "justices": "/web/justices",
+        "news": "/pages/news/index.php",
+        "nkp": "https://nkp.gov.np"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "notes": "Highest court in Nepal. Court of record. 20 Justices + 1 Chief Justice. Located at Ramashah Path, Kathmandu. Tel: 01-4200745"
+    },
+    {
+      "name_en": "Judicial Council Secretariat",
+      "name_ne": "न्याय परिषद सचिवालय",
+      "category": "judiciary",
+      "domain": "jcs.gov.np",
+      "base_url": "https://jcs.gov.np",
+      "endpoints": {
+        "alternate": "http://www.judicialcouncil.gov.np"
+      },
+      "has_english": false,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "list",
+      "notes": "Recommends appointment of judges. Members hold 4-year terms. Located at Ramshahpath, Kathmandu. Note: Domain is jcs.gov.np, not jc.gov.np"
+    },
+    {
+      "name_en": "High Court Biratnagar (Koshi Province)",
+      "name_ne": "उच्च अदालत विराटनगर",
+      "category": "judiciary",
+      "domain": "supremecourt.gov.np",
+      "base_url": "https://supremecourt.gov.np/court/biratnagarhc",
+      "endpoints": {
+        "hcbab": "https://hcbab.org.np"
+      },
+      "has_english": false,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "notes": "High Court for Koshi Province (Province 1). Extended benches in Ilam, Dhankuta, Okhaldhunga. Transformed from Appellate Court September 14, 2016."
+    },
+    {
+      "name_en": "High Court Janakpur (Madhesh Province)",
+      "name_ne": "उच्च अदालत जनकपुर",
+      "category": "judiciary",
+      "domain": "supremecourt.gov.np",
+      "base_url": "https://supremecourt.gov.np/court/janakpurhc",
+      "endpoints": {},
+      "has_english": false,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "notes": "High Court for Madhesh Province (Province 2). Extended benches in Rajbiraj and Birgunj."
+    },
+    {
+      "name_en": "High Court Patan (Bagmati Province)",
+      "name_ne": "उच्च अदालत पाटन",
+      "category": "judiciary",
+      "domain": "supremecourt.gov.np",
+      "base_url": "https://supremecourt.gov.np/court/patanhc",
+      "endpoints": {
+        "case_mgmt": "https://supremecourt.gov.np/appeal/syspublic.php?d=reports&f=courtselect&courtid=6"
+      },
+      "has_english": false,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "notes": "High Court for Bagmati Province (Province 3). Extended bench in Hetauda. Chief Judge is head of judiciary for Bagmati Province."
+    },
+    {
+      "name_en": "High Court Pokhara (Gandaki Province)",
+      "name_ne": "उच्च अदालत पोखरा",
+      "category": "judiciary",
+      "domain": "supremecourt.gov.np",
+      "base_url": "https://supremecourt.gov.np/court/pokharahc",
+      "endpoints": {},
+      "has_english": false,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "notes": "High Court for Gandaki Province (Province 4). Extended bench in Baglung."
+    },
+    {
+      "name_en": "High Court Tulsipur (Lumbini Province)",
+      "name_ne": "उच्च अदालत तुलसीपुर",
+      "category": "judiciary",
+      "domain": "supremecourt.gov.np",
+      "base_url": "https://supremecourt.gov.np/court/tulsipurhc",
+      "endpoints": {},
+      "has_english": false,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "notes": "High Court for Lumbini Province (Province 5). Extended benches in Butwal and Nepalgunj. 11 Judges including Chief Judge."
+    },
+    {
+      "name_en": "High Court Surkhet/Birendranagar (Karnali Province)",
+      "name_ne": "उच्च अदालत सुर्खेत",
+      "category": "judiciary",
+      "domain": "supremecourt.gov.np",
+      "base_url": "https://supremecourt.gov.np/court/surkhethc",
+      "endpoints": {},
+      "has_english": false,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "notes": "High Court for Karnali Province (Province 6). Located in Birendranagar, Surkhet. Extended bench in Jumla. 7 Judges including Chief Judge."
+    },
+    {
+      "name_en": "High Court Dipayal (Sudurpashchim Province)",
+      "name_ne": "उच्च अदालत दिपायल",
+      "category": "judiciary",
+      "domain": "supremecourt.gov.np",
+      "base_url": "https://supremecourt.gov.np/court/dipayalhc",
+      "endpoints": {},
+      "has_english": false,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "notes": "High Court for Sudurpashchim Province (Province 7). Extended bench in Mahendranagar. 7 Judges including Chief Judge. Transformed from Appellate Court September 14, 2016."
+    }
+  ],
+  "summary": {
+    "constitutional_bodies": 13,
+    "regulatory_bodies": 7,
+    "judiciary": 9,
+    "verified_domains": [
+      "election.gov.np",
+      "ciaa.gov.np",
+      "oag.gov.np",
+      "psc.gov.np",
+      "nhrcnepal.org",
+      "nwc.gov.np",
+      "ndc.gov.np",
+      "ninc.gov.np",
+      "inc.gov.np",
+      "madheshicommission.gov.np",
+      "tharucommission.gov.np",
+      "muslimcommission.gov.np",
+      "nnrfc.gov.np",
+      "nrb.org.np",
+      "sebon.gov.np",
+      "nib.gov.np",
+      "nta.gov.np",
+      "erc.gov.np",
+      "caanepal.gov.np",
+      "dda.gov.np",
+      "supremecourt.gov.np",
+      "jcs.gov.np"
+    ],
+    "domain_notes": {
+      "nhrc.gov.np": "Redirects to nhrcnepal.org",
+      "nerc.gov.np": "Does not exist - correct domain is erc.gov.np",
+      "jc.gov.np": "Does not exist - correct domain is jcs.gov.np",
+      "nib.gov.np": "Nepal Insurance Authority (formerly Insurance Board)"
+    }
+  }
+}

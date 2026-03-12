@@ -1,0 +1,134 @@
+/* GandakiDashboard - Palantir/Bloomberg Dark Theme */
+
+.gandaki-dashboard {
+  min-height: 100vh;
+  background: var(--bg-base, #0a0a0b);
+  color: var(--text-primary, #fafafa);
+  font-family: var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
+  display: flex;
+  flex-direction: column;
+}
+
+.gandaki-dashboard-main {
+  flex: 1;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: auto;
+}
+
+/* Grid System */
+.gandaki-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 6px;
+}
+
+.gandaki-row-map {
+  min-height: 380px;
+}
+
+.gandaki-col-4 {
+  grid-column: span 4;
+}
+
+.gandaki-col-6 {
+  grid-column: span 6;
+}
+
+.gandaki-col-8 {
+  grid-column: span 8;
+}
+
+.gandaki-col-12 {
+  grid-column: span 12;
+}
+
+/* Widget containers */
+.gandaki-row > .gandaki-col-4,
+.gandaki-row > .gandaki-col-6,
+.gandaki-row > .gandaki-col-8 {
+  min-height: 320px;
+}
+
+.gandaki-row-map > .gandaki-col-4,
+.gandaki-row-map > .gandaki-col-8 {
+  min-height: 380px;
+}
+
+/* Map expanded overlay */
+.gandaki-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .gandaki-row-map {
+    grid-template-columns: 1fr;
+  }
+
+  .gandaki-row-map .gandaki-col-8,
+  .gandaki-row-map .gandaki-col-4 {
+    grid-column: span 12;
+  }
+
+  .gandaki-row-map .gandaki-col-8 {
+    order: 1;
+    min-height: 320px;
+  }
+
+  .gandaki-row-map .gandaki-col-4 {
+    order: 2;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 992px) {
+  .gandaki-dashboard-main {
+    padding: 4px;
+  }
+
+  .gandaki-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .gandaki-col-4,
+  .gandaki-col-6,
+  .gandaki-col-8,
+  .gandaki-col-12 {
+    grid-column: span 1;
+  }
+
+  .gandaki-row > .gandaki-col-4,
+  .gandaki-row > .gandaki-col-6,
+  .gandaki-row > .gandaki-col-8 {
+    min-height: 280px;
+  }
+}
+
+/* Scrollbar - Dark theme */
+.gandaki-dashboard ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.gandaki-dashboard ::-webkit-scrollbar-track {
+  background: var(--bg-surface, #111113);
+}
+
+.gandaki-dashboard ::-webkit-scrollbar-thumb {
+  background: var(--bg-active, #27272a);
+  border-radius: 0;
+}
+
+.gandaki-dashboard ::-webkit-scrollbar-thumb:hover {
+  background: var(--border-default, #3f3f46);
+}

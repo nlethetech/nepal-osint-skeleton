@@ -1,0 +1,228 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: osint_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: nepal_osint
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: nepal_osint
+    expose:
+      - "5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nepal_osint"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command:
+      - "postgres"
+      - "-c"
+      - "max_connections=50"
+      - "-c"
+      - "idle_in_transaction_session_timeout=30000"
+      - "-c"
+      - "statement_timeout=60000"
+      - "-c"
+      - "shared_buffers=64MB"
+      - "-c"
+      - "effective_cache_size=256MB"
+      - "-c"
+      - "maintenance_work_mem=32MB"
+      - "-c"
+      - "work_mem=8MB"
+
+  redis:
+    image: redis:7-alpine
+    container_name: osint_redis
+    restart: unless-stopped
+    command: redis-server --maxmemory 64mb --maxmemory-policy allkeys-lru
+    expose:
+      - "6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  migrate:
+    build:
+      context: ./backend-v5
+      dockerfile: Dockerfile.prod
+    container_name: osint_migrate
+    environment:
+      DATABASE_URL: postgresql+asyncpg://nepal_osint:${POSTGRES_PASSWORD:?err}@postgres:5432/nepal_osint
+      REDIS_URL: redis://redis:6379/0
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:?Set JWT_SECRET_KEY in .env}
+      DEBUG: "false"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: alembic upgrade head
+    restart: "no"
+
+  seed_elections:
+    build:
+      context: ./backend-v5
+      dockerfile: Dockerfile.prod
+    container_name: osint_seed_elections
+    environment:
+      DATABASE_URL: postgresql+asyncpg://nepal_osint:${POSTGRES_PASSWORD:?err}@postgres:5432/nepal_osint
+      REDIS_URL: redis://redis:6379/0
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:?Set JWT_SECRET_KEY in .env}
+      DEBUG: "false"
+    volumes:
+      - ./frontend/public/data:/frontend/public/data:ro
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    command: python scripts/import_election_data.py --all
+    restart: "no"
+    profiles: ["seed"]
+
+  backend:
+    build:
+      context: ./backend-v5
+      dockerfile: Dockerfile.prod
+    container_name: osint_backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+asyncpg://nepal_osint:${POSTGRES_PASSWORD:?err}@postgres:5432/nepal_osint
+      REDIS_URL: redis://redis:6379/0
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:?Set JWT_SECRET_KEY in .env}
+      DEBUG: "false"
+      RUN_SCHEDULER: "false"
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://api.openai.com/v1}
+      EMBEDDING_MODEL_KEY: ${EMBEDDING_MODEL_KEY:-e5-large}
+      OPENAI_EMBEDDING_ENABLED: ${OPENAI_EMBEDDING_ENABLED:-false}
+      OPENAI_EMBEDDING_MODEL: ${OPENAI_EMBEDDING_MODEL:-text-embedding-3-small}
+      OPENAI_EMBEDDING_DIMENSIONS: ${OPENAI_EMBEDDING_DIMENSIONS:-1024}
+      OPENAI_CLUSTERING_ENABLED: ${OPENAI_CLUSTERING_ENABLED:-false}
+      OPENAI_CLUSTERING_MODEL: ${OPENAI_CLUSTERING_MODEL:-gpt-4.1-mini}
+      OPENAI_AGENT_ENABLED: ${OPENAI_AGENT_ENABLED:-false}
+      OPENAI_AGENT_FAST_MODEL: ${OPENAI_AGENT_FAST_MODEL:-gpt-4.1-mini}
+      OPENAI_AGENT_DEEP_MODEL: ${OPENAI_AGENT_DEEP_MODEL:-gpt-4.1}
+      OPENAI_CLUSTER_GRAY_ZONE_LOW: ${OPENAI_CLUSTER_GRAY_ZONE_LOW:-0.68}
+      OPENAI_CLUSTER_GRAY_ZONE_HIGH: ${OPENAI_CLUSTER_GRAY_ZONE_HIGH:-0.82}
+      OPENAI_DEVELOPING_STORIES_ENABLED: ${OPENAI_DEVELOPING_STORIES_ENABLED:-false}
+      OPENAI_STORY_TRACKER_ENABLED: ${OPENAI_STORY_TRACKER_ENABLED:-false}
+      OPENAI_CACHE_TTL_SECONDS: ${OPENAI_CACHE_TTL_SECONDS:-2592000}
+      OPENAI_STORY_TRACKER_SIMILARITY_THRESHOLD: ${OPENAI_STORY_TRACKER_SIMILARITY_THRESHOLD:-0.78}
+      OPENAI_USAGE_LIMIT_ENABLED: ${OPENAI_USAGE_LIMIT_ENABLED:-true}
+      OPENAI_MAX_REQUESTS_PER_HOUR: ${OPENAI_MAX_REQUESTS_PER_HOUR:-20}
+      OPENAI_MAX_REQUESTS_PER_DAY: ${OPENAI_MAX_REQUESTS_PER_DAY:-120}
+      OPENAI_MAX_EMBEDDING_TEXTS_PER_HOUR: ${OPENAI_MAX_EMBEDDING_TEXTS_PER_HOUR:-120}
+      OPENAI_MAX_EMBEDDING_TEXTS_PER_DAY: ${OPENAI_MAX_EMBEDDING_TEXTS_PER_DAY:-600}
+      OPENAI_MAX_STRUCTURED_CALLS_PER_HOUR: ${OPENAI_MAX_STRUCTURED_CALLS_PER_HOUR:-8}
+      OPENAI_MAX_STRUCTURED_CALLS_PER_DAY: ${OPENAI_MAX_STRUCTURED_CALLS_PER_DAY:-36}
+      OPENAI_MAX_AGENT_CALLS_PER_HOUR: ${OPENAI_MAX_AGENT_CALLS_PER_HOUR:-1}
+      OPENAI_MAX_AGENT_CALLS_PER_DAY: ${OPENAI_MAX_AGENT_CALLS_PER_DAY:-4}
+      OPENAI_MAX_EMBEDDING_CHARS_PER_TEXT: ${OPENAI_MAX_EMBEDDING_CHARS_PER_TEXT:-1400}
+      OPENAI_MAX_STRUCTURED_PROMPT_CHARS: ${OPENAI_MAX_STRUCTURED_PROMPT_CHARS:-5000}
+      OPENAI_MAX_AGENT_PROMPT_CHARS: ${OPENAI_MAX_AGENT_PROMPT_CHARS:-12000}
+      OPENAI_MAX_STRUCTURED_COMPLETION_TOKENS: ${OPENAI_MAX_STRUCTURED_COMPLETION_TOKENS:-220}
+      OPENAI_MAX_AGENT_COMPLETION_TOKENS: ${OPENAI_MAX_AGENT_COMPLETION_TOKENS:-700}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      RESEND_FROM_EMAIL: ${RESEND_FROM_EMAIL:-}
+      ENVIRONMENT: production
+    expose:
+      - "8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 1
+    deploy:
+      resources:
+        limits:
+          memory: 768M
+        reservations:
+          memory: 256M
+
+  worker:
+    build:
+      context: ./backend-v5
+      dockerfile: Dockerfile.prod
+    container_name: osint_worker
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+asyncpg://nepal_osint:${POSTGRES_PASSWORD:?err}@postgres:5432/nepal_osint
+      REDIS_URL: redis://redis:6379/0
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:?Set JWT_SECRET_KEY in .env}
+      PYTHONPATH: /app
+      RUN_SCHEDULER: "true"
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://api.openai.com/v1}
+      EMBEDDING_MODEL_KEY: ${EMBEDDING_MODEL_KEY:-e5-large}
+      OPENAI_EMBEDDING_ENABLED: ${OPENAI_EMBEDDING_ENABLED:-false}
+      OPENAI_EMBEDDING_MODEL: ${OPENAI_EMBEDDING_MODEL:-text-embedding-3-small}
+      OPENAI_EMBEDDING_DIMENSIONS: ${OPENAI_EMBEDDING_DIMENSIONS:-1024}
+      OPENAI_CLUSTERING_ENABLED: ${OPENAI_CLUSTERING_ENABLED:-false}
+      OPENAI_CLUSTERING_MODEL: ${OPENAI_CLUSTERING_MODEL:-gpt-4.1-mini}
+      OPENAI_AGENT_ENABLED: ${OPENAI_AGENT_ENABLED:-false}
+      OPENAI_AGENT_FAST_MODEL: ${OPENAI_AGENT_FAST_MODEL:-gpt-4.1-mini}
+      OPENAI_AGENT_DEEP_MODEL: ${OPENAI_AGENT_DEEP_MODEL:-gpt-4.1}
+      OPENAI_CLUSTER_GRAY_ZONE_LOW: ${OPENAI_CLUSTER_GRAY_ZONE_LOW:-0.68}
+      OPENAI_CLUSTER_GRAY_ZONE_HIGH: ${OPENAI_CLUSTER_GRAY_ZONE_HIGH:-0.82}
+      OPENAI_DEVELOPING_STORIES_ENABLED: ${OPENAI_DEVELOPING_STORIES_ENABLED:-false}
+      OPENAI_STORY_TRACKER_ENABLED: ${OPENAI_STORY_TRACKER_ENABLED:-false}
+      OPENAI_CACHE_TTL_SECONDS: ${OPENAI_CACHE_TTL_SECONDS:-2592000}
+      OPENAI_STORY_TRACKER_SIMILARITY_THRESHOLD: ${OPENAI_STORY_TRACKER_SIMILARITY_THRESHOLD:-0.78}
+      OPENAI_USAGE_LIMIT_ENABLED: ${OPENAI_USAGE_LIMIT_ENABLED:-true}
+      OPENAI_MAX_REQUESTS_PER_HOUR: ${OPENAI_MAX_REQUESTS_PER_HOUR:-20}
+      OPENAI_MAX_REQUESTS_PER_DAY: ${OPENAI_MAX_REQUESTS_PER_DAY:-120}
+      OPENAI_MAX_EMBEDDING_TEXTS_PER_HOUR: ${OPENAI_MAX_EMBEDDING_TEXTS_PER_HOUR:-120}
+      OPENAI_MAX_EMBEDDING_TEXTS_PER_DAY: ${OPENAI_MAX_EMBEDDING_TEXTS_PER_DAY:-600}
+      OPENAI_MAX_STRUCTURED_CALLS_PER_HOUR: ${OPENAI_MAX_STRUCTURED_CALLS_PER_HOUR:-8}
+      OPENAI_MAX_STRUCTURED_CALLS_PER_DAY: ${OPENAI_MAX_STRUCTURED_CALLS_PER_DAY:-36}
+      OPENAI_MAX_AGENT_CALLS_PER_HOUR: ${OPENAI_MAX_AGENT_CALLS_PER_HOUR:-1}
+      OPENAI_MAX_AGENT_CALLS_PER_DAY: ${OPENAI_MAX_AGENT_CALLS_PER_DAY:-4}
+      OPENAI_MAX_EMBEDDING_CHARS_PER_TEXT: ${OPENAI_MAX_EMBEDDING_CHARS_PER_TEXT:-1400}
+      OPENAI_MAX_STRUCTURED_PROMPT_CHARS: ${OPENAI_MAX_STRUCTURED_PROMPT_CHARS:-5000}
+      OPENAI_MAX_AGENT_PROMPT_CHARS: ${OPENAI_MAX_AGENT_PROMPT_CHARS:-12000}
+      OPENAI_MAX_STRUCTURED_COMPLETION_TOKENS: ${OPENAI_MAX_STRUCTURED_COMPLETION_TOKENS:-220}
+      OPENAI_MAX_AGENT_COMPLETION_TOKENS: ${OPENAI_MAX_AGENT_COMPLETION_TOKENS:-700}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      RESEND_FROM_EMAIL: ${RESEND_FROM_EMAIL:-}
+      ENVIRONMENT: production
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    command: python -m app.worker
+    deploy:
+      resources:
+        limits:
+          memory: 384M
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    container_name: osint_frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  redis_data:

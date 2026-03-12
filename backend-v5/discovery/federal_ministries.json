@@ -1,0 +1,429 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-03",
+    "description": "Nepal Federal Ministries and Departments",
+    "total_ministries": 22,
+    "source": "Government of Nepal official sources"
+  },
+  "ministries": [
+    {
+      "id": "opmcm",
+      "name_en": "Office of the Prime Minister and Council of Ministers",
+      "name_ne": "प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय",
+      "domain": "opmcm.gov.np",
+      "base_url": "https://www.opmcm.gov.np",
+      "endpoints": {
+        "press_release_en": "/en/page/press-release",
+        "press_release_ne": "/page/press-release",
+        "notice_en": "/en/page/notice",
+        "notice_ne": "/page/notice",
+        "cabinet_decision": "/page/cabinet-decision"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 1,
+      "poll_interval_mins": 30,
+      "notes": "Central executive office, cabinet decisions"
+    },
+    {
+      "id": "moha",
+      "name_en": "Ministry of Home Affairs",
+      "name_ne": "गृह मन्त्रालय",
+      "domain": "moha.gov.np",
+      "base_url": "https://www.moha.gov.np",
+      "endpoints": {
+        "press_release_en": "/en/page/press-release",
+        "press_release_ne": "/page/press-release",
+        "notice_en": "/en/page/notice",
+        "notice_ne": "/page/notice",
+        "circular_ne": "/page/circular"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": false,
+      "page_structure": "table",
+      "priority": 1,
+      "poll_interval_mins": 30,
+      "notes": "Critical for security, curfews, law enforcement"
+    },
+    {
+      "id": "mofa",
+      "name_en": "Ministry of Foreign Affairs",
+      "name_ne": "परराष्ट्र मन्त्रालय",
+      "domain": "mofa.gov.np",
+      "base_url": "https://mofa.gov.np",
+      "endpoints": {
+        "press_release_en": "/page/press-release",
+        "notice_en": "/page/notice",
+        "news_en": "/page/news"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": false,
+      "page_structure": "table",
+      "priority": 1,
+      "poll_interval_mins": 60,
+      "notes": "Foreign policy, travel advisories, diplomatic"
+    },
+    {
+      "id": "mof",
+      "name_en": "Ministry of Finance",
+      "name_ne": "अर्थ मन्त्रालय",
+      "domain": "mof.gov.np",
+      "base_url": "https://mof.gov.np",
+      "endpoints": {
+        "press_release_en": "/en/page/press-release",
+        "press_release_ne": "/page/press-release",
+        "notice_en": "/en/page/notice",
+        "notice_ne": "/page/notice",
+        "budget_en": "/en/page/budget",
+        "budget_ne": "/page/budget",
+        "economic_survey": "/page/economic-survey"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 1,
+      "poll_interval_mins": 60,
+      "notes": "Budget, economic policy, fiscal matters"
+    },
+    {
+      "id": "moe",
+      "name_en": "Ministry of Education, Science and Technology",
+      "name_ne": "शिक्षा, विज्ञान तथा प्रविधि मन्त्रालय",
+      "domain": "moest.gov.np",
+      "base_url": "https://moest.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice",
+        "circular_ne": "/page/circular"
+      },
+      "has_english": false,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 2,
+      "poll_interval_mins": 120,
+      "notes": "Education policy, exam results, scholarships"
+    },
+    {
+      "id": "mohp",
+      "name_en": "Ministry of Health and Population",
+      "name_ne": "स्वास्थ्य तथा जनसंख्या मन्त्रालय",
+      "domain": "mohp.gov.np",
+      "base_url": "https://mohp.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice",
+        "circular_ne": "/page/circular"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 1,
+      "poll_interval_mins": 60,
+      "notes": "Health policy, disease outbreaks, public health"
+    },
+    {
+      "id": "mod",
+      "name_en": "Ministry of Defence",
+      "name_ne": "रक्षा मन्त्रालय",
+      "domain": "mod.gov.np",
+      "base_url": "https://mod.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice"
+      },
+      "has_english": false,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 1,
+      "poll_interval_mins": 60,
+      "notes": "Defence policy, military matters"
+    },
+    {
+      "id": "moald",
+      "name_en": "Ministry of Agriculture and Livestock Development",
+      "name_ne": "कृषि तथा पशुपन्छी विकास मन्त्रालय",
+      "domain": "moald.gov.np",
+      "base_url": "https://moald.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice",
+        "circular_ne": "/page/circular"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 2,
+      "poll_interval_mins": 120,
+      "notes": "Agriculture policy, food security"
+    },
+    {
+      "id": "moics",
+      "name_en": "Ministry of Industry, Commerce and Supplies",
+      "name_ne": "उद्योग, वाणिज्य तथा आपूर्ति मन्त्रालय",
+      "domain": "moics.gov.np",
+      "base_url": "https://moics.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 2,
+      "poll_interval_mins": 120,
+      "notes": "Industry policy, commerce, supply chain"
+    },
+    {
+      "id": "moewri",
+      "name_en": "Ministry of Energy, Water Resources and Irrigation",
+      "name_ne": "ऊर्जा, जलस्रोत तथा सिँचाइ मन्त्रालय",
+      "domain": "moewri.gov.np",
+      "base_url": "https://moewri.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 2,
+      "poll_interval_mins": 120,
+      "notes": "Energy, hydropower, irrigation projects"
+    },
+    {
+      "id": "mocit",
+      "name_en": "Ministry of Communications and Information Technology",
+      "name_ne": "सञ्चार तथा सूचना प्रविधि मन्त्रालय",
+      "domain": "mocit.gov.np",
+      "base_url": "https://mocit.gov.np",
+      "endpoints": {
+        "press_release_en": "/en/page/press-release",
+        "press_release_ne": "/page/press-release",
+        "notice_en": "/en/page/notice",
+        "notice_ne": "/page/notice"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 2,
+      "poll_interval_mins": 120,
+      "notes": "Telecom, IT policy, digital Nepal"
+    },
+    {
+      "id": "moless",
+      "name_en": "Ministry of Labour, Employment and Social Security",
+      "name_ne": "श्रम, रोजगार तथा सामाजिक सुरक्षा मन्त्रालय",
+      "domain": "moless.gov.np",
+      "base_url": "https://moless.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice",
+        "circular_ne": "/page/circular"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 2,
+      "poll_interval_mins": 120,
+      "notes": "Labour laws, foreign employment, social security"
+    },
+    {
+      "id": "moljpa",
+      "name_en": "Ministry of Law, Justice and Parliamentary Affairs",
+      "name_ne": "कानून, न्याय तथा संसदीय मामिला मन्त्रालय",
+      "domain": "moljpa.gov.np",
+      "base_url": "https://moljpa.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice",
+        "act_ne": "/page/act",
+        "regulation_ne": "/page/regulation"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 2,
+      "poll_interval_mins": 120,
+      "notes": "Legal affairs, acts, regulations"
+    },
+    {
+      "id": "mohud",
+      "name_en": "Ministry of Urban Development",
+      "name_ne": "शहरी विकास मन्त्रालय",
+      "domain": "mohud.gov.np",
+      "base_url": "https://mohud.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 3,
+      "poll_interval_mins": 180,
+      "notes": "Urban planning, housing policy"
+    },
+    {
+      "id": "mofaga",
+      "name_en": "Ministry of Federal Affairs and General Administration",
+      "name_ne": "संघीय मामिला तथा सामान्य प्रशासन मन्त्रालय",
+      "domain": "mofaga.gov.np",
+      "base_url": "https://mofaga.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice",
+        "circular_ne": "/page/circular"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 2,
+      "poll_interval_mins": 120,
+      "notes": "Local government, civil service administration"
+    },
+    {
+      "id": "mocta",
+      "name_en": "Ministry of Culture, Tourism and Civil Aviation",
+      "name_ne": "संस्कृति, पर्यटन तथा नागरिक उड्डयन मन्त्रालय",
+      "domain": "mocta.gov.np",
+      "base_url": "https://mocta.gov.np",
+      "endpoints": {
+        "press_release_en": "/en/page/press-release",
+        "press_release_ne": "/page/press-release",
+        "notice_en": "/en/page/notice",
+        "notice_ne": "/page/notice"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 2,
+      "poll_interval_mins": 120,
+      "notes": "Tourism policy, civil aviation, culture"
+    },
+    {
+      "id": "mowcsc",
+      "name_en": "Ministry of Women, Children and Senior Citizens",
+      "name_ne": "महिला, बालबालिका तथा ज्येष्ठ नागरिक मन्त्रालय",
+      "domain": "mowcsc.gov.np",
+      "base_url": "https://mowcsc.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 3,
+      "poll_interval_mins": 180,
+      "notes": "Women affairs, child welfare, senior citizens"
+    },
+    {
+      "id": "moys",
+      "name_en": "Ministry of Youth and Sports",
+      "name_ne": "युवा तथा खेलकुद मन्त्रालय",
+      "domain": "moys.gov.np",
+      "base_url": "https://moys.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice"
+      },
+      "has_english": false,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 3,
+      "poll_interval_mins": 180,
+      "notes": "Youth affairs, sports"
+    },
+    {
+      "id": "mowss",
+      "name_en": "Ministry of Water Supply",
+      "name_ne": "खानेपानी मन्त्रालय",
+      "domain": "mowss.gov.np",
+      "base_url": "https://mowss.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 3,
+      "poll_interval_mins": 180,
+      "notes": "Water supply, sanitation"
+    },
+    {
+      "id": "mofe",
+      "name_en": "Ministry of Forests and Environment",
+      "name_ne": "वन तथा वातावरण मन्त्रालय",
+      "domain": "mofe.gov.np",
+      "base_url": "https://mofe.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 2,
+      "poll_interval_mins": 120,
+      "notes": "Forest policy, environment, conservation"
+    },
+    {
+      "id": "mopid",
+      "name_en": "Ministry of Physical Infrastructure and Transport",
+      "name_ne": "भौतिक पूर्वाधार तथा यातायात मन्त्रालय",
+      "domain": "mopit.gov.np",
+      "base_url": "https://mopit.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 2,
+      "poll_interval_mins": 120,
+      "notes": "Roads, bridges, transport policy"
+    },
+    {
+      "id": "molcpa",
+      "name_en": "Ministry of Land Management, Cooperatives and Poverty Alleviation",
+      "name_ne": "भूमि व्यवस्था, सहकारी तथा गरिबी निवारण मन्त्रालय",
+      "domain": "molcpa.gov.np",
+      "base_url": "https://molcpa.gov.np",
+      "endpoints": {
+        "press_release_ne": "/page/press-release",
+        "notice_ne": "/page/notice"
+      },
+      "has_english": true,
+      "has_nepali": true,
+      "ssl_valid": true,
+      "page_structure": "table",
+      "priority": 3,
+      "poll_interval_mins": 180,
+      "notes": "Land management, cooperatives"
+    }
+  ]
+}

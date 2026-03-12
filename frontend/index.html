@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>NepalOSINT | Open Source News & Information Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  </head>
+  <body class="bp6-dark bg-bp-bg text-bp-text font-sans antialiased">
+    <div id="root">
+      <!-- Shown until React mounts -->
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;color:#F6F7F9;font-family:Inter,sans-serif;">
+        <div style="width:40px;height:40px;border:3px solid #2D72D2;border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;margin-bottom:16px;"></div>
+        <p style="font-size:14px;opacity:0.7;">Loading NepalOSINT...</p>
+      </div>
+      <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+    </div>
+    <script>
+      // Show errors visually for debugging
+      window.addEventListener('error', function(e) {
+        var d = document.getElementById('_err');
+        if (!d) { d = document.createElement('div'); d.id='_err'; d.style.cssText='position:fixed;top:0;left:0;right:0;background:red;color:white;padding:12px;z-index:99999;font-size:14px;font-family:monospace;white-space:pre-wrap;max-height:50vh;overflow:auto'; document.body.appendChild(d); }
+        d.textContent += 'ERR: ' + (e.message || e) + ' @ ' + (e.filename||'') + ':' + (e.lineno||'') + '\n';
+      });
+      window.addEventListener('unhandledrejection', function(e) {
+        var d = document.getElementById('_err');
+        if (!d) { d = document.createElement('div'); d.id='_err'; d.style.cssText='position:fixed;top:0;left:0;right:0;background:red;color:white;padding:12px;z-index:99999;font-size:14px;font-family:monospace;white-space:pre-wrap;max-height:50vh;overflow:auto'; document.body.appendChild(d); }
+        d.textContent += 'REJECT: ' + (e.reason && e.reason.message ? e.reason.message : e.reason) + '\n';
+      });
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
